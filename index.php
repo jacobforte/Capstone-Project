@@ -1,12 +1,15 @@
 <?php
 /**
- * A test class. This is a brief description, the brief ends at the first endline following a period.
- * This class is used for testing doxygen.
- * This is an in-depth description for this class
- * It can store and return a variable of any type
+ * A test class. This is a brief description, the brief ends at the first period./n
+ * This class is used for testing doxygen./n
+ * This is an in-depth description for this class/n
+ * It can store and return a variable of any type/n
+ * Doxygen requires //n in orderr to end the line.
+ * 
+ * Adding a line space adds a larger gap between lines.
  */
 class Test {
-  private $htmlOut; /**< This is a private variable. The less than symbol in the code is needed for comments after a line of code. */
+  public $htmlOut; /**< This is a private variable. The less than symbol in the code is needed for comments after a line of code. */
 
   /**
    * A set function.
@@ -33,12 +36,11 @@ class Test {
 }
 
 /**
- * \fn The test output function returns static text. The fn is needed for functions outside a class.
+ * \fn The test output function returns static text.
+ * The fn is needed for functions outside a class.
  * This starts the detailed description. Check doxygen documentation for more structure commands
  * INPUT: none
  * OUTPUT: a string containing an html page
- * 
- * This line of text was updated by the server automaticly
  */
 function TestOutput() {
   return "<h1>Hello World</h1>
