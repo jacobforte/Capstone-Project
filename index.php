@@ -1,5 +1,11 @@
 <?php
 /**
+ * \file
+ * A documented file.
+ * This file contains test documentation, look over it to see examples of doxygen
+ */
+
+/**
  * A test class. This is a brief description, the brief ends at the first period.\n
  * This class is used for testing doxygen.\n
  * This is an in-depth description for this class\n
@@ -37,8 +43,10 @@ class Test {
 }
 
 /**
+ * \fn index.php
  * The test output function returns static text.
- * The fn is needed for functions outside a class.
+ * The \\fn is needed for functions outside a class.
+ * Additionally, the top comment with the \\file is need for doxigen to check this file
  * This starts the detailed description. Check doxygen documentation for more structure commands
  * INPUT: none
  * OUTPUT: a string containing an html page
