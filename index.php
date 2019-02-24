@@ -16,7 +16,7 @@
  */
 class Test {
   public $htmlOut; /**< This is a public variable. The less than symbol in the code is needed for comments after a line of code. */
-  private $invisibleVar; // This variable wont show in the documentation because it is private
+  private $invisibleVar; /** This variable wont show in the documentation because it is private */
 
   /**
    * A set function.
