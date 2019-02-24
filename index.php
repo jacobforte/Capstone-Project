@@ -43,7 +43,6 @@ class Test {
 }
 
 /**
- * \fn index.php
  * The test output function returns static text.
  * The \\fn is needed for functions outside a class.
  * Additionally, the top comment with the \\file is need for doxigen to check this file
