@@ -62,8 +62,8 @@ public function TestOutput() {
 }
 
 
-$html = TestOutput();
-$testClass = new Test;
+$html = TestOutput(); /**< Used to store the TestOutput's output */
+$testClass = new Test;  /**< This is a object of the Test class */
 $testClass->setHtmlOut($html);
 echo $testClass->getHtmlOut();
 ?>
