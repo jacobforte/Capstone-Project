@@ -24,7 +24,8 @@ class Test {
    * INPUT: None
    * OUTPUT: A string that has been previously set.
    * 
-   * This functions returns the variable that was previously set
+   * This functions returns the variable that was previously set.
+   * This line of text was updated by the server automaticly
    */
   public function getHtmlOut() {
     return $this->htmlOut;
