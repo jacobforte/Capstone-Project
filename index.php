@@ -33,7 +33,7 @@ class Test {
 }
 
 /**
- * \\fn The test output function returns static text. The fn is needed for functions outside a class.
+ * \fn The test output function returns static text. The fn is needed for functions outside a class.
  * This starts the detailed description. Check doxygen documentation for more structure commands
  * INPUT: none
  * OUTPUT: a string containing an html page
