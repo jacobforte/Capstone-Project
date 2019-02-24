@@ -1,6 +1,6 @@
 <?php
-/// A test class. This is a brief description
 /**
+ * A test class. This is a brief description, the brief ends at the first endline following a period.
  * This class is used for testing doxygen.
  * This is an in-depth description for this class
  * It can store and return a variable of any type
@@ -8,8 +8,8 @@
 class Test {
   private $htmlOut; /**< This is a private variable. The less than symbol in the code is needed for comments after a line of code. */
 
-  /// A set function
   /**
+   * A set function.
    * INPUT: Any variable
    * OUTPUT: None
    * 
@@ -19,8 +19,8 @@ class Test {
     $this->htmlOut = $string;
   }
 
-  /// A get function
   /**
+   * A get function.
    * INPUT: None
    * OUTPUT: A string that has been previously set.
    * 
@@ -31,9 +31,9 @@ class Test {
   }
 }
 
-/// The test output function returns static text.
 /**
- * This starts the detailed description
+ * \\fn The test output function returns static text. The fn is needed for functions outside a class.
+ * This starts the detailed description. Check doxygen documentation for more structure commands
  * INPUT: none
  * OUTPUT: a string containing an html page
  * 
