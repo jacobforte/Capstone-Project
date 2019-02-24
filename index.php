@@ -10,6 +10,7 @@
  */
 class Test {
   public $htmlOut; /**< This is a private variable. The less than symbol in the code is needed for comments after a line of code. */
+  private $invisibleVar /**< This variable wont show in the documentation because it is private */
 
   /**
    * A set function.
@@ -42,7 +43,7 @@ class Test {
  * INPUT: none
  * OUTPUT: a string containing an html page
  */
-function TestOutput() {
+public function TestOutput() {
   return "<h1>Hello World</h1>
       <p>Written by Jacob Forte</p>
       <p>Some change 4</p>
