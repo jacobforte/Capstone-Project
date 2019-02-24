@@ -6,7 +6,7 @@
  */
 
 /**
- * A test class. This is a brief description, the brief ends at the first period.\n
+ * A test class. This is a brief description, the brief ends at the first period or first endline. See?\n
  * This class is used for testing doxygen.\n
  * This is an in-depth description for this class\n
  * It can store and return a variable of any type\n
@@ -35,7 +35,7 @@ class Test {
    * OUTPUT: A string that has been previously set.
    * 
    * This functions returns the variable that was previously set.
-   * This line of text was updated by the server automaticly
+   * This line of text was updated by the server automaticly.
    */
   public function getHtmlOut() {
     return $this->htmlOut;
@@ -44,9 +44,8 @@ class Test {
 
 /**
  * The test output function returns static text.
- * The \\fn is needed for functions outside a class.
- * Additionally, the top comment with the \\file is need for doxigen to check this file
- * This starts the detailed description. Check doxygen documentation for more structure commands
+ * The top comment with the \\file is need for doxigen to check nonclass variables and functions.
+ * This starts the detailed description. Check doxygen documentation for more structure commands.
  * INPUT: none
  * OUTPUT: a string containing an html page
  */
