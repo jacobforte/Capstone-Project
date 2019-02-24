@@ -37,7 +37,8 @@ class Test {
 }
 
 /**
- * \fn The test output function returns static text.
+ * \fn index.php
+ * The test output function returns static text.
  * The fn is needed for functions outside a class.
  * This starts the detailed description. Check doxygen documentation for more structure commands
  * INPUT: none
