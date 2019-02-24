@@ -36,6 +36,8 @@ class Test {
  * This starts the detailed description
  * INPUT: none
  * OUTPUT: a string containing an html page
+ * 
+ * This line of text was updated by the server automaticly
  */
 function TestOutput() {
   return "<h1>Hello World</h1>
