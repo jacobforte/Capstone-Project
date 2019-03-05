@@ -10,6 +10,6 @@ CREATE TABLE tblUserSellBook (
 	price double NOT NULL,
 	postDate datetime,
 	PRIMARY KEY(id)
-	FOREIGN KEY email REFERENCES tblUsers(email),
-	FOREIGN KEY classCRN REFERENCES tblClasses(crn)
+	FOREIGN KEY(email) REFERENCES tblUsers(email),
+	FOREIGN KEY(classCRN) REFERENCES tblClasses(crn)
 );
