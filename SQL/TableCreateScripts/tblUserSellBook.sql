@@ -6,7 +6,7 @@ CREATE TABLE tblUserSellBook (
 	classCRN varchar(255) NOT NULL,
 	shortDescription varchar(255),
 	longDescription varchar(2550),
-	condition varchar(255),
+	bookCondition varchar(255),
 	price double NOT NULL,
 	postDate datetime,
 	PRIMARY KEY(id)
