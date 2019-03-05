@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS 'tblBooks';
+DROP TABLE IF EXISTS tblBooks;
 
 CREATE TABLE tblBooks (
 	isbn varchar(255) NOT NULL,

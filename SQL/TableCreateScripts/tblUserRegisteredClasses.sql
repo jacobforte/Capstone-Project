@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS 'tblUserRegisteredClasses';
+DROP TABLE IF EXISTS tblUserRegisteredClasses;
 
 CREATE TABLE tblUserRegisteredClasses (
 	email varchar(255) NOT NULL,

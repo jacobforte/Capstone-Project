@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS 'tblNotifications';
+DROP TABLE IF EXISTS tblNotifications;
 
 CREATE TABLE tblNotifications (
 	type varchar(255),

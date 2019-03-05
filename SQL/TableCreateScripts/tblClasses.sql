@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS 'tblClasses';
+DROP TABLE IF EXISTS tblClasses;
 
 CREATE TABLE tblClasses (
 	crn integer NOT NULL,
