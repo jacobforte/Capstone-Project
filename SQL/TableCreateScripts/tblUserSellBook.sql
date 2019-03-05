@@ -9,7 +9,7 @@ CREATE TABLE tblUserSellBook (
 	bookCondition varchar(255),
 	price double NOT NULL,
 	postDate datetime,
-	PRIMARY KEY(id)
+	PRIMARY KEY(id),
 	FOREIGN KEY(email) REFERENCES tblUsers(email),
 	FOREIGN KEY(classCRN) REFERENCES tblClasses(crn)
 );
