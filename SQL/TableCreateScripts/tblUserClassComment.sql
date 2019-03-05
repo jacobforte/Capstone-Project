@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS tblUsersClassComment;
+DROP TABLE IF EXISTS tblUserClassComment;
 
-CREATE TABLE tblUsersClassComment (
+CREATE TABLE tblUserClassComment (
 	email varchar(255) NOT NULL,
 	classCRN varchar(255) NOT NULL,
 	shortDescription varchar(255),
