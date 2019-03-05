@@ -6,4 +6,4 @@ CREATE TABLE tblUserNotification (
 	PRIMARY KEY(email, notificationType)
 	FOREIGN KEY(email) REFERENCES tblUsers(email),
 	FOREIGN KEY(notificationType) REFERENCES tblNotifications(type)
-));
+);
