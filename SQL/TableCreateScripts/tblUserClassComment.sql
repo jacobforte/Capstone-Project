@@ -8,5 +8,5 @@ CREATE TABLE tblUserClassComment (
 	rating integer NOT NULL,
 	PRIMARY KEY(email, classCRN),
 	FOREIGN KEY(email) REFERENCES tblUsers(email),
-	FOREIGN KEY(classCRN) REFERENCES tblUsers(crn)
+	FOREIGN KEY(classCRN) REFERENCES tblBooks(crn)
 );
