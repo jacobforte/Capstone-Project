@@ -1,13 +1,13 @@
-USE 'Capstone';
+IF EXISTS tblBooks (
+	DROP TABLE tblBooks
+);
 
-DROP TABLE IF EXISTS 'Books';
-
-CREATE TABLE 'Books' (
-    'BookID' INTEGER NOT NULL,
-    'BookName' VARCHAR(255),
-    INDEX('BookID'),
-    PRIMARY KEY ('BookID')
-    ) Engine=innodb DEFAULT CHARSET=utf8;
-
-INSERT INTO 'Books' ('BookID', 'BookName')
-VALUES (123, 'Web Programing 1');
+CREATE TABLE tblBooks (
+	isbn varchar(255) NOT NULL,
+	title varchar(255) NOT NULL,
+	author varchar(255),
+	editor varchar(255),
+	publisher varchar(255),
+	photoName varchar(255),
+	PRIMARY KEY (isbn)
+);
