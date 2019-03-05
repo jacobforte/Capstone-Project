@@ -10,5 +10,3 @@ CREATE TABLE tblUsersClassComment (
 	FOREIGN KEY(email) REFERENCES tblUsers(email),
 	FOREIGN KEY(classCRN) REFERENCES tblUsers(crn)
 );
-
-//Should we allow multiple comments? Perhaps allow replying to other comments?
