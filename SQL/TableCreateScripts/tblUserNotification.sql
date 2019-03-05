@@ -1,6 +1,4 @@
-IF EXISTS tblUserNotification (
-	DROP TABLE tblUserNotification
-);
+DROP TABLE IF EXISTS 'tblUserNotification';
 
 CREATE TABLE tblUserNotification (
 	email varchar(255) NOT NULL,

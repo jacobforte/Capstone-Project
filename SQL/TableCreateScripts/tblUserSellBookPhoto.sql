@@ -1,6 +1,4 @@
-IF EXISTS tblUserSellBookPhoto (
-	DROP TABLE tblUserSellBookPhoto
-);
+DROP TABLE IF EXISTS 'tblUserSellBookPhoto';
 
 CREATE TABLE tblUserSellBookPhoto (
 	id integer NOT NULL AUTO_INCREMENT,

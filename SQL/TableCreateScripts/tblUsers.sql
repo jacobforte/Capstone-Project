@@ -1,6 +1,4 @@
-IF EXISTS tblUsers (
-	DROP TABLE tblUsers
-);
+DROP TABLE IF EXISTS 'tblUsers';
 
 CREATE TABLE tblUsers (
 	email varchar(255) NOT NULL,

@@ -1,6 +1,4 @@
-IF EXISTS tblClassRequiresBook (
-	DROP TABLE tblClassRequiresBook
-);
+DROP TABLE IF EXISTS 'tblClassRequiresBook';
 
 CREATE TABLE tblClassRequiresBook (
 	classCRN varchar(255),
