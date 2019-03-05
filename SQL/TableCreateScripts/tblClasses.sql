@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS tblClasses;
 
 CREATE TABLE tblClasses (
-	crn integer NOT NULL,
+	crn varchar(255) NOT NULL,
 	courseID varchar(255) NOT NULL,
 	title varchar(255) NOT NULL,
 	instructor varchar(255) NOT NULL,
