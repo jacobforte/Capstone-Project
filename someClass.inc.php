@@ -30,7 +30,6 @@ class Test {
   }
 
   /**
-   * \fn
    * A get function.
    * INPUT: None
    * OUTPUT: A string that has been previously set.
