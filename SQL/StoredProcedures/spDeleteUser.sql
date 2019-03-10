@@ -2,8 +2,9 @@
  * \file
  * This Stored Procedure deletes a user from the database.
  * This also deletes all UserNotifications, UserRegisteredClasses, posted books (along with the list of photos), and comments.
- * The actual photo will need to be removed.
+ * The actual photo will need to be removed./n
  * IN email varchar(255)
+ * OUT none
 */
 DELIMITER $$
 DROP PROCEDURE IF EXISTS spDeleteUser$$
