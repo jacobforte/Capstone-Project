@@ -18,7 +18,7 @@ BEGIN
         bookISBN,
         shortDescription,
         longDescription,
-        condition,
+        bookCondition,
         price,
         postDate
     )
@@ -28,7 +28,7 @@ BEGIN
         bookISBN,
         shortDescription,
         longDescription,
-        condition,
+        bookCondition,
         price,
         postDate
     );
