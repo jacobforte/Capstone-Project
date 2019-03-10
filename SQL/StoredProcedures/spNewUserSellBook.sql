@@ -7,9 +7,9 @@ CREATE PROCEDURE spNewUserSellBook
     IN bookISBN varchar(255),
     IN shortDescription varchar(255),
     IN longDescription varchar(255),
-    IN condition varchar(255),
+    IN bookCondition varchar(255),
     IN price double,
-    IN postDate date
+    IN postDate datetime
 )
 BEGIN
     INSERT INTO tblUserSellBook

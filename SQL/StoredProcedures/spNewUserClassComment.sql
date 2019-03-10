@@ -5,7 +5,7 @@ CREATE PROCEDURE spNewUserClassComment
 (
     IN email varchar(255),
     IN classCRN varchar(255),
-    IN shortDescription varchar(2550)
+    IN shortDescription varchar(2550),
     IN rating varchar(255),
     IN reviewDate date,
     IN instructor varchar(255),
