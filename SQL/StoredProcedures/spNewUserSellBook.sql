@@ -6,7 +6,7 @@ CREATE PROCEDURE spNewUserSellBook
     IN email varchar(255),
     IN bookISBN varchar(255),
     IN shortDescription varchar(255),
-    IN longDescription varchar(255),
+    IN longDescription varchar(2550),
     IN bookCondition varchar(255),
     IN price double,
     IN postDate datetime
