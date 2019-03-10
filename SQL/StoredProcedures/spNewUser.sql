@@ -10,5 +10,5 @@ CREATE PROCEDURE spNewUser
 BEGIN
     INSERT INTO tblUsers (email, name, password)
     VALUES (email, name, password);
-END
+END$$
 DELIMITER ;
