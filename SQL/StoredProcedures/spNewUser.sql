@@ -1,5 +1,7 @@
 DELIMITER $$
-DROP PROCEDURE IF EXISTS spNewUser
+DROP PROCEDURE IF EXISTS spNewUser$$
+
+CREATE PROCEDURE spGETPOSTLIST()
 (
     @email varchar(255),
     @name varchar(255),
