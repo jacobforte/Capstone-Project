@@ -32,5 +32,8 @@ BEGIN
         price,
         postDate
     );
+
+    SELECT id FROM tblUserSellBook b
+    WHERE b.email = email AND b.bookISBN = bookISBN;
 END$$
 DELIMITER ;
