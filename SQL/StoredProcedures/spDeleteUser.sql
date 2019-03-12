@@ -14,9 +14,9 @@ BEGIN
     DELETE FROM tblUserSellBookPhoto p
     WHERE (p.id) IN
         (
-            SELECT b.id
+            SELECT p.id
             FROM tblUserSellBook
-            Where b.email = email
+            Where p.email = email
         );
 
     DELETE FROM tblUserSellBook WHERE email = email;
