@@ -16,7 +16,7 @@
   <ul>
     <li><a href="index.php">Home Page<br></a></li>
 	<li><a href="register.php">Register<br></a></li>
-	<li><a href="signin">Sign In<br></a></li>
+	<li><a href="signin.php">Sign In<br></a></li>
 	<li><a href="profile.php">User Account<br></a></li>
 	<li><a href="search.php">Search Book<br></a></li>
 	<li><a href="booklisting.php">Book Listing<br></a></li>
