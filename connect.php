@@ -12,22 +12,11 @@
 
 <div class="container">
 
-<header>
-   <h1> BookIt </h1>
-<?php
-$user = 'root';
-$pass = '';
-$db = 'foodcm';
-
-$db = new mysqli('localhost',$user, $pass, $db) or die("Unable to connect");
-
-?>
-</header> 
 <nav>
   <ul>
     <li><a href="home.php">Home Page<br></a></li>
 	<li><a href="register.php">Register<br></a></li>
-	<li><a href="signup">Sign Up<br></a></li>
+	<li><a href="signin">Sign In<br></a></li>
 	<li><a href="profile.php">User Account<br></a></li>
 	<li><a href="search.php">Search Book<br></a></li>
 	<li><a href="booklisting.php">Book Listing<br></a></li>
