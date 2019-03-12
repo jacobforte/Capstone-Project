@@ -22,7 +22,7 @@
 	<li><a href="booklisting.php">Book Listing<br></a></li>
 	<li><a href="course.php">Course Lookup<br></a></li>
 	<li><a href="bookdetails.php">Book details<br></a></li>
-	<li><a href="notfication.php">Notifaction<br></a></li>
+	<li><a href="notification.php">Notifaction<br></a></li>
   </ul>
 </nav>
 
