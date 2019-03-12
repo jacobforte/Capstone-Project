@@ -20,6 +20,6 @@ BEGIN
 
     DELETE FROM tblUserSellBook WHERE email = email;
     DELETE FROM tblUsers WHERE email = email;
-    COMMIT TRANSACTION;
+    COMMIT;
 END$$
 DELIMITER ;
