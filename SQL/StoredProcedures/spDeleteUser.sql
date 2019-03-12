@@ -12,12 +12,8 @@ BEGIN
     DELETE FROM tblUserClassComment WHERE email = email;
 
     DELETE FROM tblUserSellBookPhoto p
-    WHERE (p.id) IN
-        (
-            SELECT b.id
-            FROM tblUserSellBook b
-            Where b.email = email
-        );
+    LEFT OUTER JOIN tblUserSellBook b ON (b.id = p.id)
+    WHERE b.email = email;
 
     DELETE FROM tblUserSellBook WHERE email = email;
     DELETE FROM tblUsers WHERE email = email;
