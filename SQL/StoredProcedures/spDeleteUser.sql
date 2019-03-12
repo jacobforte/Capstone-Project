@@ -11,8 +11,8 @@ BEGIN
     DELETE FROM tblUserRegisteredClasses WHERE email = email;
     DELETE FROM tblUserClassComment WHERE email = email;
 
-    DELETE FROM tblUserSellBookPhoto p
-    LEFT OUTER JOIN tblUserSellBook b ON (b.id = p.id)
+    DELETE FROM tblUserSellBookPhoto AS p
+    LEFT OUTER JOIN tblUserSellBook AS b ON (b.id = p.id)
     WHERE b.email = email;
 
     DELETE FROM tblUserSellBook WHERE email = email;
