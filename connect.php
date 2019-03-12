@@ -14,7 +14,7 @@
 
 <nav>
   <ul>
-    <li><a href="home.php">Home Page<br></a></li>
+    <li><a href="index.php">Home Page<br></a></li>
 	<li><a href="register.php">Register<br></a></li>
 	<li><a href="signin">Sign In<br></a></li>
 	<li><a href="profile.php">User Account<br></a></li>
