@@ -12,7 +12,7 @@ BEGIN
     DELETE FROM tblUserClassComment WHERE email = email;
 
     DELETE FROM tblUserSellBookPhoto
-    LEFT OUTER JOIN tblUserSellBook ON tblUserSellBookPhoto.id = tblUserSellBook.id
+    LEFT OUTER JOIN tblUserSellBook ON tblUserSellBookPhoto.id = tblUserSellBook.id AND tblUserSellBook.email = email;
     WHERE tblUserSellBook.email = email;
 
     DELETE FROM tblUserSellBook WHERE email = email;
