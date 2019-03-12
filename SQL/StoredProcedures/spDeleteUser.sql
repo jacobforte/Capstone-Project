@@ -7,9 +7,9 @@ CREATE PROCEDURE spDeleteUser
 )
 BEGIN
     BEGIN TRANSACTION;
-    DELETE FROM tblUserNotifications WHERE email = email;
-    DELETE FROM tblUserRegisteredClasses WHERE email = email;
-    DELETE FROM tblUserClassComment WHERE email = email;
+    DELETE FROM tblUserNotifications n WHERE n.email = email;
+    DELETE FROM tblUserRegisteredClasses r WHERE r.email = email;
+    DELETE FROM tblUserClassComment co WHERE co.email = email;
 
     DELETE FROM tblUserSellBookPhoto p
     WHERE (p.id) IN
@@ -19,8 +19,8 @@ BEGIN
             Where b.email = email
         );
 
-    DELETE FROM tblUserSellBook WHERE email = email;
-    DELETE FROM tblUsers WHERE email = email;
+    DELETE FROM tblUserSellBook b WHERE b.email = email;
+    DELETE FROM tblUsers u WHERE u.email = email;
     COMMIT TRANSACTION;
 END$$
 DELIMITER ;
