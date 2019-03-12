@@ -16,7 +16,7 @@ BEGIN
     (
         SELECT id FROM tblUserSellBook b
         WHERE b.email = email
-    )
+    );
 
     DELETE FROM tblUserSellBook WHERE email = email;
     DELETE FROM tblUsers WHERE email = email;
