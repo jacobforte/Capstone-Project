@@ -21,7 +21,7 @@
 	<li><a href="search.php">Search Book<br></a></li>
 	<li><a href="booklisting.php">Book Listing<br></a></li>
 	<li><a href="course.php">Course Lookup<br></a></li>
-	<li><a href="book details.php">Book details<br></a></li>
+	<li><a href="bookdetails.php">Book details<br></a></li>
   </ul>
 </nav>
 
