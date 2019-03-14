@@ -7,6 +7,8 @@ CREATE PROCEDURE spDeleteUserNotification
     IN notificationType varchar(255)
 )
 BEGIN
-    DELETE FROM tblUserNotification WHERE tblUserNotification.email = email;
+    DELETE FROM tblUserNotification
+    WHERE tblUserNotification.email = email
+    AND tblUserNotification.notificationType = notificationType;
 END$$
 DELIMITER ;

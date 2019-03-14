@@ -7,6 +7,8 @@ CREATE PROCEDURE spDeleteUserClassComment
     IN classCRN varchar(255)
 )
 BEGIN
-    DELETE FROM tblUserClassComment WHERE tblUserClassComment.email = email;
+    DELETE FROM tblUserClassComment
+    WHERE tblUserClassComment.email = email
+    AND tblUserClassComment.classCRN = classCRN;
 END$$
 DELIMITER ;

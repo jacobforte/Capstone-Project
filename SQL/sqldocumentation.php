@@ -82,36 +82,36 @@
 
  /**
  * \file spDeleteUserNotification.sql
- * Remove a notification from a user
- * IN email varchar(255),
- * IN notificationType varchar(255)
+ * Unsubscribes a user from a notification.
+ * IN email varchar(255),\n
+ * IN notificationType varchar(255)\n
  * Returns: None
  */
 
  /**
- * \file spDeleteUser.sql
- * Deletes a user from a database.
- * This also deletes all UserNotifications, UserRegisteredClasses, posted books (along with the list of photos), and comments that are related to the user.
- * The actual photo will need to be removed from the server.\n
- * IN email varchar(255)\n
+ * \file spDeleteUserRegisteredClass.sql
+ * Unsubscribes a user from a class.
+ * IN email varchar(255),\n
+ * IN classCRN(255)\n
  * Returns: None
  */
 
  /**
- * \file spDeleteUser.sql
- * Deletes a user from a database.
- * This also deletes all UserNotifications, UserRegisteredClasses, posted books (along with the list of photos), and comments that are related to the user.
- * The actual photo will need to be removed from the server.\n
- * IN email varchar(255)\n
+ * \file spDeleteUserSellBook.sql
+ * Removes a book from the book postings
+ * This also delete all photos related to the book posting. the actual photos will need to be removed manually.\n
+ * The id comes from the book posting id.
+ * IN id integer\n
  * Returns: None
  */
 
  /**
- * \file spDeleteUser.sql
+ * \file spDeleteUserSellBookPhoto.sql
  * Deletes a user from a database.
  * This also deletes all UserNotifications, UserRegisteredClasses, posted books (along with the list of photos), and comments that are related to the user.
  * The actual photo will need to be removed from the server.\n
- * IN email varchar(255)\n
+ * IN id integer,\n
+ * IN photoName varchar(255)\n
  * Returns: None
  */
 ?>
