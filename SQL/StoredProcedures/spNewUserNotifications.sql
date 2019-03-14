@@ -1,7 +1,7 @@
 DELIMITER $$
-DROP PROCEDURE IF EXISTS spNewUserNotification$$
+DROP PROCEDURE IF EXISTS spNewUserNotifications$$
 
-CREATE PROCEDURE spNewUserNotification
+CREATE PROCEDURE spNewUserNotifications
 (
     IN email varchar(255),
     IN notificationType varchar(255)
