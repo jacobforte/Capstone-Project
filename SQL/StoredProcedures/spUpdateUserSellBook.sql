@@ -15,7 +15,7 @@ BEGIN
     SET tblUserSellBook.bookISBN = bookISBN,
     tblUserSellBook.shortDescription = shortDescription,
     tblUserSellBook.longDescription = longDescription,
-    tblUserSellBook..bookCondition = bookCondition,
+    tblUserSellBook.bookCondition = bookCondition,
     tblUserSellBook.price = price
     WHERE tblUserSellBook.id = id;
 END$$
