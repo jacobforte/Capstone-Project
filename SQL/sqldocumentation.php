@@ -100,15 +100,14 @@
  * \file spDeleteUserSellBook.sql
  * Removes a book from the book postings
  * This also delete all photos related to the book posting. the actual photos will need to be removed manually.\n
- * The id comes from the book posting id.
+ * The id comes from the book posting id.\n
  * IN id integer\n
  * Returns: None
  */
 
  /**
  * \file spDeleteUserSellBookPhoto.sql
- * Deletes a user from a database.
- * This also deletes all UserNotifications, UserRegisteredClasses, posted books (along with the list of photos), and comments that are related to the user.
+ * Removes a photo from a book posting
  * The actual photo will need to be removed from the server.\n
  * IN id integer,\n
  * IN photoName varchar(255)\n
