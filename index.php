@@ -1,20 +1,15 @@
-<?php 
-#include connect.php
-?>
-<html>
-<!DOCTYPE html>
-<head>
-     <meta http-equiv='content-type' content='text/html;charset=utf-8' />
-     <title>Capstone Project: BookIt </title>
-     <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" href="/bootstrap/css">
-</head>
-<body>
+<html lang="en">
+    <head>
+        <?php include("head.inc.php"); ?>
+    </head>
+    <body>
+        <?php include("header.inc.php"); ?>
+        
+        <main>
+            <h1>Welcome</h1>
+            <p>This site is under maintenance.</p>
+        </main>
 
-<div class="container">
-
-<header>
-    <h1> Welcome to Kent State Stark </h1>
-    <h2> BookIt </h2>
-</header> 
+        <?php include("footer.inc.php"); ?>
+    </body>
+</html>
