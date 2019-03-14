@@ -1,7 +1,7 @@
 DELIMITER $$
-DROP PROCEDURE IF EXISTS spDeleteUser$$
+DROP PROCEDURE IF EXISTS spUpdateUserSellBook$$
 
-CREATE PROCEDURE spDeleteUser
+CREATE PROCEDURE spUpdateUserSellBook
 (
     IN id integer,
     IN bookISBN varchar(255),
