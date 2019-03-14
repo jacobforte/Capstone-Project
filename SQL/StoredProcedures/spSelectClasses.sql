@@ -44,7 +44,7 @@ BEGIN
         SET startTime = "%";
     END IF;
     IF endTime IS NULL || endTime = "" THEN
-        SET crendTimen = "%";
+        SET endTime = "%";
     END IF;
 
     SELECT tblClasses.crn,
