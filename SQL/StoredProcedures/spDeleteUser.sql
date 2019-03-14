@@ -7,9 +7,9 @@ CREATE PROCEDURE spDeleteUser
 )
 BEGIN
     START TRANSACTION;
-    DELETE FROM tblUserNotification WHERE email = email;
-    DELETE FROM tblUserRegisteredClasses WHERE email = email;
-    DELETE FROM tblUserClassComment WHERE email = email;
+    DELETE FROM tblUserNotification WHERE tblUserNotification.email = email;
+    DELETE FROM tblUserRegisteredClasses WHERE tblUserRegisteredClasses.email = email;
+    DELETE FROM tblUserClassComment WHERE tblUserClassComment.email = email;
 
     DELETE FROM tblUserSellBookPhoto
     WHERE id IN 

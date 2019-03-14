@@ -71,4 +71,47 @@
  * IN email varchar(255)\n
  * Returns: None
  */
+
+ /**
+ * \file spDeleteUserClassComment.sql
+ * Deletes a comment given the users email and class crn.
+ * IN email varchar(255),\n
+ * IN classCRN varchar(255)\n
+ * Returns: None
+ */
+
+ /**
+ * \file spDeleteUserNotification.sql
+ * Remove a notification from a user
+ * IN email varchar(255),
+ * IN notificationType varchar(255)
+ * Returns: None
+ */
+
+ /**
+ * \file spDeleteUser.sql
+ * Deletes a user from a database.
+ * This also deletes all UserNotifications, UserRegisteredClasses, posted books (along with the list of photos), and comments that are related to the user.
+ * The actual photo will need to be removed from the server.\n
+ * IN email varchar(255)\n
+ * Returns: None
+ */
+
+ /**
+ * \file spDeleteUser.sql
+ * Deletes a user from a database.
+ * This also deletes all UserNotifications, UserRegisteredClasses, posted books (along with the list of photos), and comments that are related to the user.
+ * The actual photo will need to be removed from the server.\n
+ * IN email varchar(255)\n
+ * Returns: None
+ */
+
+ /**
+ * \file spDeleteUser.sql
+ * Deletes a user from a database.
+ * This also deletes all UserNotifications, UserRegisteredClasses, posted books (along with the list of photos), and comments that are related to the user.
+ * The actual photo will need to be removed from the server.\n
+ * IN email varchar(255)\n
+ * Returns: None
+ */
 ?>
