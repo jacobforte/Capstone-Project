@@ -15,37 +15,37 @@ CREATE PROCEDURE spSelectClasses
     IN endTime time
 )
 BEGIN
-    --Set optional parameters
+    -- Set optional parameters
     IF crn IS NULL || crn = "" THEN
-        crn = "%";
-    END IF
+        SET crn = "%";
+    END IF;
     IF courseID IS NULL || courseID = "" THEN
-        courseID = "%";
-    END IF
+        SET courseID = "%";
+    END IF;
     IF title IS NULL || title = "" THEN
-        title = "%";
-    END IF
+        SET title = "%";
+    END IF;
     IF credits IS NULL || credits = "" THEN
-        credits = "%";
-    END IF
+        SET credits = "%";
+    END IF;
     IF campus IS NULL || campus = "" THEN
-        campus = "%";
-    END IF
+        SET campus = "%";
+    END IF;
     IF startDate IS NULL || startDate = "" THEN
-        startDate = "%";
-    END IF
+        SET startDate = "%";
+    END IF;
     IF endDate IS NULL || endDate = "" THEN
-        endDate = "%";
-    END IF
+        SET endDate = "%";
+    END IF;
     IF instructor IS NULL || instructor = "" THEN
-        instructor = "%";
-    END IF
+        SET instructor = "%";
+    END IF;
     IF startTime IS NULL || startTime = "" THEN
-        startTime = "%";
-    END IF
+        SET startTime = "%";
+    END IF;
     IF endTime IS NULL || endTime = "" THEN
-        crendTimen = "%";
-    END IF
+        SET crendTimen = "%";
+    END IF;
 
     SELECT tblClasses.crn,
         tblClasses.courseID,

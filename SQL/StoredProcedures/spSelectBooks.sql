@@ -10,22 +10,22 @@ CREATE PROCEDURE spSelectBooks
     IN publisher varchar(255)
 )
 BEGIN
-    --Set optional parameters
+    -- Set optional parameters
     IF isbn IS NULL || isbn = "" THEN
-        isbn = "%";
-    END IF
+        SET isbn = "%";
+    END IF;
     IF title IS NULL || title = "" THEN
-        title = "%";
-    END IF
+        SET title = "%";
+    END IF;
     IF author IS NULL || author = "" THEN
-        author = "%";
-    END IF
+        SET author = "%";
+    END IF;
     IF edition IS NULL || edition = "" THEN
-        edition = "%";
-    END IF
+        SET edition = "%";
+    END IF;
     IF publisher IS NULL || publisher = "" THEN
-        publisher = "%";
-    END IF
+        SET publisher = "%";
+    END IF;
 
     SELECT tblBooks.isbn,
         tblBooks.title,
