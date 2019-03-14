@@ -10,6 +10,6 @@ CREATE PROCEDURE spUpdateUser
 BEGIN
     UPDATE tblUsers
     SET tblUsers.email = email, tblUsers.name = name, tblUsers.password = password
-    WHERE tblUsers.email
+    WHERE tblUsers.email;
 END$$
 DELIMITER ;

@@ -21,6 +21,6 @@ BEGIN
     tblUserClassComment.semester = semester,
     tblUserClassComment.campus = campus
     WHERE tblUserClassComment.email = email
-    AND tblUserClassComment.classCRN = classCRN
+    AND tblUserClassComment.classCRN = classCRN;
 END$$
 DELIMITER ;

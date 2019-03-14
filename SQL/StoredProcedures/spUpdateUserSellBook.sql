@@ -16,7 +16,7 @@ BEGIN
     tblUserSellBook.shortDescription = shortDescription,
     tblUserSellBook.longDescription = longDescription,
     tblUserSellBook..bookCondition = bookCondition,
-    tblUserSellBook.price = price,
-    WHERE tblUserSellBook.id = id
+    tblUserSellBook.price = price
+    WHERE tblUserSellBook.id = id;
 END$$
 DELIMITER ;
