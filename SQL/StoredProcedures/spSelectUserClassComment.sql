@@ -1,7 +1,7 @@
 DELIMITER $$
-DROP PROCEDURE IF EXISTS spUserClassComment$$
+DROP PROCEDURE IF EXISTS spSelectUserClassComment$$
 
-CREATE PROCEDURE spUserClassComment
+CREATE PROCEDURE spSelectUserClassComment
 (
     IN courseID varchar(255)
 )

@@ -269,7 +269,7 @@
  */
 
  /**
- * \file spUserClassComment.sql
+ * \file spSelectUserClassComment.sql
  * Returns a list of all comments related to a class.
  * Note that this uses the course ID, not an individual section's class CRN
  * IN courseID varchar(255)\n
