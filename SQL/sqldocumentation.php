@@ -175,7 +175,7 @@
 
  /**
  * \file spSelectNotifications.sql
- * Returns a list of all notifications
+ * Returns a list of all notifications.
  * IN none\n
  * Returns:\n
  * type,\n
@@ -234,7 +234,7 @@
 
  /**
  * \file spSelectClassRequiresBook.sql
- * Returns a list of all books related to a class
+ * Returns a list of all books related to a class.
  * IN classCRN varchar(255)\n
  * Returns:\n
  * isbn,\n
