@@ -4,7 +4,7 @@ DROP PROCEDURE IF EXISTS spDeleteUserRegisteredClass$$
 CREATE PROCEDURE spDeleteUserRegisteredClass
 (
     IN email varchar(255),
-    IN classCRN(255)
+    IN classCRN varchar(255)
 )
 BEGIN
     DELETE FROM tblUserRegisteredClasses
