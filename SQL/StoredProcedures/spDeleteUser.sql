@@ -12,14 +12,14 @@ BEGIN
     DELETE FROM tblUserClassComment WHERE tblUserClassComment.email = email;
 
     DELETE FROM tblUserSellBookPhoto
-    WHERE id IN 
+    WHERE tblUserSellBookPhoto.id IN 
     (
-        SELECT id FROM tblUserSellBook b
-        WHERE b.email = email
+        SELECT tblUserSellBook.id FROM tblUserSellBook
+        WHERE tblUserSellBook.email = email
     );
 
-    DELETE FROM tblUserSellBook WHERE email = email;
-    DELETE FROM tblUsers WHERE email = email;
+    DELETE FROM tblUserSellBook WHERE tblUserSellBook.email = email;
+    DELETE FROM tblUsers WHERE tblUsers.email = email;
     COMMIT;
 END$$
 DELIMITER ;
