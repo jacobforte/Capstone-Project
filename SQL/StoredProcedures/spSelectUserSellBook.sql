@@ -14,15 +14,23 @@ BEGIN
     -- Set optional parameters
     IF id IS NULL || id = "" THEN
         SET id = "%";
+    ELSE
+        SET courseID = "%" + courseID + "%";
     END IF;
     IF email IS NULL || email = "" THEN
         SET email = "%";
+    ELSE
+        SET courseID = "%" + courseID + "%";
     END IF;
     IF bookISBN IS NULL || bookISBN = "" THEN
         SET bookISBN = "%";
+    ELSE
+        SET courseID = "%" + courseID + "%";
     END IF;
     IF bookCondition IS NULL || bookCondition = "" THEN
         SET bookCondition = "%";
+    ELSE
+        SET courseID = "%" + courseID + "%";
     END IF;
     IF minPrice IS NULL THEN
         SET minPrice = 0;

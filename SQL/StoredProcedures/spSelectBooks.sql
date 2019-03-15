@@ -13,18 +13,28 @@ BEGIN
     -- Set optional parameters
     IF isbn IS NULL || isbn = "" THEN
         SET isbn = "%";
+    ELSE
+        SET campus = "%" + campus + "%";
     END IF;
     IF title IS NULL || title = "" THEN
         SET title = "%";
+    ELSE
+        SET campus = "%" + campus + "%";
     END IF;
     IF author IS NULL || author = "" THEN
         SET author = "%";
+    ELSE
+        SET campus = "%" + campus + "%";
     END IF;
     IF edition IS NULL || edition = "" THEN
         SET edition = "%";
+    ELSE
+        SET campus = "%" + campus + "%";
     END IF;
     IF publisher IS NULL || publisher = "" THEN
         SET publisher = "%";
+    ELSE
+        SET campus = "%" + campus + "%";
     END IF;
 
     SELECT tblBooks.isbn,

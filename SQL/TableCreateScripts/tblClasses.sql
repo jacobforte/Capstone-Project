@@ -12,6 +12,7 @@ CREATE TABLE tblClasses (
 	endDate date NOT NULL,
 	startTime time NOT NULL,
 	endTime time NOT NULL,
+	meetDays varchar(255),
 	totalSeats integer,
 	seatsRemaining integer,
 	description varchar (255),

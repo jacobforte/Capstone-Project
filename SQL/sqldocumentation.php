@@ -195,7 +195,8 @@
  * IN startDate varchar(255), (OPTIONAL)\n
  * IN endDate varchar(255), (OPTIONAL)\n
  * IN startTime varchar(255), (OPTIONAL)\n
- * IN endTime varchar(255) (OPTIONAL)\n
+ * IN endTime varchar(255), (OPTIONAL)\n
+ * IN meetDays varchar(255) (OPTIONAL)\n
  * Returns:\n
  * crn,\n
  * courseID,\n
@@ -208,6 +209,7 @@
  * endDate,\n
  * startTime,\n
  * endTime,\n
+ *  meetDays,\n
  * totalSeats,\n
  * seatsRemaining,\n
  * description,\n
