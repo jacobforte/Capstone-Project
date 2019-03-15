@@ -59,11 +59,10 @@ BEGIN
     IF endTime IS NULL || endTime = "" THEN
         SET endTime = "00:00:00";
     END IF;
-    IF meetTime IS NULL || meetTime = "" THEN
-        SET meetTime = "%";
-    END IF;
     IF meetDays IS NULL || meetDays = "" THEN
         SET meetDays = "%";
+    ELSE
+        SET meetDays = "%" + meetDays + "%";
     END IF;
 
     SELECT tblClasses.crn,
@@ -77,7 +76,7 @@ BEGIN
         tblClasses.endDate,
         tblClasses.startTime,
         tblClasses.endTime,
-        tblClasses.meetDays
+        tblClasses.meetDays,
         tblClasses.totalSeats,
         tblClasses.seatsRemaining,
         tblClasses.description,

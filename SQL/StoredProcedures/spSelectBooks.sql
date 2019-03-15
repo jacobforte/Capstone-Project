@@ -14,27 +14,27 @@ BEGIN
     IF isbn IS NULL || isbn = "" THEN
         SET isbn = "%";
     ELSE
-        SET campus = "%" + campus + "%";
+        SET isbn = "%" + isbn + "%";
     END IF;
     IF title IS NULL || title = "" THEN
         SET title = "%";
     ELSE
-        SET campus = "%" + campus + "%";
+        SET title = "%" + title + "%";
     END IF;
     IF author IS NULL || author = "" THEN
         SET author = "%";
     ELSE
-        SET campus = "%" + campus + "%";
+        SET author = "%" + author + "%";
     END IF;
     IF edition IS NULL || edition = "" THEN
         SET edition = "%";
     ELSE
-        SET campus = "%" + campus + "%";
+        SET edition = "%" + edition + "%";
     END IF;
     IF publisher IS NULL || publisher = "" THEN
         SET publisher = "%";
     ELSE
-        SET campus = "%" + campus + "%";
+        SET publisher = "%" + publisher + "%";
     END IF;
 
     SELECT tblBooks.isbn,

@@ -15,22 +15,22 @@ BEGIN
     IF id IS NULL || id = "" THEN
         SET id = "%";
     ELSE
-        SET courseID = "%" + courseID + "%";
+        SET id = "%" + id + "%";
     END IF;
     IF email IS NULL || email = "" THEN
         SET email = "%";
     ELSE
-        SET courseID = "%" + courseID + "%";
+        SET email = "%" + email + "%";
     END IF;
     IF bookISBN IS NULL || bookISBN = "" THEN
         SET bookISBN = "%";
     ELSE
-        SET courseID = "%" + courseID + "%";
+        SET bookISBN = "%" + bookISBN + "%";
     END IF;
     IF bookCondition IS NULL || bookCondition = "" THEN
         SET bookCondition = "%";
     ELSE
-        SET courseID = "%" + courseID + "%";
+        SET bookCondition = "%" + bookCondition + "%";
     END IF;
     IF minPrice IS NULL THEN
         SET minPrice = 0;
