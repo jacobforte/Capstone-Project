@@ -4,15 +4,15 @@
 function dbconnection($spString) {
     $dbuser = 'webuser';
     $dbpass = '123456';
-    $dbconnstring = 'mysql:host=webdev-stark.cs.kent.edu;dbname=Capstone;';
+    $dbconnstring = 'mysql:host=40.121.205.213;dbname=Capstone;';
 
     try {
         //Establish the connection.
-        $pdo = new PDO($dbconnstring, $dbuser, $dbpass);
+        $pdo = new PDO($dbconnstring, $dbuser, $dbpass, array('charset'=>'utf8'));
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
-        //Set the sql command and execute it.
         $sql = 'CALL ' . $spString;
+        $pdo->query("SET CHARACTER SET utf8");
         $query = $pdo->query($sql);
 
         //Fetch the data
