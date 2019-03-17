@@ -15,22 +15,22 @@ BEGIN
     IF id IS NULL || id = "" THEN
         SET id = "%";
     ELSE
-        SET id = "%" + id + "%";
+        SET id = CONCAT("%", id, "%");
     END IF;
     IF email IS NULL || email = "" THEN
         SET email = "%";
     ELSE
-        SET email = "%" + email + "%";
+        SET email = CONCAT("%", email, "%");
     END IF;
     IF bookISBN IS NULL || bookISBN = "" THEN
         SET bookISBN = "%";
     ELSE
-        SET bookISBN = "%" + bookISBN + "%";
+        SET bookISBN = CONCAT("%", bookISBN, "%");
     END IF;
     IF bookCondition IS NULL || bookCondition = "" THEN
         SET bookCondition = "%";
     ELSE
-        SET bookCondition = "%" + bookCondition + "%";
+        SET bookCondition = CONCAT("%", bookCondition, "%");
     END IF;
     IF minPrice IS NULL THEN
         SET minPrice = 0;

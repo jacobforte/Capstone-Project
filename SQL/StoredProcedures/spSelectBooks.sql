@@ -14,27 +14,27 @@ BEGIN
     IF isbn IS NULL || isbn = "" THEN
         SET isbn = "%";
     ELSE
-        SET isbn = "%" + isbn + "%";
+        SET isbn = CONCAT("%", isbn, "%");
     END IF;
     IF title IS NULL || title = "" THEN
         SET title = "%";
     ELSE
-        SET title = "%" + title + "%";
+        SET title = CONCAT("%", title, "%");
     END IF;
     IF author IS NULL || author = "" THEN
         SET author = "%";
     ELSE
-        SET author = "%" + author + "%";
+        SET author = CONCAT("%", author, "%");
     END IF;
     IF edition IS NULL || edition = "" THEN
         SET edition = "%";
     ELSE
-        SET edition = "%" + edition + "%";
+        SET edition = CONCAT("%", edition, "%");
     END IF;
     IF publisher IS NULL || publisher = "" THEN
         SET publisher = "%";
     ELSE
-        SET publisher = "%" + publisher + "%";
+        SET publisher = CONCAT("%", publisher, "%");
     END IF;
 
     SELECT tblBooks.isbn,

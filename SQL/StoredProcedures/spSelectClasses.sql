@@ -20,27 +20,27 @@ BEGIN
     IF crn IS NULL || crn = "" THEN
         SET crn = "%";
     ELSE
-        SET crn = "%" + crn + "%";
+        SET crn = CONCAT("%", crn, "%");
     END IF;
     IF courseID IS NULL || courseID = "" THEN
         SET courseID = "%";
     ELSE
-        SET courseID = "%" + courseID + "%";
+        SET courseID = CONCAT("%", courseID, "%");
     END IF;
     IF title IS NULL || title = "" THEN
         SET title = "%";
     ELSE
-        SET title = "%" + title + "%";
+        SET title = CONCAT("%", title, "%");
     END IF;
     IF credits IS NULL || credits = "" THEN
         SET credits = "%";
     ELSE
-        SET credits = "%" + credits + "%";
+        SET credits = CONCAT("%", credits, "%");
     END IF;
     IF campus IS NULL || campus = "" THEN
         SET campus = "%";
     ELSE
-        SET campus = "%" + campus + "%";
+        SET campus = CONCAT("%", campus, "%");
     END IF;
     IF startDate IS NULL THEN
         SET startDate = "2000-01-01";
@@ -51,7 +51,7 @@ BEGIN
     IF instructor IS NULL || instructor = "" THEN
         SET instructor = "%";
     ELSE
-        SET instructor = "%" + instructor + "%";
+        SET instructor = CONCAT("%", instructor, "%");
     END IF;
     IF startTime IS NULL || startTime = "" THEN
         SET startTime = "00:00:00";
@@ -62,7 +62,7 @@ BEGIN
     IF meetDays IS NULL || meetDays = "" THEN
         SET meetDays = "%";
     ELSE
-        SET meetDays = "%" + meetDays + "%";
+        SET meetDays = CONCAT("%", meetDays, "%");
     END IF;
 
     SELECT tblClasses.crn,
