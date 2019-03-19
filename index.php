@@ -9,6 +9,13 @@
         <main>
             <h1>Welcome</h1>
             <p>This site is under maintenance.</p>
+            <?php
+                require("resources/functions/dbconnection.function.php");
+                $test = dbconnection("spSelectClasses('', '', '', '', '', '', '', '', '', '', '')");
+                foreach($test in $line) {
+                    echo "{$line['title']} <br>";
+                }
+            ?>
         </main>
 
         <?php include("resources/includes/footer.inc.php"); ?>
