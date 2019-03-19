@@ -11,7 +11,7 @@
             <p>This site is under maintenance.</p>
             <?php
                 require("resources/functions/dbconnection.function.php");
-                $test = dbconnection("spSelectClasses('', '', '', '', '', '', '', '', '', '', '')");
+                $test = dbconnection("spSelectClasses('', '', '', '', '', '', '2000-02-02', '2000-02-02', '', '', '')");
                 foreach($test as $line) {
                     echo "{$line['title']} <br>";
                 }
