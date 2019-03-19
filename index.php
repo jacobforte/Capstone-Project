@@ -12,7 +12,7 @@
             <?php
                 require("resources/functions/dbconnection.function.php");
                 $test = dbconnection("spSelectClasses('', '', '', '', '', '', '', '', '', '', '')");
-                foreach($test in $line) {
+                foreach($test as $line) {
                     echo "{$line['title']} <br>";
                 }
             ?>
