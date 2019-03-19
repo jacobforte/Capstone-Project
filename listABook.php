@@ -1,14 +1,15 @@
+<!doctype html>
 <html lang="en">
     <head>
-        <?php include("head.inc.php"); ?>
+        <?php include("resources/includes/head.inc.php"); ?>
     </head>
     <body>
-        <?php include("header.inc.php"); ?>
+        <?php include("resources/includes/header.inc.php"); ?>
         
         <main>
             
         </main>
 
-        <?php include("footer.inc.php"); ?>
+        <?php include("resources/includes/footer.inc.php"); ?>
     </body>
 </html>
