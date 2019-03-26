@@ -1,7 +1,7 @@
 DELIMITER $$
-DROP PROCEDURE IF EXISTS spUserSellBook$$
+DROP PROCEDURE IF EXISTS spSelectUserSellBook$$
 
-CREATE PROCEDURE spUserSellBook
+CREATE PROCEDURE spSelectUserSellBook
 (
     IN id integer,
     IN email varchar(255),
