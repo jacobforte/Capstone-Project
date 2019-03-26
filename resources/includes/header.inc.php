@@ -1,0 +1,56 @@
+<div class="container-fluid" style="background-color: #002664;">
+    <nav class="navbar navbar-expand-md justify-content-between">
+        <div class="row">
+            <div class="col-12 pl-0 text-right">
+                <a class="navbar-brand text-white mr-0 pb-0" href="#"><h1 class="font-weight-bold mb-0">BookIt</h1></a>
+                <a href="#"><h5 class="text-warning font-weight-bold">Kent State</h5></a>
+            </div>
+        </div>
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarText">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav ml-sm-auto">
+                <li class="nav-item">
+                    <a class="nav-link mx-2 text-white" href="#"><h5 class="font-weight-bold">Home</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mx-2 text-white" href="#"><h5 class="font-weight-bold">List a Book</h5></a>
+                </li>
+                <li class="nav-item dropdown" id="loggedIn">
+                    <a class="nav-link text-white mx-2" href id="navbardrop" data-toggle="dropdown">
+                        <h5 class="font-weight-bold d-inline">zbrockwa </h5><i class="fas fa-xs fa" id="chev"></i>
+                    </a>
+                    <div class="dropdown-menu" style="background-color: #EDF2F4;">
+                        <h6 class="font-weight-bold text-blue text-center">Account</h6>
+                        <h6 class="font-weight-bold text-blue text-center">Sign out</h6>
+                    </div>
+                </li>
+                <li class="nav-item dropdown" id="headerSearch">
+                    <a class="nav-link text-white mx-2" href id="navbardrop" data-toggle="dropdown">
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-xs fa" id="chev"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" style="background-color: #EDF2F4;">
+                        <form>
+                            <div class="input-group p-3">
+                                <input type="text" name="term" placeholder="Search" class="form-control">
+                                <div class="input-group-append">
+                                    <button type="submit" name="searchSubmit" class="btn" style="background-color: #EAAB00;">
+                                        <i class="fas fa-search" style="color: #002664;"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="input-group px-3 pb-3">
+                                <select class="form-control">
+                                    <option>ISBN</option>
+                                    <option>Course No.</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
