@@ -192,10 +192,10 @@
  * IN instructor varchar(255), (OPTIONAL)\n
  * IN credits varchar(255), (OPTIONAL)\n
  * IN campus varchar(255), (OPTIONAL)\n
- * IN startDate varchar(255), (OPTIONAL)\n
- * IN endDate varchar(255), (OPTIONAL)\n
- * IN startTime varchar(255), (OPTIONAL)\n
- * IN endTime varchar(255), (OPTIONAL)\n
+ * IN startDate date, (OPTIONAL)\n
+ * IN endDate date, (OPTIONAL)\n
+ * IN startTime time, (OPTIONAL)\n
+ * IN endTime time, (OPTIONAL)\n
  * IN meetDays varchar(255) (OPTIONAL)\n
  * Returns:\n
  * crn,\n
