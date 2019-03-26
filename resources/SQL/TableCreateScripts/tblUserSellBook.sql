@@ -11,5 +11,5 @@ CREATE TABLE tblUserSellBook (
 	postDate datetime,
 	PRIMARY KEY(id),
 	FOREIGN KEY(email) REFERENCES tblUsers(email),
-	FOREIGN KEY(classCRN) REFERENCES tblBooks(isbn)
+	FOREIGN KEY(bookISBN) REFERENCES tblBooks(isbn)
 );
