@@ -1,0 +1,52 @@
+[data-toggle="dropdown"] #chev:after {
+  content: "\f078";
+}
+
+.show > [data-toggle="dropdown"] #chev:after {
+  content: "\f077";
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.7)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+@media only screen and (min-width: 576px) {
+    #headerSearch .dropdown-menu {
+        width: 300px;
+    }
+
+    #loggedIn .dropdown-menu {
+        width: 150px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #headerSearch .dropdown-menu {
+        width: 300px;
+    }
+    #loggedIn .dropdown-menu {
+        width: 150px;
+    }
+}
+
+.bg-blue {
+    background-color: #002664;
+}
+
+.text-blue {
+    color: #002664;
+}
+
+.bg-orange {
+    background-color: #EAAB00;
+}
+
+.text-orange {
+    color: #EAAB00;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    background-color: #002664;
+}
+
+
