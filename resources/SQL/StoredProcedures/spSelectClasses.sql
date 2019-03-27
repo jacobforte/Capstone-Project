@@ -57,7 +57,7 @@ BEGIN
         SET startTime = "00:00:00";
     END IF;
     IF endTime IS NULL || endTime = "" THEN
-        SET endTime = "00:00:00";
+        SET endTime = "23:59:59";
     END IF;
     IF meetDays IS NULL || meetDays = "" THEN
         SET meetDays = "%";
