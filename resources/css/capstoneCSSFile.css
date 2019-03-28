@@ -45,8 +45,26 @@
     color: #EAAB00;
 }
 
+.bg-light {
+    background-color: #EDF2F4;
+}
+
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
     background-color: #002664;
 }
 
+.btn-warning {
+    color: #002664;
+    background-color: #EAAB00;
+    border-color: #EAAB00;
+}
 
+a:link {color: #002664; text-decoration: none; }
+a:visited {color: #002664; }
+a:hover {color: #335997; }
+a:active {color: #002664; }
+
+a.head-link:link {color: white; }
+a.head-link:visited {color: white; }
+a.head-link:hover {color: #EAAB00; }
+a.head-link:active {color: #EAAB00; }
