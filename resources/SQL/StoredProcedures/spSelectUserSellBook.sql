@@ -12,11 +12,6 @@ CREATE PROCEDURE spSelectUserSellBook
 )
 BEGIN
     -- Set optional parameters
-    IF id IS NULL || id = "" THEN
-        SET id = "%";
-    ELSE
-        SET id = CONCAT("%", id, "%");
-    END IF;
     IF email IS NULL || email = "" THEN
         SET email = "%";
     ELSE
@@ -28,7 +23,7 @@ BEGIN
         SET bookISBN = CONCAT("%", bookISBN, "%");
     END IF;
     IF bookCondition IS NULL || bookCondition = "" THEN
-        SET bookCondition = "%";
+        SET bookCondition = NULL;
     ELSE
         SET bookCondition = CONCAT("%", bookCondition, "%");
     END IF;
@@ -49,10 +44,10 @@ BEGIN
         tblUserSellBook.postDate
     FROM tblUserSellBook
     LEFT OUTER JOIN tblBooks ON tblBooks.isbn = tblUserSellBook.bookISBN
-    WHERE tblUserSellBook.id LIKE id
+    WHERE (tblUserSellBook.id = id OR id IS NULL)
         AND tblUserSellBook.email LIKE email
         AND tblUserSellBook.bookISBN LIKE bookISBN
-        AND tblUserSellBook.bookCondition LIKE bookCondition
+        AND (tblUserSellBook.bookCondition LIKE bookCondition OR bookCondition IS NULL)
         AND tblUserSellBook.price >= minPrice
         AND tblUserSellBook.price <= maxPrice;
 END$$
