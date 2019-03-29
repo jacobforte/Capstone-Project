@@ -18,8 +18,10 @@ function dbconnection($spString)
 
         //Fetch the data
         $result = array();
-        while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
-            $result[] = $row;
+        If (preg_match("/(spUpdate|spDelete){1}/", $sql) == 0) {
+            while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+                $result[] = $row;
+            }
         }
 
         //Terminate the connection and return the results
