@@ -1,6 +1,9 @@
 <?php
- //The string should contain the stored procedure name along with any input parameters in parenthesis
-//Example "spSelectUser(someemail@email, somepassword)"
+/**
+ * This function is used to connect to the database and call stored procedures.
+ * The string should contain the stored procedure name along with any input parameters in parenthesis.\n
+ * Example: "spSelectUser(someemail@email, somepassword)"
+ */
 function dbconnection($spString)
 {
     $dbuser = 'webuser';
