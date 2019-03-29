@@ -1,4 +1,4 @@
-<?php include('resources/functions/account.function.php'); ?>
+<?php include('resources/functions/account.listings.function.php'); ?>
 <!doctype html>
 <html lang="en">
     <head>

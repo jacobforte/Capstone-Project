@@ -2,6 +2,10 @@
 
 require("dbconnection.function.php");
 
+if(isset($_POST['remove'])) {
+    removeUserListing($_POST['remove']);
+}
+
 function outputUserListings($user) {
     $listings = dbconnection("spSelectUserSellBook(null, \"" . $user . "\", null, null, null, null)");
 
@@ -39,18 +43,24 @@ function outputUserListings($user) {
                     <p>' . $listing['longDescription'] . '</p>
                 </div>
             </div>
-            <div class="row mb-3">';
-                foreach($listingImages as $image) {
-                    echo '<div class="col-6 col-md-4 col-lg-3">';
-                    echo '  <img src="resources/images/' . $image["photoName"] . '" class="img-thumbnail" />';
-                    echo '</div>';
-                }
-            echo '</div>
-            <div class="row">
-                <div class="col-12">
-                    <a href="#" class="btn btn-warning">Remove</a>
+            <form action="" method="post">
+                <div class="row mb-3">';
+                        foreach($listingImages as $image) {
+                            echo '<div class="col-6 col-md-4 col-lg-3">';
+                            echo '  <img src="resources/images/' . $image["photoName"] . '" class="img-thumbnail" />';
+                            echo '</div>';
+                        }
+                echo '</div>
+                <div class="row">
+                    <div class="col-12">
+                        <button type="submit" name="remove" value="' . $listing["id"] . '" class="btn btn-warning">Remove</button>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>';
     }
+}
+
+function removeUserListing($id) {
+    dbconnection("spDeleteUserSellBook(" . $id . ")");
 }
