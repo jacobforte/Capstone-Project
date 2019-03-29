@@ -1,3 +1,4 @@
+<?php include('resources/functions/account.function.php'); ?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -25,82 +26,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h5 class="font-weight-bold"><a href="#">Database System Concepts</a></h5>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 col-md-6 col-lg-6">
-                                    <div class="row">
-                                        <div class="col-12 col-md-3 col-lg-3">
-                                            <h6 class="font-weight-bold">Condition</h6>
-                                            <p>New</p>
-                                        </div>
-                                        <div class="col-12 col-md-3 col-lg-3">
-                                            <h6 class="font-weight-bold">Price</h6>
-                                            <p>$89.99</p>
-                                        </div>
-                                        <div class="col-12 col-md-6 col-lg-3">
-                                            <h6 class="font-weight-bold">ISBN</h6>
-                                            <p>9780073523323</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <h6 class="font-weight-bold">Listing Description</h6>
-                                </div>
-                                <div class="col-12">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum pharetra dolor, vel feugiat dui tempor a. Etiam rutrum nisl arcu, at finibus risus posuere non. Sed interdum ipsum in mi pretium, sit amet lacinia sem malesuada. Sed tincidunt bibendum lacus, eu ornare.</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <a href="#" class="btn btn-warning">Remove</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h5 class="font-weight-bold"><a href="#">Operating System Concepts</a></h5>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 col-md-6 col-lg-6">
-                                    <div class="row">
-                                        <div class="col-12 col-md-3 col-lg-3">
-                                            <h6 class="font-weight-bold">Condition</h6>
-                                            <p>Used</p>
-                                        </div>
-                                        <div class="col-12 col-md-3 col-lg-3">
-                                            <h6 class="font-weight-bold">Price</h6>
-                                            <p>$30.00</p>
-                                        </div>
-                                        <div class="col-12 col-md-6 col-lg-3">
-                                            <h6 class="font-weight-bold">ISBN</h6>
-                                            <p>9780025370087</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <h6 class="font-weight-bold">Listing Description</h6>
-                                </div>
-                                <div class="col-12">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum pharetra dolor, vel feugiat dui tempor a. Etiam rutrum nisl arcu, at finibus risus posuere non. Sed interdum ipsum in mi pretium, sit amet lacinia sem malesuada. Sed tincidunt bibendum lacus, eu ornare.</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <a href="#" class="btn btn-warning">Remove</a>
-                                </div>
-                            </div>
-                        </div>
+                        <?php outputUserListings("zbrockwa@kent.edu"); ?>
                     </div>
                 </div>
             </div>
