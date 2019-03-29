@@ -6,6 +6,7 @@ function outputUserListings($user) {
     $listings = dbconnection("spSelectUserSellBook(null, \"" . $user . "\", null, null, null, null)");
 
     foreach($listings as $listing) {
+        $listingImages = dbconnection("spSelectUserSellBookPhoto(" . $listing['id'] . ")");
         echo '<div class="mb-3">
             <div class="row">
                 <div class="col-12">
@@ -38,6 +39,13 @@ function outputUserListings($user) {
                     <p>' . $listing['longDescription'] . '</p>
                 </div>
             </div>
+            <div class="row mb-3">';
+                foreach($listingImages as $image) {
+                    echo '<div class="col-3">';
+                    echo '  <img src="resources/images/' . $image["photoName"] . '" class="img-thumbnail" />';
+                    echo '</div>';
+                }
+            echo '</div>
             <div class="row">
                 <div class="col-12">
                     <a href="#" class="btn btn-warning">Remove</a>

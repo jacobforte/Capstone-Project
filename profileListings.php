@@ -22,7 +22,7 @@
                         <div class="mb-3">
                             <div class="row mb-3">
                                 <div class="col-12">
-                                    <h4 class="font-weight-bold">Your Listings (2)</h4>
+                                    <h4 class="font-weight-bold">Your Listings</h4>
                                 </div>
                             </div>
                         </div>
