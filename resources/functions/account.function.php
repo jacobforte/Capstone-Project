@@ -41,7 +41,7 @@ function outputUserListings($user) {
             </div>
             <div class="row mb-3">';
                 foreach($listingImages as $image) {
-                    echo '<div class="col-3">';
+                    echo '<div class="col-6 col-md-4 col-lg-3">';
                     echo '  <img src="resources/images/' . $image["photoName"] . '" class="img-thumbnail" />';
                     echo '</div>';
                 }
