@@ -1,4 +1,5 @@
 <?php
+/** \file */
 /**
  * This function is used to connect to the database and call stored procedures.
  * The string should contain the stored procedure name along with any input parameters in parenthesis.\n
