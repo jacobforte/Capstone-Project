@@ -41,7 +41,8 @@ BEGIN
         tblUserSellBook.longDescription,
         tblUserSellBook.bookCondition,
         tblUserSellBook.price,
-        tblUserSellBook.postDate
+        tblUserSellBook.postDate,
+        tblBooks.title
     FROM tblUserSellBook
     LEFT OUTER JOIN tblBooks ON tblBooks.isbn = tblUserSellBook.bookISBN
     WHERE (tblUserSellBook.id = id OR id IS NULL)
