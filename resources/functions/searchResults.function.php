@@ -5,7 +5,7 @@ function outputClasses($search) {
     $classes = array();
     //$classes = dbconnection("spSelectClasses(NULL, {$search}, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)");
 
-    if (count($classes) != 0) {
+    if (count($classes) == 0) {
         echo "<div class='row mt-2'>
             <div class='col'>
                 <h5><strong>No Results for \"{$search}\"</strong></h5>
