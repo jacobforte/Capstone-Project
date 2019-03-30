@@ -19,7 +19,7 @@ function outputClasses($search) {
             </div>
         </div>";
 
-        foreach($class as $classes) {
+        foreach($classes as $class) {
             echo "<div class='row mt-2'>
                 <div class='col'>
                     {$class["title"]}
