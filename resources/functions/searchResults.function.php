@@ -25,9 +25,9 @@ function outputClasses($search) {
                     {$class["title"]}<br>
                     {$class["courseID"]}
                 </div>
-                <div class='col-sm-auto'>
-                    <span class='ml-auto'>{$class["seatsRemaining"]} Seats Available</span><br>
-                    <span class='ml-auto'>Updated {$class["lastUpdated"]}</span>
+                <div class='col-sm-auto text-right'>
+                    {$class["seatsRemaining"]} Seats Available<br>
+                    Updated {$class["lastUpdated"]}
                 </div>
             </div>";
         }
