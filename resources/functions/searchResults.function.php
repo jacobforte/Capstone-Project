@@ -22,7 +22,12 @@ function outputClasses($search) {
         foreach($classes as $class) {
             echo "<div class='row mt-2'>
                 <div class='col'>
-                    {$class["title"]}
+                    {$class["title"]}<br>
+                    {$class["courseID"]}
+                </div>
+                <div class='col-sm-auto'>
+                    <span class='ml-auto'>{$class["seatsRemaining"]} Seats Available</span><br>
+                    <span class='ml-auto'>Updated {$class["lastUpdated"]}</span>
                 </div>
             </div>";
         }
