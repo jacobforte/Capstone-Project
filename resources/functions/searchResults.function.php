@@ -2,7 +2,7 @@
 require_once("resources/functions/dbconnection.function.php");
 
 function outputClasses($search) {
-    $classes = dbconnection("spSelectClasses(NULL, {$search}, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)");
+    $classes = dbconnection("spSelectClasses(NULL, \"{$search}\", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)");
 
     if (count($classes) == 0) {
         echo "<div class='row mt-2'>
