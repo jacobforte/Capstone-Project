@@ -68,3 +68,8 @@ a.head-link:link {color: white; }
 a.head-link:visited {color: white; }
 a.head-link:hover {color: #EAAB00; }
 a.head-link:active {color: #EAAB00; }
+
+/* Index.php */
+.w-480p {max-width: 480px !important;}
+.w-160p {width: 160px !important;}
+/* Index.php */
