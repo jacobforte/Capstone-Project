@@ -22,7 +22,7 @@ BEGIN
         tblClasses.description,
         tblClasses.lastUpdated
     FROM tblUserRegisteredClasses
-    LEFT OUTER JOIN tblClasses ON tblClasses.crn = tblUserRegisteredClasses.crn
+    LEFT OUTER JOIN tblClasses ON tblClasses.crn = tblUserRegisteredClasses.classCRN
     WHERE tblUserRegisteredClasses.email = email;
 END$$
 DELIMITER ;
