@@ -7,7 +7,7 @@
 	
 	<div class="col-sm-4">
 	<div class="row">
-	<h1>Book-it</h1>
+	<h1>BookIt</h1>
 	</div>
 	
 	<p id="storloc">Kent state</p>
