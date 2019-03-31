@@ -28,7 +28,7 @@
 			</div>
 				<button type="submit" class="btn btn-warning btn-block">Submit</button>
 				<br></br>
-			<a href="register.php"><p>Don't have an Account?</p></a>
+			<a id="foot" href="register.php"><p>Don't have an Account?</p></a>
 		</form>
 	</div>
   </div>
