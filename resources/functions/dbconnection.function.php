@@ -22,7 +22,7 @@ function dbconnection($spString)
 
         //Fetch the data
         $result = array();
-        If (preg_match("/(spUpdate|spDelete){1}/", $sql) == 0) {
+        If (preg_match("/(spUpdate|spDelete|spNew){1}/", $sql) == 0) {
             while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
                 $result[] = $row;
             }

@@ -1,6 +1,6 @@
 <?php
 
-include("resources/function/dbconnection.functions.php");
+include("resources/functions/dbconnection.function.php");
 
 $email = $_POST["email"];
 $dnam = $_POST["dnam"];
