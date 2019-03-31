@@ -63,7 +63,7 @@
                             </div>
                             <div class="col-sm-auto">
                                 <div class="form-group">
-                                    <button type="submit" class="btn bg-orange w-160p"><strong>Submit</strong></button>
+                                    <button type="submit" class="btn bg-orange w-160p"><strong>Search</strong></button>
                                 </div>
                             </div>
                         </form>

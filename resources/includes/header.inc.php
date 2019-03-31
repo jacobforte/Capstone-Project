@@ -58,19 +58,19 @@ exit;
                         <i class="fas fa-xs fa" id="chev"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right bg-light">
-                        <form>
+                        <form method="post" action="searchResults.php">
                             <div class="input-group p-3">
                                 <input type="text" name="term" placeholder="Search" class="form-control">
                                 <div class="input-group-append">
-                                    <button type="submit" name="searchSubmit" class="btn btn-warning">
+                                    <button type="submit" class="btn btn-warning">
                                         <i class="fas fa-search"></i>
                                     </button>
                                 </div>
                             </div>
                             <div class="input-group px-3 pb-3">
                                 <select class="form-control">
-                                    <option>ISBN</option>
-                                    <option>Course No.</option>
+                                    <option value="courseNo">Course No</option>
+                                    <option value="isbn">Book ISBN</option>
                                 </select>
                             </div>
                         </form>

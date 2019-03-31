@@ -34,7 +34,7 @@
                             <div class="row mt-2">
                                 <div class="col">
                                     <div class="form-group">
-                                        <button type="submit" class="btn bg-orange w-160p"><strong>Submit</strong></button>
+                                        <button type="submit" class="btn bg-orange w-160p"><strong>Search</strong></button>
                                     </div>
                                 </div>
                             </div>
