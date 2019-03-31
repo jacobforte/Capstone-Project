@@ -6,7 +6,7 @@ $email = $_POST["email"];
 $dnam = $_POST["dnam"];
 $pwd = $_POST["pwd"];
 
-dbconnection("spNewUser($email, $dnam, $pwd)");
+dbconnection("spNewUser('$email', '$dnam', '$pwd')");
 	
 	
 header('Location: login.php');
