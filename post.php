@@ -1,5 +1,6 @@
 <?php
 
+include("resources/function/dbconnection.functions.php");
 dbconnection("spNewUser('$_POST[email]', '$_POST[dnam]', '$_POST[pwd]')");
 	
 	
