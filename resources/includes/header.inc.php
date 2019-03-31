@@ -1,3 +1,22 @@
+<?php
+
+session_start();
+
+if($_GET['log'] = 1)
+	$_SESSION['username'] = NULL;
+
+if(isset($_SESSION['username'])){
+	$user = $_SESSION['username'];	
+	
+}
+else{
+	$user = "Sign-in";
+}
+
+
+?>
+
+
 <div class="container-fluid bg-blue">
     <nav class="navbar navbar-expand-sm justify-content-between">
         <div class="row">
@@ -12,18 +31,18 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav ml-sm-auto">
                 <li class="nav-item">
-                    <a class="nav-link mx-1 head-link text-center" href="#"><h5 class="font-weight-bold">Home</h5></a>
+                    <a class="nav-link mx-1 head-link text-center" href="index.php"><h5 class="font-weight-bold">Home</h5></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-1 head-link text-center" href="#"><h5 class="font-weight-bold">List a Book</h5></a>
+                    <a class="nav-link mx-1 head-link text-center" href="postABook.php"><h5 class="font-weight-bold">List a Book</h5></a>
                 </li>
                 <li class="nav-item dropdown" id="loggedIn">
                     <a class="nav-link head-link mx-1 text-center" href id="navbardrop" data-toggle="dropdown">
-                        <h5 class="font-weight-bold d-inline">zbrockwa </h5><i class="fas fa-xs fa" id="chev"></i>
+                        <h5 class="font-weight-bold d-inline"><?php echo $user; ?> </h5><i class="fas fa-xs fa" id="chev"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right bg-light">
-                        <h6 class="font-weight-bold text-center"><a href="#">Account</a></h6>
-                        <h6 class="font-weight-bold text-center"><a href="#">Sign out</a></h6>
+                        <h6 class="font-weight-bold text-center"><a href="profileAccount.php">Account</a></h6>
+                        <h6 class="font-weight-bold text-center"><a href="login.php?log=1">Sign out</a></h6>
                     </div>
                 </li>
                 <li class="nav-item dropdown" id="headerSearch">
