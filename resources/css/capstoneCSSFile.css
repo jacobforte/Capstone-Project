@@ -59,6 +59,42 @@
     border-color: #EAAB00;
 }
 
+#navi {
+	color: white;
+	background-color: rgb(0, 38, 100);
+}
+
+#navi2 {
+	padding-top: 25px;
+	font-size: 25px;
+}
+
+#logo {
+	padding-bottom: 0px;
+	border-bottom: collapse;
+	
+}
+
+#storloc {
+	color: rgb(239, 171, 0); 
+	font-size: 15px;"
+}
+
+#foottext {
+	padding-top: 20px;
+	
+}
+
+#loginform {
+
+	padding: 80px;
+	height: 710px;
+	font-size: 25px;
+	color: white;
+	background-color: rgb(0, 38, 100);	
+	
+}
+
 a:link {color: #002664; text-decoration: none; }
 a:visited {color: #002664; }
 a:hover {color: #335997; }
