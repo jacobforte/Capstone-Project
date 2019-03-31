@@ -1,15 +1,13 @@
 <?php
 
+/** \file */
+/**
+ * This function is used to retrieve and display all active book listings for a specific user.
+ * @param ID (email) of user to retrieve listings for
+ *
+ */
+
 require("resources/functions/dbconnection.function.php");
-
-if(isset($_GET['q'])) {
-    removeUserListing($_GET['q']);
-}
-
-function removeUserListing($id) {
-    dbconnection("spDeleteUserSellBook(" . $id . ")");
-}
-
 
 function outputUserListings($user) {
     $listings = dbconnection("spSelectUserSellBook(null, \"" . $user . "\", null, null, null, null)");
