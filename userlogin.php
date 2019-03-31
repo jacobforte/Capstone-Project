@@ -2,7 +2,7 @@
 	
 	session_start();
 
-	include 'dbconnection.function.php';
+	include("resources/functions/dbconnection.function.php");
 	
 	$email = $_POST['email'];
 	$password = $_POST['pwd'];
