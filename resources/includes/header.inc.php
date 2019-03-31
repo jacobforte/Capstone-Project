@@ -2,9 +2,6 @@
 
 session_start();
 
-if($_GET['log'] = 1)
-	$_SESSION['username'] = NULL;
-
 if(isset($_SESSION['username'])){
 	$user = $_SESSION['username'];	
 	$link = "profileAccount.php";
