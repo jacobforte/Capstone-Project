@@ -52,10 +52,10 @@
                                 <div class="form-group">
                                     <select class="form-control" name="searchType">
                                         <?php if ($searchType=="courseNo") {?>
-                                            <option value="courseNo" selected>Course No</option>
+                                            <option value="courseNo" selected>Course No.</option>
                                             <option value="isbn">Book ISBN</option>
                                         <?php } else {?>
-                                            <option value="courseNo">Course No</option>
+                                            <option value="courseNo">Course No.</option>
                                             <option value="isbn" selected>Book ISBN</option>
                                         <?php }?>
                                     </select>

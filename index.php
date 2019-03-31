@@ -25,7 +25,7 @@
                                 <div class="col-sm-auto">
                                     <div class="form-group">
                                         <select class="form-control" name="searchType">
-                                            <option value="courseNo">Course No</option>
+                                            <option value="courseNo">Course No.</option>
                                             <option value="isbn">Book ISBN</option>
                                         </select>
                                     </div>

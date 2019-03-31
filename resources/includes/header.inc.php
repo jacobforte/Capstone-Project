@@ -60,7 +60,7 @@ exit;
                     <div class="dropdown-menu dropdown-menu-right bg-light">
                         <form method="post" action="searchResults.php">
                             <div class="input-group p-3">
-                                <input type="text" name="term" placeholder="Search" class="form-control">
+                                <input type="text" name="search" placeholder="Search" class="form-control">
                                 <div class="input-group-append">
                                     <button type="submit" class="btn btn-warning">
                                         <i class="fas fa-search"></i>
@@ -68,8 +68,8 @@ exit;
                                 </div>
                             </div>
                             <div class="input-group px-3 pb-3">
-                                <select class="form-control">
-                                    <option value="courseNo">Course No</option>
+                                <select class="form-control" name="searchType">
+                                    <option value="courseNo">Course No.</option>
                                     <option value="isbn">Book ISBN</option>
                                 </select>
                             </div>
