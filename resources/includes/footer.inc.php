@@ -3,6 +3,7 @@
 
 
 <div id="navi" class="container-fluid">
+	<div class="row container-fluid">
 	
 	<div class="col-sm-4">
 	<div class="row">
@@ -25,7 +26,7 @@
 		<p>Kent State Stark - Capstone Project</p>
 		<p>Created by Jacob, Marcus, Vina, and Zach</p>
 	</div>
-	
+	</div>
 </div>
 
 
