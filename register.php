@@ -7,7 +7,7 @@
         <?php include("resources/includes/header.inc.php"); ?>
 
         <main>
-            
+		<br></br>
             <div  class="container-fluid" style="width: 500px; height: 800px;">
 
 <div class="row">
