@@ -46,7 +46,7 @@
 }
 
 .bg-light {
-    background-color: #EDF2F4;
+    background-color: #EDF2F4 !important;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {

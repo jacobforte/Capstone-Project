@@ -1,17 +1,22 @@
 <?php
 
-require("dbconnection.function.php");
+require("resources/functions/dbconnection.function.php");
 
-if(isset($_POST['remove'])) {
-    removeUserListing($_POST['remove']);
+if(isset($_GET['q'])) {
+    removeUserListing($_GET['q']);
 }
+
+function removeUserListing($id) {
+    dbconnection("spDeleteUserSellBook(" . $id . ")");
+}
+
 
 function outputUserListings($user) {
     $listings = dbconnection("spSelectUserSellBook(null, \"" . $user . "\", null, null, null, null)");
 
     foreach($listings as $listing) {
         $listingImages = dbconnection("spSelectUserSellBookPhoto(" . $listing['id'] . ")");
-        echo '<div class="mb-3">
+        echo '<div class="mb-3" id="' . $listing["id"] . '">
             <div class="row">
                 <div class="col-12">
                     <h5 class="font-weight-bold"><a href="#">' . $listing['title'] . '</a></h5>
@@ -53,7 +58,7 @@ function outputUserListings($user) {
                 echo '</div>
                 <div class="row">
                     <div class="col-12">
-                        <button type="submit" name="remove" value="' . $listing["id"] . '" class="btn btn-warning">Remove</button>
+                        <button type="button" class="btn btn-warning" onclick="removeById(' . $listing["id"] . ')">Remove</button>
                     </div>
                 </div>
             </form>
@@ -61,6 +66,3 @@ function outputUserListings($user) {
     }
 }
 
-function removeUserListing($id) {
-    dbconnection("spDeleteUserSellBook(" . $id . ")");
-}
