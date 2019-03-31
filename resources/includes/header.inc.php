@@ -7,11 +7,13 @@ if($_GET['log'] = 1)
 
 if(isset($_SESSION['username'])){
 	$user = $_SESSION['username'];	
-	
+	$link = "profileAccount.php";
 }
 else{
 	$user = "Sign-in";
+	$link = "login.php";
 }
+
 
 
 ?>
@@ -41,7 +43,7 @@ else{
                         <h5 class="font-weight-bold d-inline"><?php echo $user; ?> </h5><i class="fas fa-xs fa" id="chev"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right bg-light">
-                        <h6 class="font-weight-bold text-center"><a href="profileAccount.php">Account</a></h6>
+                        <h6 class="font-weight-bold text-center"><a href="<?php echo $link; ?>">Account</a></h6>
                         <h6 class="font-weight-bold text-center"><a href="login.php?log=1">Sign out</a></h6>
                     </div>
                 </li>
