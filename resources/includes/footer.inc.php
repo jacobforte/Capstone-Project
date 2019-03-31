@@ -16,7 +16,7 @@
 	
 	<div id="foottext" class="col-sm-4 text-center">
 	
-		<a href="#navi"><p>Back to top of page.</p></a>
+		<a href="#navi" id="foot"><p>Back to top of page.</p></a>
 		<span class="glyphicon glyphicon-arrow-up" style="color: rgb(239, 171, 0);"></span>
 
 	
