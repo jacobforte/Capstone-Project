@@ -11,7 +11,14 @@ else{
 	$link = "login.php";
 }
 
+if(isset($_GET['log'])){
 
+unset($_SESSION['username']);
+session_destroy();
+
+header("Location: login.php");
+exit;
+}
 
    
 ?>
