@@ -1,7 +1,12 @@
 <?php
 
 include("resources/function/dbconnection.functions.php");
-dbconnection("spNewUser('$_POST[email]', '$_POST[dnam]', '$_POST[pwd]')");
+
+$email = $_POST["email"];
+$dnam = $_POST["dnam"];
+$pwd = $_POST["pwd"];
+
+dbconnection("spNewUser($email, $dnam, $pwd)");
 	
 	
 header('Location: login.php');
