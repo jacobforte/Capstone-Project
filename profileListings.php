@@ -44,7 +44,7 @@
                                 </div>
                             </div>
                         </div>
-                        <?php outputUserListings("zachobrockway@gmail.com"); ?>
+                        <?php outputUserListings("zbrockwa@kent.edu"); ?>
                     </div>
                 </div>
             </div>
