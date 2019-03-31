@@ -15,4 +15,5 @@ if(isset($_POST['id'])) {
 
 function removeUserListing($id) {
     dbconnection("spDeleteUserSellBook(" . $id . ")");
+    echo count(dbconnection("spSelectUserSellBook(null, \"zbrockwa@kent.edu\", null, null, null, null)"));
 }

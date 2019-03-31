@@ -12,6 +12,14 @@ require("resources/functions/dbconnection.function.php");
 function outputUserListings($user) {
     $listings = dbconnection("spSelectUserSellBook(null, \"" . $user . "\", null, null, null, null)");
 
+    if (count($listings) == 0) {
+        echo '<div class="col-12">
+            <div class="row">
+                <h5>No active book listings.</h5>
+            </div>
+        </div>';
+    }
+
     foreach($listings as $listing) {
         $listingImages = dbconnection("spSelectUserSellBookPhoto(" . $listing['id'] . ")");
         echo '<div class="mb-3" id="' . $listing["id"] . '">

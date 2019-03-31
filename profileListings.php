@@ -3,24 +3,7 @@
 <html lang="en">
     <head>
         <?php include("resources/includes/head.inc.php"); ?>
-
-        <script>
-            function removeById(str) {
-                $.ajax({
-                    url:"resources/functions/account/account.listings.remove.function.php?id=" + str,
-                    type: "POST",
-                    data:{
-                        id: str,
-                    },
-                    success:function(data) {
-                        $('#' + str).fadeOut();
-                    },
-                    error:function(data){
-                        alert("Whoops, something went wrong! Please try again.");
-                    }
-                });
-            }
-        </script>
+        <title>Your Listings | BookIt - KSU</title>
     </head>
     <body>
         <?php include("resources/includes/header.inc.php"); ?>
@@ -44,6 +27,11 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-12 d-none" id="no-listings">
+                            <div class="row">
+                                <h5>No active book listings.</h5>
+                            </div>
+                        </div>
                         <?php outputUserListings("zbrockwa@kent.edu"); ?>
                     </div>
                 </div>
@@ -56,4 +44,6 @@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"
             integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
             crossorigin="anonymous"></script>
+
+    <script src="resources/js/account.listings.js"></script>
 </html>
