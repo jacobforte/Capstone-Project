@@ -19,7 +19,7 @@ else{
 ?>
 
 
-<div class="container-fluid bg-blue">
+<div class="container-fluid bg-blue" id="navi" >
     <nav class="navbar navbar-expand-sm justify-content-between">
         <div class="row">
             <div class="col-12 pl-0 text-right">
