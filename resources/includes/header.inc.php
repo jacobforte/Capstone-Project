@@ -12,6 +12,12 @@ else{
 }
 
 
+if(isset($_GET['log'] == 1){
+unset($_SESSION['username']);
+session_destroy();
+
+header("Location: login.php");
+exit;
 
 ?>
 
