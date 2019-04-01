@@ -2,14 +2,6 @@
 
 session_start();
 
-if(isset($_SESSION['username'])){
-	$user = $_SESSION['username'];	
-	$link = "profileAccount.php";
-}
-else{
-	$user = "Sign-in";
-	$link = "login.php";
-}
 
 if(isset($_GET['log'])){
 
@@ -24,7 +16,7 @@ exit;
 ?>
 
 
-<div class="container-fluid bg-blue" id="navi" >
+<div class="container-fluid bg-blue">
     <nav class="navbar navbar-expand-sm justify-content-between">
         <div class="row">
             <div class="col-12 pl-0 text-right">
@@ -44,13 +36,22 @@ exit;
                     <a class="nav-link mx-1 head-link text-center" href="postABook.php"><h5 class="font-weight-bold">List a Book</h5></a>
                 </li>
                 <li class="nav-item dropdown" id="loggedIn">
-                    <a class="nav-link head-link mx-1 text-center" href id="navbardrop" data-toggle="dropdown">
-                        <h5 class="font-weight-bold d-inline"><?php echo $user; ?> </h5><i class="fas fa-xs fa" id="chev"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right bg-light">
-                        <h6 class="font-weight-bold text-center"><a href="<?php echo $link; ?>">Account</a></h6>
-                        <h6 class="font-weight-bold text-center"><a href="login.php?log=1">Sign out</a></h6>
-                    </div>
+                    <?php if (isset($_SESSION['user'])) { ?>
+                        <a class="nav-link head-link mx-1 text-center" href id="navbardrop" data-toggle="dropdown">
+                            <h5 class="font-weight-bold d-inline">
+                                <?php echo($_SESSION['user']['name']); ?>
+                            </h5>
+                            <i class="fas fa-xs fa" id="chev"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right bg-light">
+                            <h6 class="font-weight-bold text-center"><a href="profileAccount.php">Account</a></h6>
+                            <h6 class="font-weight-bold text-center"><a href="login.php?log=1">Sign out</a></h6>
+                        </div>
+                    <?php } else { ?>
+                        <a class="nav-link head-link mx-1 text-center" href="login.php">
+                            <h5 class="font-weight-bold d-inline">Sign in</h5>
+                        </a>
+                    <?php } ?>
                 </li>
                 <li class="nav-item dropdown" id="headerSearch">
                     <a class="nav-link head-link mx-1 text-center" href id="navbardrop" data-toggle="dropdown">
