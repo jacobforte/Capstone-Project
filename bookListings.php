@@ -1,17 +1,6 @@
-<?php
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-   // require_once("resources/functions/searchResults.function.php");
-    $search = "tblBooks";
-    $searchType = " ";
-    if (isset($_POST["search"]) && isset($_POST["searchType"])) {
-        $search = $_POST["search"];
-        $searchType = $_POST["searchType"];
-    }
-?>
 <!doctype html>
 <html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> 
