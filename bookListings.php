@@ -3,7 +3,7 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
    // require_once("resources/functions/searchResults.function.php");
-    $search = "tblUserSellBook";
+    $search = "tblBooks";
     $searchType = " ";
     if (isset($_POST["search"]) && isset($_POST["searchType"])) {
         $search = $_POST["search"];
@@ -27,7 +27,7 @@
 	<h1> Title <?php $row['title']?> </h1>
 		<p> <b> Author </b> <br><?php $row['author']?> </br> </p>
 		<p> <b> ISBN </b> <br> <?php $row['isbn']?> </br> </p>
-		<button type="button" a href="postabook.php"> Sell a Textbook </button>
+		<button type="button" a href="postABook.php"> Sell a Textbook </button>
 	<div class="row">
     <div class="col-sm-auto mt-3">
 	<h2> Filters </h2>
