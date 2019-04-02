@@ -51,7 +51,6 @@
 				<input type="radio"id="Choice4" name="oldest" value="oldest"> Date (oldest)<br>
 			</div>
 
-			 <div data-role="main" class="ui-content">
 			    <form method="post" action="/bookListing.php">
 			      <div data-role="option">
 				<label for="price-min">Price Max:</label>
