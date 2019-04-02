@@ -45,7 +45,7 @@
     <form method="post" action="/action_page_post.php">
       <div data-role="option">
         <label for="price-min">Price Range:</label>
-        <input type="range" name="price-min" id="price-min" value="25" min="0" max="500">      
+        <input type="range" name="price-min" id="price-min" value="25" value="100" min="0" max="500">      
       </div>
     </form>
   </div>
