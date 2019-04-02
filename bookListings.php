@@ -42,7 +42,7 @@
 			</div>
 
 			 <div data-role="main" class="ui-content">
-			    <form method="post" action="/action_page_post.php">
+			    <form method="post" action="/bookListing.php">
 			      <div data-role="option">
 				<label for="price-min">Price Max:</label>
 				<input type="range" name="price-min" id="price-min" value="25" min="0" max="500">      
