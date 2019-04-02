@@ -31,7 +31,7 @@
 	<div class="row">
     <div class="col-sm-auto mt-3">
 	<h2> Filters </h2>
-		<?php // if ($searchType=="") {?>
+		<?php // if ($searchType=="bookCondition") {?>
 			<div>
 				Show Condition<br>
 				<input type="checkbox"> Mint<br>
