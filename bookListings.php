@@ -40,16 +40,16 @@
 				<input type="radio"id="Choice3" name="newest" value="newest"> Date (newest) <br>
 				<input type="radio"id="Choice4" name="oldest" value="oldest"> Date (oldest)<br>
 			</div>
-	  <?php //} elseif {?>
- <div data-role="main" class="ui-content">
-    <form method="post" action="/action_page_post.php">
-      <div data-role="option">
-        <label for="price-min">Price Max:</label>
-        <input type="range" name="price-min" id="price-min" value="25" min="0" max="500">      
-      </div>
-    </form>
-  </div>
 
+			 <div data-role="main" class="ui-content">
+			    <form method="post" action="/action_page_post.php">
+			      <div data-role="option">
+				<label for="price-min">Price Max:</label>
+				<input type="range" name="price-min" id="price-min" value="25" min="0" max="500">      
+			      </div>
+			    </form>
+			  </div>
+		<input type="submit" data-inline="true" value="Submit">
 	</div>
 
 	</main>
