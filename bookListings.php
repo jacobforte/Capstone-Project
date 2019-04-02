@@ -24,7 +24,7 @@
 	<div class="row">
     <div class="col-sm-auto mt-3">
 	<h2> Filters </h2>
-		<?php // if ($searchType=="bookCondition") {?>
+
 			<div>
 				Show Condition<br>
 				<input type="checkbox"> Mint<br>
@@ -32,7 +32,7 @@
 				<input type="checkbox"> Fair<br>
 				<input type="checkbox"> Poor<br>
 			</div>
-		<?php //} else {?>
+
 			<div>
 				Sort By<br>
 				<input type="radio" id="Choice1" name="lowest" value="lowest"> Price (lowest to highest)<br>
@@ -45,14 +45,11 @@
     <form method="post" action="/action_page_post.php">
       <div data-role="option">
         <label for="price-min">Price Range:</label>
-        <input type="range" name="price-min" id="price-min" value="25" min="0" max="500">
-        <label for="price-max">Price Range:</label>
-        <input type="range" name="price-max" id="price-max" value="125" min="0" max="500">
+        <input type="range" name="price-min" id="price-min" value="25" min="0" max="500">      
       </div>
-        <input type="submit" data-inline="true" value="Submit">
     </form>
   </div>
-		<?php// }?>
+
 	</div>
 
 	</main>
