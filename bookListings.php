@@ -50,13 +50,12 @@
 				<input type="radio"id="Choice4" name="oldest" value="oldest"> Date (oldest)<br>
 			</div>
 
-			    <form method="post" action="/bookListing.php">
-			      <div data-role="option">
-				<label for="price-min">Price Max:</label>
-				<input type="range" name="price-min" id="price-min" value="25" min="0" max="500">      
-			      </div>
-			    </form>
-			  </div>
+			  <div data-role="rangeslider" data-mini="true">
+			  <label for="range-4a">Price Range:</label>
+			  <input name="range-4a" id="range-4a" min="0" max="500" value="0" type="range" />
+			  <label for="range-4b">Price Range:</label>
+			  <input name="range-4b" id="range-4b" min="0" max="500" value="500" type="range" />
+			</div>
 			<input type="submit" data-inline="true" class="btn btn-warning" value="Submit" class="col-md-2">
 	</div>
 
