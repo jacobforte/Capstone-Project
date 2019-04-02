@@ -1,37 +1,23 @@
 <footer>
 
-
-
-<div id="navi" class="container-fluid">
-	<div class="row container-fluid">
-	
-	<div class="col-sm-4">
-	<div class="row">
-	<h1>BookIt</h1>
-	</div>
-	
-	<p id="storloc">Kent state</p>
-	
-	</div>
-	
-	<div id="foottext" class="col-sm-4 text-center">
-	
-		<a href="#navi" id="foot"><p>Back to top of page.</p></a>
-		<span class="glyphicon glyphicon-arrow-up" style="color: rgb(239, 171, 0);"></span>
-
-	
-	</div>
-	
-	<div id="foottext" class="col-sm-4 text-right">
-		<p>Kent State Stark - Capstone Project</p>
-		<p>Created by Jacob, Marcus, Vina, and Zach</p>
-	</div>
-	</div>
-</div>
-
-
-
-
-
+    <div class="container-fluid bg-blue">
+        <nav class="navbar justify-content-between">
+            <div class="row">
+                <div class="col-12 pl-0 text-right">
+                    <a class="navbar-brand text-white mr-0 pb-0" href="#"><h1 class="font-weight-bold mb-0">BookIt</h1></a>
+                    <a href="#"><h5 class="text-orange font-weight-bold">Kent State</h5></a>
+                </div>
+            </div>
+            <div class="ml-md-auto">
+                <div class="row">
+                    <div class="col-12 text-center text-md-right">
+                        <h6 class="text-white mb-1">Kent State Stark - Capstone Project</h6>
+                        <h6 class="text-white mb-1">Created by Jacob, Marcus, Vina, and Zach</h6>
+                        <a href="#"><h6 class="text-white mb-1">Back to top</h6></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
 
 </footer>
