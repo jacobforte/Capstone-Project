@@ -1,9 +1,10 @@
-function subscribeByCrn(str) {
+function subscribeByCrn(str, email) {
     $.ajax({
-        url:"resources/functions/course/course.details.subscribe.function.php?id=" + str,
+        url:"resources/functions/course/course.details.subscribe.function.php?id=",
         type: "POST",
         data:{
             id: str,
+            email: email
         },
         success:function(data) {
             $('#btn' + str).text('Subscribed');

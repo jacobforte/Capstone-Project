@@ -3,9 +3,9 @@
 require("../dbconnection.function.php");
 
 if(isset($_POST['id'])) {
-    subscribeUserTo($_POST['id']);
+    subscribeUserTo($_POST['id'], $_POST['email']);
 }
 
-function subscribeUserTo($crn) {
-    dbconnection("spNewUserRegisteredClass('" . $_SESSION['user']['email'] . "', " . $crn . ")");
+function subscribeUserTo($crn, $email) {
+    dbconnection("spNewUserRegisteredClass(" . $email . ", " . $crn . ")");
 }
