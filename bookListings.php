@@ -3,7 +3,7 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
    // require_once("resources/functions/searchResults.function.php");
-    $search = "tblBooks";
+    $search = "tblUserSellBook";
     $searchType = " ";
     if (isset($_POST["search"]) && isset($_POST["searchType"])) {
         $search = $_POST["search"];
