@@ -43,7 +43,7 @@
 	  <?php //} elseif {?>
  <div data-role="main" class="ui-content">
     <form method="post" action="/action_page_post.php">
-      <div data-role="rangeslider">
+      <div data-role="option">
         <label for="price-min">Price Range:</label>
         <input type="range" name="price-min" id="price-min" value="25" min="0" max="500">
         <label for="price-max">Price Range:</label>
