@@ -1,20 +1,13 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta http-equiv='content-type' content='text/html;charset=utf-8' />
-
-<link rel="stylesheet" href="resources/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="resources/js/bootstrap.min.js"></script>
-
-<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
-
-<link rel="stylesheet" href="resources/css/capstoneCSSFile.css">    </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>rangeslider demo</title>
+  <link rel="stylesheet" href="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.css">
+  <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
+</head> 
 
         <?php include("resources/includes/head.inc.php"); ?>
     </head>
@@ -52,9 +45,9 @@
 
 			  <div data-role="rangeslider" data-mini="true">
 			  <label for="range-4a">Price Range:</label>
-			  <input name="range-4a" id="range-4a" min="0" max="500" value="0" type="range" />
+			  <input name="range-4a" id="range-4a" min="0" max="1000" value="0" type="range" />
 			  <label for="range-4b">Price Range:</label>
-			  <input name="range-4b" id="range-4b" min="0" max="500" value="500" type="range" />
+			  <input name="range-4b" id="range-4b" min="0" max="25" value="1000" type="range" />
 			</div>
 			<input type="submit" data-inline="true" class="btn btn-warning" value="Submit" class="col-md-2">
 	</div>
