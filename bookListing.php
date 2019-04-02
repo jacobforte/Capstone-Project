@@ -1,7 +1,7 @@
 <?php 
 require_once("resources/functions/dbconnection.function.php");
 
-$books =dbconnection("spSelectUserSellBook"(NULL,NULL,\"9780073523323"\,NULL,NULL,NULL))";
+$books =dbconnection("spSelectUserSellBook"(NULL,NULL,\"9780073523323\",NULL,NULL,NULL))";
 ?>
 <!doctype html>
 <html lang="en">
