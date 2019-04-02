@@ -8,7 +8,7 @@
   <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
 </head> 
-
+<body>
         <?php include("resources/includes/head.inc.php"); ?>
     </head>
     <body>
