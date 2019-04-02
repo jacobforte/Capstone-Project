@@ -57,8 +57,7 @@
 			      </div>
 			    </form>
 			  </div>
-		<div class="row 1">
-			<input type="submit" data-inline="true" class="btn btn-warning" value="Submit">
+			<input type="submit" data-inline="true" class="btn btn-warning" value="Submit" class="col-md-2">
 	</div>
 
 	</main>
