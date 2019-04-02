@@ -25,13 +25,12 @@
 	<div class="col">
     <div class="container">
 
-	<img src="testing.jpg" class="col-md-4" alt="Datebase" width="150" height="400"> 
 	<div class="col-md-auto mt-9">
 	<h1> Title <?php $row['title']?> </h1>
 		<p> <b> Author </b> <br><?php $row['author']?> </br> </p>
 		<p> <b> ISBN </b> <br> <?php $row['isbn']?> </br> </p>
 		<button type="button" class="btn btn-warning" action="postABook.php"> Sell Your Textbook </button>
-	<div class="row">
+	<div class="row 1">
     <div class="col-sm-auto mt-3">
 	<h2> Filters </h2>
 
@@ -58,7 +57,7 @@
 			      </div>
 			    </form>
 			  </div>
-		<input type="submit" data-inline="true" class="btn btn-warning" value="Submit">
+			<input type="submit" data-inline="true" class="btn btn-warning" value="Submit" class="col-md-2">
 	</div>
 
 	</main>
