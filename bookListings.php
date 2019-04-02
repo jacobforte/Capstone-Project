@@ -7,6 +7,7 @@ $books =dbconnection("spSelectUserSellBook"(NULL,NULL,\"9780073523323\",NULL,NUL
 <html lang="en">
 <head>
 
+
   <title>Book Listing</title>
   <?php include("resources/includes/head.inc.php"); ?>
 </head> 
@@ -29,14 +30,14 @@ $books =dbconnection("spSelectUserSellBook"(NULL,NULL,\"9780073523323\",NULL,NUL
 						<div class="row 1">
 							<div class="col-sm-auto mt-3">
 								<h2> Filters </h2>
-
 								<div>
 									Show Condition<br>
 									<input type="checkbox"> Mint<br>
 									<input type="checkbox"> Good<br>
 									<input type="checkbox"> Fair<br>
 									<input type="checkbox"> Poor<br>
-								</>
+								</div>
+
 
 								<div>
 									Sort By<br>
@@ -60,8 +61,10 @@ $books =dbconnection("spSelectUserSellBook"(NULL,NULL,\"9780073523323\",NULL,NUL
 				</div>
 			</div>
 
+
 		</main>
 		
     <?php include("resources/includes/footer.inc.php"); ?>
+
     </body>
 </html>
