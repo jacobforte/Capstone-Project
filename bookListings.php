@@ -25,7 +25,6 @@
 	<div class="col">
     <div class="container">
 
-	<img src="testing.jpg" class="col-md-4" alt="Datebase" width="150" height="400"> 
 	<div class="col-md-auto mt-9">
 	<h1> Title <?php $row['title']?> </h1>
 		<p> <b> Author </b> <br><?php $row['author']?> </br> </p>
