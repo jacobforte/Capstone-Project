@@ -144,6 +144,8 @@
             </div>
         </main>
 
+        <?php include('resources/includes/footer.inc.php'); ?>
+
     </body>
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"
