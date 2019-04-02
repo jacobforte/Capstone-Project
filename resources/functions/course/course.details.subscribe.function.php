@@ -7,5 +7,5 @@ if(isset($_POST['id'])) {
 }
 
 function subscribeUserTo($crn) {
-    dbconnection("spNewUserRegisteredClass('zachobrockway@gmail.com', " . $crn . ")");
+    dbconnection("spNewUserRegisteredClass('" . $_SESSION['user']['email'] . "', " . $crn . ")");
 }
