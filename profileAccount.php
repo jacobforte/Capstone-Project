@@ -13,13 +13,12 @@
 		
 			
 
-			/*if(isset($_POST['email'])){
-				$newemail = $_POST['email'];
-				$currentemail = $_SESSION['user']['email'];
-				
-				dbconnection("spUpdateUser('$newemail', '$_SESSION['user']['name']', '$_SESSION['user']['password']', '$_SESSION['user']['id'])");
-				
-			}*/
+			if(isset($_POST['email'])) {
+                $newemail = $_POST['email'];
+                $currentemail = $_SESSION['user']['email'];
+                dbconnection("spUpdateUser(" . $_SESSION['user']['id'] . ",'" . $newemail . "','" . $_SESSION['user']['name'] . "','" . $_SESSION['user']['password'] . "')");
+
+            }
 			
 			
 			
@@ -56,7 +55,7 @@
 									<h3>Confirm new password:</h3>
 									<input type="text" name="confirm">
 								</div>
-								<br></br>
+								<br>
 								<button type="submit" class="btn btn-lg bg-orange">Update</button>
 							</form>
 							<br>
