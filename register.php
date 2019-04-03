@@ -38,6 +38,15 @@
 								<br></br>
 								<a href="login.php" class="text-white text-center"><p>Already have an Account?</p></a>
 						</form>
+			
+						<?php
+						
+						if(isset($_GET['error'])){
+							if($_GET['error'] = 1){
+								echo '<p class="text-white text-center">Passwords did not Match please re-enter information.</p>';
+							}
+						}
+						?>
                     </div>
                 </div>
             </div>
