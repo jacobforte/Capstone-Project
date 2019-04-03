@@ -9,7 +9,8 @@ CREATE PROCEDURE spSelectUser
 BEGIN
     SELECT tblUsers.email,
         tblUsers.name,
-        tblUsers.id
+        tblUsers.id,
+        tblUsers.password
     FROM tblUsers
     WHERE tblUsers.email = email
         AND tblUsers.password = password;
