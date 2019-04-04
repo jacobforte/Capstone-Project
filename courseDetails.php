@@ -1,4 +1,4 @@
-<?php //include('resources/functions/course/course.details.list.function.php'); ?>
+<?php include('resources/functions/course/course.details.list.function.php'); ?>
 <!doctype html>
 <html lang="en">
     <head>
