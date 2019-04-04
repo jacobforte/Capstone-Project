@@ -10,6 +10,6 @@ CREATE TABLE tblUserClassComment (
 	semester varchar(255),
 	campus varchar(255),
 	PRIMARY KEY(email, classCRN),
-	FOREIGN KEY(email) REFERENCES tblUsers(email),
+	FOREIGN KEY(email) REFERENCES tblUsers(email) ON UPDATE CASCADE,
 	FOREIGN KEY(classCRN) REFERENCES tblClasses(crn)
 );

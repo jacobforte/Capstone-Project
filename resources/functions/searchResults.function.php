@@ -1,6 +1,11 @@
 <?php
+/** \file */
 require_once("resources/functions/dbconnection.function.php");
 
+/**
+ * This function outputs data for the search results page when searching for a Course ID.
+ * The string should contain the Course ID or be empty.
+ */
 function outputClasses($search) {
     $classes = dbconnection("spSelectClasses(NULL, \"{$search}\", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)");
 
