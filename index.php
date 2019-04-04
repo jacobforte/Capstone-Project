@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <?php include("resources/includes/head.inc.php"); ?>
+        <title>BookIt - KSU</title>
     </head>
     <body>
         <?php include("resources/includes/header.inc.php"); ?>
