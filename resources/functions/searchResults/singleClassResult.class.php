@@ -16,7 +16,7 @@
             $this->title = $dbArrayRow["title"];
             $this->lastUpdated = timeSinceDate(date("Y-m-d h:i:s", $dbArrayRow["lastUpdated"]));
             $this->seatsRemaining = $dbArrayRow["seatsRemaining"];
-            $this->campus = new array[];
+            $this->campus = array();
             $this->campus[] = $dbArrayRow["campus"];
         }
 

@@ -14,7 +14,7 @@
          * @param searchString - The string the user entered in the search bar.
          */
          public function __construct($searchString) {
-            $singleClassResultArray = new array();
+            $singleClassResultArray = array();
             $dbResult = dbconnection("spSelectClasses(NULL, \"{$searchString}\", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)");
 
             $count = 0;
