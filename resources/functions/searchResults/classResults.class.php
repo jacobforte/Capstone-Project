@@ -17,21 +17,16 @@
             $singleClassResultArray = array();
             $dbResult = dbconnection("spSelectClasses(NULL, \"{$searchString}\", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)");
 
-            $count = 0;
+            $count = -1;
             foreach ($dbResult as $row) {
                 //If the current row has a different title as the previous row, create a new SingleClassResult
-                if ($count == 0) {
+                if ($count == -1 || $row["title"] != $singleClassResultArray[$count]->getTitle()) {
                     echo "helo";
                     $singleClassResultArray[] = new SingleClassResult($row);
-                    $count = $count + 1;
-                }
-                elseif ($row["title"] != $singleClassResultArray[$count]->getTitle()) {
                     echo "hello";
-                    $singleClassResultArray[] = new SingleClassResult($row);
                     $count = $count + 1;
                 }
                 else {
-                    echo "helllo";
                     $singleClassResultArray[$count]->add(new SingleClassResult($row));
                 }
             }
