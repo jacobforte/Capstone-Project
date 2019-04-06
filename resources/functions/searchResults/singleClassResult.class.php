@@ -10,7 +10,7 @@
         private $seatsRemaining;
 
         public function __construct($dbArrayRow) {
-            $this->courseID = preg_replace("/-[0-9]\*$/", "" ,$dbArrayRow["courseID"]);
+            $this->courseID = preg_replace("/-[0-9]*$/", "" ,$dbArrayRow["courseID"]);
             $this->title = $dbArrayRow["title"];
             $this->lastUpdated = strtotime($dbArrayRow["lastUpdated"]);
             $this->seatsRemaining = $dbArrayRow["seatsRemaining"];

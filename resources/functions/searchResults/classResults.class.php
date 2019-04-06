@@ -37,7 +37,7 @@
          */
         public function print() {
             if (count($this->singleClassResultArray) == 0) {
-                echo "There are no results for \"{$this->searchString}\"<br>";
+                echo "<h5 class='mb-0'><strong>There are no results for \"{$this->searchString}\"</strong></h5><br>";
             }
             else {
                 echo "<h5 class='mb-0'><strong>Showing ". count($this->singleClassResultArray) ." results for \"{$this->searchString}\"</strong></h5><br>";
