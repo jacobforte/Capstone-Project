@@ -41,7 +41,7 @@
             }
             else {
                 foreach ($this->singleClassResultArray as $row) {
-                    echo "Showing {count($this->singleClassResultArray)} for \"{$this->searchString}\"<br>";
+                    echo "Showing ".count($this->singleClassResultArray)}." for \"{$this->searchString}\"<br>";
                     $row->print();
                 }
             }
