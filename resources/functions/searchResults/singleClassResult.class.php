@@ -14,7 +14,7 @@
         public function __construct($dbArrayRow) {
             $this->courseID = preg_replace("/-[0-9]\*$/", "" ,$dbArrayRow["courseID"]);
             $this->title = $dbArrayRow["title"];
-            $this->lastUpdated = date("Y-m-d H:i:s", $dbArrayRow["lastUpdated"]);
+            $this->lastUpdated = strtotime($dbArrayRow["lastUpdated"]);
             $this->seatsRemaining = $dbArrayRow["seatsRemaining"];
             $this->campus = array();
             $this->campus[] = $dbArrayRow["campus"];
@@ -38,7 +38,7 @@
                         {$this->getSeatsRemaining()} Seats Available<br>
                         Updated {$this->getLastUpdated()} ago.
                     </div>
-                </div>/n";
+                </div>\n";
         }
 
         public function getCourseID() {return $this->courseID;}
