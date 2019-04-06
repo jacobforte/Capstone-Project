@@ -1,6 +1,6 @@
 <?php
-    require_once("../dbconnection.function.php");
-    require_once("./singleClassResult.class.php");
+    require_once("resources/functions/dbconnection.function.php");
+    require_once("resources/functions/searchResults/singleClassResult.class.php");
 
     /**
      * This class will be used by the search results page.
