@@ -47,7 +47,7 @@
         public function getSeatsRemaining() {return $this->seatsRemaining;}
         public function getCampus() {return $this->campus;}
 
-        private function timeSinceDate($time)
+        public function timeSinceDate($time)
         {
             $time = time() - $time;
             $time = ($time<1)? 1 : $time;
