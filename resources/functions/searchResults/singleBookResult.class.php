@@ -56,12 +56,7 @@
             require_once("resources/functions/dbconnection.function.php");
 
             $dbResult = dbconnection("spSelectUserSellBook(NULL, NULL, \"{$bookISBN}\", NULL, NULL, NULL)");
-            if (count($dbResult) == 0) {
-                $this->minPrice = "NULL";
-                $this->maxPrice = "NULL";
-                $this->numberOfListings = "0";
-            }
-            else {
+            if (count($dbResult) > 0) {
                 $count = 0;
                 foreach($dbResult as $row) {
                     if ($count == 0) {
