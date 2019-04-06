@@ -14,20 +14,20 @@
          * @param searchString - The string the user entered in the search bar.
          */
          public function __construct($searchString) {
-            $singleClassResultArray = array();
+            $this->singleClassResultArray = array();
             $dbResult = dbconnection("spSelectClasses(NULL, \"{$searchString}\", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)");
 
             $count = -1;
             foreach ($dbResult as $row) {
                 //If the current row has a different title as the previous row, create a new SingleClassResult
-                if ($count == -1 || $row["title"] != $singleClassResultArray[$count]->getTitle()) {
+                if ($count == -1 || $row["title"] != $this->singleClassResultArray[$count]->getTitle()) {
                     echo "helo";
-                    $singleClassResultArray[] = new SingleClassResult($row);
+                    $this->singleClassResultArray[] = new SingleClassResult($row);
                     echo "hello";
                     $count = $count + 1;
                 }
                 else {
-                    $singleClassResultArray[$count]->add(new SingleClassResult($row));
+                    $this->singleClassResultArray[$count]->add(new SingleClassResult($row));
                 }
             }
         }
@@ -36,7 +36,7 @@
          * Use this function to print the formatted string for each row of data.
          */
         public function print() {
-            foreach ($singleClassResultArray as $row) {
+            foreach ($this->singleClassResultArray as $row) {
                 $row->print();
             }
         }
