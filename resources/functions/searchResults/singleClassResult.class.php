@@ -38,7 +38,7 @@
                         {$this->getSeatsRemaining()} Seats Available<br>
                         Updated {$this->getLastUpdated()} ago.
                     </div>
-                </div>/n"
+                </div>/n";
         }
 
         public function getCourseID() {return $this->courseID;}
