@@ -22,7 +22,7 @@
 
         public function add($object2) {
             $this->seatsRemaining = $this->seatsRemaining + $object2->getSeatsRemaining();
-            if (!(in_array($object2->getCampus(), $this->campus)) {
+            if (!(in_array($object2->getCampus(), $this->campus))) {
                 $this->campus[] = $object2->getCampus();
                 sort($this->campus);
             }
