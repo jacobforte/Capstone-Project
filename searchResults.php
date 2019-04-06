@@ -1,5 +1,5 @@
 <?php
-    require_once("resources/functions/classResults.class.php");
+    require_once("resources/functions/searchResults/classResults.class.php");
 
     $search = "";
     $searchType = "courseNo";
