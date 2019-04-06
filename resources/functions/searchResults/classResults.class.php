@@ -21,9 +21,7 @@
             foreach ($dbResult as $row) {
                 //If the current row has a different title as the previous row, create a new SingleClassResult
                 if ($count == -1 || $row["title"] != $this->singleClassResultArray[$count]->getTitle()) {
-                    echo "helo";
                     $this->singleClassResultArray[] = new SingleClassResult($row);
-                    echo "hello";
                     $count = $count + 1;
                 }
                 else {

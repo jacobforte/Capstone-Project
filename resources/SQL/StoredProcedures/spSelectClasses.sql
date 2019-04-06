@@ -91,6 +91,7 @@ BEGIN
         AND tblClasses.startDate >= startDate
         AND tblClasses.endDate <= endDate
         AND tblClasses.startTime >= startTime
-        AND tblClasses.endTime <= endTime;
+        AND tblClasses.endTime <= endTime
+    ORDER BY tblClasses.courseID;
 END$$
 DELIMITER ;

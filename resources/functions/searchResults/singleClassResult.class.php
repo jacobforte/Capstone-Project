@@ -31,7 +31,7 @@
         public function print() {
             echo "<div class='row mt-2'>
                     <div class='col'>
-                        <a href='courseDetails.php?id={$this->getCourseID()}'>{$this->getTitle()}</a><br>
+                        <a class='text-primary' href='courseDetails.php?id={$this->getCourseID()}'>{$this->getTitle()}</a><br>
                         {$this->getCourseID()}
                     </div>
                     <div class='col-sm-auto text-right'>
