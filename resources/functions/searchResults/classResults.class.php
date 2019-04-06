@@ -21,14 +21,17 @@
             foreach ($dbResult as $row) {
                 //If the current row has a different title as the previous row, create a new SingleClassResult
                 if ($count == 0) {
+                    echo "helo";
                     $singleClassResultArray[] = new SingleClassResult($row);
                     $count = $count + 1;
                 }
                 elseif ($row["title"] != $singleClassResultArray[$count]->getTitle()) {
+                    echo "hello";
                     $singleClassResultArray[] = new SingleClassResult($row);
                     $count = $count + 1;
                 }
                 else {
+                    echo "helllo";
                     $singleClassResultArray[$count]->add(new SingleClassResult($row));
                 }
             }
