@@ -6,6 +6,8 @@ CREATE PROCEDURE spSelectUserClassComment
     IN courseID varchar(255)
 )
 BEGIN
+	SET courseID = CONCAT(courseID, "%");
+
     SELECT tblUserClassComment.email,
         tblUserClassComment.classCRN,
         tblUserClassComment.shortDescription,
@@ -15,7 +17,7 @@ BEGIN
         tblUserClassComment.semester,
         tblUserClassComment.campus
     FROM tblUserClassComment
-    LEFT OUTER JOIN tblClasses ON tblClasses.crn = tblUserClassComment.crn
-    WHERE tblClasses.courseID = courseID;
+    LEFT OUTER JOIN tblClasses ON tblClasses.crn = tblUserClassComment.classCrn
+    WHERE tblClasses.courseID LIKE courseID;
 END$$
 DELIMITER ;
