@@ -7,39 +7,38 @@
 <body>
 <?php include("resources/includes/header.inc.php"); ?>
 
-<main>
+<main class="mb-4">
     <div class="container">
-        <div class="row">
-            <div class="col-12 col-lg-10 pt-4">
-                <h3 class="font-weight-bold">Introduction to Computer Science</h3>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-sm-12 col-md-9 col-lg-6 col-xl-5">
-                <div class="row">
-                    <div class="col-12 col-sm-3">
-                        <h5>CS-10051</h5>
-                    </div>
-                    <div class="col-12 col-sm-3">
-                        <h5>4 Credits</h5>
-                    </div>
-                    <div class="col-12 col-sm-6">
-                        <h5>34 Seats Available</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+        <?php
+            if ((isset($_POST['termSubmit'])))
+                printHeader($_GET["id"], $_POST['term']);
+            else
+                printHeader($_GET["id"], "2019-06-10:2019-08-17");
+        ?>
+
         <div class="row mb-3">
             <div class="col-12 col-sm-6 col-md-3">
-                <select class="custom-select">
-                    <option selected>Spring 2019</option>
-                    <option value="1">Summer 2019</option>
-                    <option value="2">Fall 2019</option>
-                </select>
+                <form action="" method="post" class="form-inline">
+                    <select class="custom-select mb-3 mb-sm-0 mr-sm-3" name="term">
+                        <option value="2019-06-10:2019-08-17"
+                            <?php if(isset($_POST['termSubmit'])) { if ($_POST["term"] == "2019-06-10:2019-08-17") { echo 'selected'; } } ?>
+                        >Summer 2019</option>
+                        <option value="2019-08-22:2019-12-08"
+                            <?php if(isset($_POST['termSubmit'])) { if ($_POST["term"] == "2019-08-22:2019-12-08") { echo 'selected'; } } ?>
+                        >Fall 2019</option>
+                    </select>
+                    <button type="submit" name="termSubmit" class="btn btn-warning d-inline">Submit</button>
+                </form>
             </div>
         </div>
 
-        <?php outputAllSectionsFor($_GET["id"]); ?>
+        <?php
+            if ((isset($_POST['termSubmit'])))
+                outputAllSectionsFor($_GET["id"], $_POST['term']);
+            else
+                outputAllSectionsFor($_GET["id"], "2019-06-10:2019-08-17");
+        ?>
 
         <div class="row">
             <div class="col-12">
