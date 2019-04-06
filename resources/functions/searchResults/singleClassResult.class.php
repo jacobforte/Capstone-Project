@@ -33,7 +33,7 @@
                 </div>\n";
         }
 
-        public function getCourseID() {return $this->courseID;}
+        public function getTitle() {return $this->title;}
         public function getSeatsRemaining() {return $this->seatsRemaining;}
 
         private function timeSinceDate($time)
