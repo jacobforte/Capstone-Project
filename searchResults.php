@@ -1,5 +1,5 @@
 <?php
-    require_once("resources/functions/searchResults.function.php");
+    require_once("resources/functions/classResults.class.php");
 
     $search = "";
     $searchType = "courseNo";
@@ -66,7 +66,8 @@
                         </form>
                         <?php
                             if ($searchType=="courseNo") {
-                                outputClasses($search);
+                                $classResults = new ClassResults($search);
+                                $classResults->print();
                             }
                             else {
 
