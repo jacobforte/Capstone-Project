@@ -8,44 +8,33 @@
         private $title;
         private $lastUpdated;
         private $seatsRemaining;
-        /* This variable is used for filtering */
-        private $campus;
 
         public function __construct($dbArrayRow) {
             $this->courseID = preg_replace("/-[0-9]\*$/", "" ,$dbArrayRow["courseID"]);
             $this->title = $dbArrayRow["title"];
             $this->lastUpdated = strtotime($dbArrayRow["lastUpdated"]);
             $this->seatsRemaining = $dbArrayRow["seatsRemaining"];
-            $this->campus = array();
-            $this->campus[] = $dbArrayRow["campus"];
         }
 
         public function add($object2) {
             $this->seatsRemaining = $this->seatsRemaining + $object2->getSeatsRemaining();
-            if (!(in_array($object2->getCampus(), $this->campus))) {
-                $this->campus[] = $object2->getCampus();
-                sort($this->campus);
-            }
         }
 
         public function print() {
             echo "<div class='row mt-2'>
                     <div class='col'>
-                        <a class='text-primary' href='courseDetails.php?id={$this->getCourseID()}'>{$this->getTitle()}</a><br>
-                        {$this->getCourseID()}
+                        <a class='text-primary' href='courseDetails.php?id={$this->courseID}'>{$this->title}</a><br>
+                        {$this->courseID}
                     </div>
                     <div class='col-sm-auto text-right'>
-                        {$this->getSeatsRemaining()} Seats Available<br>
-                        Updated {$this->getLastUpdated()} ago.
+                        {$this->seatsRemaining} Seats Available<br>
+                        Updated {$this->lastUpdated} ago.
                     </div>
                 </div>\n";
         }
 
         public function getCourseID() {return $this->courseID;}
-        public function getTitle() {return $this->title;}
-        public function getLastUpdated() {return $this->lastUpdated;}
         public function getSeatsRemaining() {return $this->seatsRemaining;}
-        public function getCampus() {return $this->campus;}
 
         private function timeSinceDate($time)
         {
