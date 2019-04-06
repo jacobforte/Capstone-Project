@@ -139,3 +139,29 @@ function printSections($c, $sc) {
         echo '</div>';
     }
 }
+
+function printReviews($courseId) {
+    $reviews = dbconnection("spSelectUserClassComment(\"" . $courseId . "\")");
+    foreach ($reviews as $review) {
+        echo '<div class="review mb-3">
+            <div class="row mb-1">
+                <div class="col-12">
+                    <h5 class="font-weight-bold">' . $review["name"] . '</h5>
+                    <h6 class="d-sm-inline mr-sm-2"><i class="fas fa-chalkboard-teacher text-orange" aria-label="Professor"></i> ' . $review["instructor"] . '</h6>
+                    <h6 class="d-sm-inline mr-sm-2"><i class="fas fa-calendar-day text-orange" aria-label="Semester"></i> ' . $review["semester"] . '</h6>
+                    <h6 class="d-sm-inline"><i class="fas fa-school text-orange" aria-label="Campus"></i> ' . $review["campus"] . '</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p class="mb-2">' . $review["shortDescription"] . '</p>
+                </div>
+                <div class="col-12">';
+                    for ($i = 0; $i < $review["rating"]; $i++) {
+                        echo '<i class="fas fa-star text-orange"></i>';
+                    }
+                echo '</div>
+            </div>
+        </div>';
+    }
+}
