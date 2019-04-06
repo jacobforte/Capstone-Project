@@ -36,11 +36,11 @@
             if (empty($this->publisher)) {$publisherText = "";}
             else {$publisherText = "Publisher: {$this->publisher} ";}
             if (empty($this->minPrice)) {$priceText = "";}
-            else {$priceText = "Price Range: ${$this->minPrice} to ${$this->maxPrice}";}
+            else {$priceText = "Price Range: $". strval($this->minPrice) ." to $". strval($this->maxPrice) ."";}
             if (empty($this->numberOfListings)) {$listingsText = "There are no listings for this book.";}
-            else {$listingsText = "There are {$this->numberOfListings} for this book.";}
+            else {$listingsText = "There are {$this->numberOfListings} listings for this book.";}
 
-            echo "<div class='row mt-2'>
+            echo "<div class='row mb-2'>
                     <div class='col'>
                         <a class='text-primary' href='bookListings.php?isbn={$this->isbn}'>{$this->title}{$editionText}</a><br>
                         {$authorText}{$publisherText}
