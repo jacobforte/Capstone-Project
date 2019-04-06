@@ -21,7 +21,7 @@
         }
 
         public function print() {
-            echo "<div class='row mt-2'>
+            echo "<div class='row mb-2'>
                     <div class='col'>
                         <a class='text-primary' href='courseDetails.php?id={$this->courseID}'>{$this->title}</a><br>
                         {$this->courseID}
