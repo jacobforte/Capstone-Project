@@ -12,7 +12,7 @@
         public function __construct($dbArrayRow) {
             $this->courseID = preg_replace("/-[0-9]*$/", "" ,$dbArrayRow["courseID"]);
             $this->title = $dbArrayRow["title"];
-            $this->lastUpdated = timeSinceDate(strtotime($dbArrayRow["lastUpdated"]));
+            $this->lastUpdated = $this->timeSinceDate(strtotime($dbArrayRow["lastUpdated"]));
             $this->seatsRemaining = $dbArrayRow["seatsRemaining"];
         }
 
@@ -36,8 +36,7 @@
         public function getTitle() {return $this->title;}
         public function getSeatsRemaining() {return $this->seatsRemaining;}
 
-        private function timeSinceDate($time)
-        {
+        private function timeSinceDate($time) {
             $time = time() - $time;
             $time = ($time<1)? 1 : $time;
             $tokens = array (
