@@ -40,7 +40,7 @@
                 echo "There are no results for \"{$this->searchString}\"<br>";
             }
             else {
-                echo "<strong>Showing ". count($this->singleClassResultArray) ." results for \"{$this->searchString}\"</strong><br>";
+                echo "<h5><strong>Showing ". count($this->singleClassResultArray) ." results for \"{$this->searchString}\"</strong></h5><br>";
                 foreach ($this->singleClassResultArray as $row) {
                     $row->print();
                 }
