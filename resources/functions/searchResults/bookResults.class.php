@@ -28,8 +28,8 @@
          * Use this function to print the formatted string for each row of data.
          */
         public function print() {
+            echo "<h5 class='mb-0'><strong>Showing ". count($this->singleBookResultArray) ." results for \"{$this->searchString}\"</strong></h5><br>";
             foreach ($this->singleBookResultArray as $row) {
-                echo "<h5 class='mb-0'><strong>Showing ". count($this->singleBookResultArray) ." results for \"{$this->searchString}\"</strong></h5><br>";
                 $row->print();
             }
         }
