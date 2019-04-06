@@ -20,23 +20,6 @@
 
         <main class="container mt-4">
             <div class="row">
-                <div class="col-sm-auto mt-3">
-                    <br><br>
-                    <strong>Filters</strong>
-                    <?php if ($searchType=="courseNo") {?>
-                        <div>
-                            Show Campus<br>
-                            <input type="checkbox"> Kent<br>
-                            <input type="checkbox"> Stark<br>
-                        </div>
-                    <?php } else {?>
-                        <div>
-                            Condition<br>
-                            <input type="checkbox"> New<br>
-                            <input type="checkbox"> Like New<br>
-                        </div>
-                    <?php }?>
-                </div>
                 <div class="col">
                     <div class="container">
                         <form class="row" method="post" action="searchResults.php">
