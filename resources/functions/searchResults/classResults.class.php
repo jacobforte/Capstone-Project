@@ -8,12 +8,14 @@
      */
     class ClassResults {
         private $singleClassResultArray;
+        private $searchString;
 
         /**
          * Use this to fetch the data for multiple rows of class results
          * @param searchString - The string the user entered in the search bar.
          */
-         public function __construct($searchString) {
+        public function __construct($searchString) {
+            $this->searchString = $searchString;
             $this->singleClassResultArray = array();
             $dbResult = dbconnection("spSelectClasses(NULL, \"{$searchString}\", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)");
 
@@ -34,8 +36,14 @@
          * Use this function to print the formatted string for each row of data.
          */
         public function print() {
-            foreach ($this->singleClassResultArray as $row) {
-                $row->print();
+            if (count($this->singleClassResultArray) == 0) {
+                echo "There are no results for \"{$this->searchString}\"<br>";
+            }
+            else {
+                foreach ($this->singleClassResultArray as $row) {
+                    echo "Showing {count($this->singleClassResultArray)} for \"{$this->searchString}\"<br>";
+                    $row->print();
+                }
             }
         }
     }
