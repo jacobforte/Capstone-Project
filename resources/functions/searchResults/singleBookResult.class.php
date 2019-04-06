@@ -20,7 +20,7 @@
             $this->author = $dbArrayRow["author"];
             $this->edition = $dbArrayRow["edition"];
             $this->publisher = $dbArrayRow["publisher"];
-            getMinMaxPrice($this->isbn);
+            $this->getMinMaxPrice($this->isbn);
         }
 
         public function print() {
