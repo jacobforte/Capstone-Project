@@ -26,9 +26,6 @@
                     $this->singleClassResultArray[] = new SingleClassResult($row);
                     $count = $count + 1;
                 }
-                else {
-                    $this->singleClassResultArray[$count]->add(new SingleClassResult($row));
-                }
             }
         }
 

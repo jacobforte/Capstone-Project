@@ -46,8 +46,8 @@ BEGIN
     FROM tblBooks
     WHERE tblBooks.isbn LIKE isbn
         AND tblBooks.title LIKE title
-        AND tblBooks.author LIKE author
-        AND tblBooks.edition LIKE edition
-        AND tblBooks.publisher LIKE publisher;
+        AND IFNULL(tblBooks.author, '') LIKE author
+        AND IFNULL(tblBooks.edition, '') LIKE edition
+        AND IFNULL(tblBooks.publisher, '') LIKE publisher;
 END$$
 DELIMITER ;

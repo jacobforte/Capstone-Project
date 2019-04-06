@@ -7,17 +7,13 @@
         private $courseID;
         private $title;
         private $lastUpdated;
-        private $seatsRemaining;
+        private $credits;
 
         public function __construct($dbArrayRow) {
             $this->courseID = preg_replace("/-[0-9]*$/", "" ,$dbArrayRow["courseID"]);
             $this->title = $dbArrayRow["title"];
             $this->lastUpdated = $this->timeSinceDate(strtotime($dbArrayRow["lastUpdated"]));
-            $this->seatsRemaining = $dbArrayRow["seatsRemaining"];
-        }
-
-        public function add($object2) {
-            $this->seatsRemaining = $this->seatsRemaining + $object2->getSeatsRemaining();
+            $this->credits = $dbArrayRow["credits"];
         }
 
         public function print() {
@@ -27,14 +23,13 @@
                         {$this->courseID}
                     </div>
                     <div class='col-sm-auto text-right'>
-                        {$this->seatsRemaining} Seats Available<br>
+                        Credit Hours: {$this->credits}<br>
                         Updated {$this->lastUpdated} ago.
                     </div>
                 </div>\n";
         }
 
         public function getTitle() {return $this->title;}
-        public function getSeatsRemaining() {return $this->seatsRemaining;}
 
         private function timeSinceDate($time) {
             $time = time() - $time;

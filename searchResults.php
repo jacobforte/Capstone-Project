@@ -1,5 +1,6 @@
 <?php
     require_once("resources/functions/searchResults/classResults.class.php");
+    require_once("resources/functions/searchResults/bookResults.class.php");
 
     $search = "";
     $searchType = "courseNo";
@@ -53,9 +54,11 @@
                                 $classResults->print();
                             }
                             else {
-                                
+                                $bookResults = new BookResults($search);
+                                $bookResults->print();
                             }
                         ?>
+                        <br>
                     </div>
                 </div>
             </div>
