@@ -157,8 +157,13 @@ function printReviews($courseId) {
                     <p class="mb-2">' . $review["shortDescription"] . '</p>
                 </div>
                 <div class="col-12">';
-                    for ($i = 0; $i < $review["rating"]; $i++) {
+                    $i = 0;
+                    for ($i; $i < $review["rating"]; $i++) {
                         echo '<i class="fas fa-star text-orange"></i>';
+                    }
+                    while ($i != 5) {
+                        echo '<i class="far fa-star text-orange"></i>';
+                        $i++;
                     }
                 echo '</div>
             </div>

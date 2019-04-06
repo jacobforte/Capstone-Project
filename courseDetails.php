@@ -49,6 +49,7 @@
                 <i class="fas fa-star text-orange"></i>
                 <i class="fas fa-star text-orange"></i>
                 <i class="fas fa-star text-orange"></i>
+                <i class="far fa-star text-orange"></i>
                 <p>4 out of 5 stars</p>
             </div>
         </div>
