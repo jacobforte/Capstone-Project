@@ -48,6 +48,7 @@ BEGIN
         AND tblBooks.title LIKE title
         AND IFNULL(tblBooks.author, '') LIKE author
         AND IFNULL(tblBooks.edition, '') LIKE edition
-        AND IFNULL(tblBooks.publisher, '') LIKE publisher;
+        AND IFNULL(tblBooks.publisher, '') LIKE publisher
+    ORDER BY tblBooks.title;
 END$$
 DELIMITER ;

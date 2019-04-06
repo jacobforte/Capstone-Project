@@ -42,7 +42,7 @@
 
             echo "<div class='row mb-2'>
                     <div class='col'>
-                        <a class='text-primary' href='bookListings.php?isbn={$this->isbn}'>{$this->title}{$editionText}</a><br>
+                        <a class='text-primary' href='bookListings.php?isbn={$this->isbn}'>{$this->isbn} - {$this->title}{$editionText}</a><br>
                         {$authorText}{$publisherText}
                     </div>
                     <div class='col-sm-auto text-right'>

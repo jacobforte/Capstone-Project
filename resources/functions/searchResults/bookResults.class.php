@@ -8,12 +8,14 @@
      */
     class BookResults {
         private $singleBookResultArray;
+        private $searchString;
 
         /**
          * Use this to fetch the data for multiple rows of book results
          * @param searchString - The string the user entered in the search bar.
          */
          public function __construct($searchString) {
+            $this->searchString = $searchString;
             $this->singleBookResultArray = array();
             $dbResult = dbconnection("spSelectBooks(\"{$searchString}\", NULL, NULL, NULL, NULL)");
 
@@ -27,6 +29,7 @@
          */
         public function print() {
             foreach ($this->singleBookResultArray as $row) {
+                echo "<h5 class='mb-0'><strong>Showing ". count($this->singleBookResultArray) ." results for \"{$this->searchString}\"</strong></h5><br>";
                 $row->print();
             }
         }
