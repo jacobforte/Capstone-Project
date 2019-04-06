@@ -29,15 +29,15 @@
             $publisherText;
             $priceText;
             $listingsText;
-            if (!empty($this->author)) {$authorText = "";}
+            if (empty($this->author)) {$authorText = "";}
             else {$authorText = "Author: {$this->author} ";}
-            if (!empty($this->edition)) {$editionText = "";}
+            if (empty($this->edition)) {$editionText = "";}
             else {$editionText = " Edition: {$this->edition}";}
-            if (!empty($this->publisher)) {$publisherText = "";}
+            if (empty($this->publisher)) {$publisherText = "";}
             else {$publisherText = "Publisher: {$this->publisher} ";}
-            if (!empty($this->minPrice)) {$priceText = "";}
+            if (empty($this->minPrice)) {$priceText = "";}
             else {$priceText = "Price Range: ${$this->minPrice} to ${$this->maxPrice}";}
-            if (!empty($this->numberOfListings)) {$listingsText = "There are no listings for this book.";}
+            if (empty($this->numberOfListings)) {$listingsText = "There are no listings for this book.";}
             else {$listingsText = "There are {$this->numberOfListings} for this book.";}
 
             echo "<div class='row mt-2'>
