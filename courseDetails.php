@@ -67,6 +67,7 @@
         <?php printReviews($_GET['id']); ?>
 
     </div>
+    <br />
 </main>
 
 <?php include('resources/includes/footer.inc.php'); ?>
