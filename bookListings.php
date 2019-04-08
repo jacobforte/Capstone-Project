@@ -1,6 +1,6 @@
 <?php 
 require_once("resources/functions/dbconnection.function.php");
-$books =dbconnection("spSelectUserSellBook"(NULL,NULL, \"". $id. "\",NULL,NULL,NULL \")";
+$books =dbconnection("spSelectUserSellBook"(NULL,NULL, \"". $isbn. "\",NULL,NULL,NULL \")";
 ?>
 <!doctype html>
 <html lang="en">
