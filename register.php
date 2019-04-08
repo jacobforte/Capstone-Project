@@ -32,7 +32,7 @@
 							</div>
 							<div class="form-group text-left">
 								<label for="pwd">Confirm Password:</label>
-								<input type="password" class="form-control" name="pwd">
+								<input type="password" class="form-control" name="confirm">
 							</div>
 								<button type="submit" class="btn btn-warning btn-block">Submit</button>
 								<br></br>
