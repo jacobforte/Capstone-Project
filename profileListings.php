@@ -1,4 +1,6 @@
 <?php include('resources/functions/account/account.listings.list.function.php'); ?>
+<?php include_once("resources/includes/check.php"); ?>
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -7,16 +9,15 @@
     </head>
     <body>
         <?php include("resources/includes/header.inc.php"); ?>
-
         <main>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-2 col-12 py-2 py-lg-3 pb-lg-4 bg-light">
                         <nav class="nav nav-pills flex-column flex-sm-row flex-lg-column">
-                            <a class="h5 mb-1 text-blue font-weight-bold flex-fill text-lg-right text-center nav-link" href="#">Account</a>
-                            <a class="h5 mb-1 text-blue font-weight-bold flex-fill text-lg-right text-center nav-link" href="#">Notifications</a>
-                            <a class="h5 mb-1 text-blue font-weight-bold flex-fill text-lg-right text-center nav-link" href="#">Courses</a>
-                            <a class="h5 mb-1 text-blue font-weight-bold flex-fill text-lg-right text-center nav-link" href="#">Listings</a>
+                            <a class="h5 mb-1 text-blue font-weight-bold flex-fill text-lg-right text-center nav-link" href="profileAccount.php">Account</a>
+                            <a class="h5 mb-1 text-blue font-weight-bold flex-fill text-lg-right text-center nav-link" href="profileNotifications.php">Notifications</a>
+                            <a class="h5 mb-1 text-blue font-weight-bold flex-fill text-lg-right text-center nav-link" href="profileCourses.php">Courses</a>
+                            <a class="h5 mb-1 text-blue font-weight-bold flex-fill text-lg-right text-center nav-link" href="profileListings.php">Listings</a>
                         </nav>
                     </div>
                     <div class="col-12 col-lg-10 pt-4 pb-4">
