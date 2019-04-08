@@ -1,6 +1,7 @@
 <?php 
 require_once("resources/functions/dbconnection.function.php");
-$books =dbconnection("spSelectUserSellBook"(\"". $isbn. "\",\"". $title. "\",NULL,NULL,NULL\")";
+$isbn = "9780128016350";
+$books = dbconnection("spSelectUserSellBook(NULL, NULL, \"". $isbn. "\", NULL,NULL, NULL)");
 ?>
 <!doctype html>
 <html lang="en">
@@ -16,7 +17,7 @@ $books =dbconnection("spSelectUserSellBook"(\"". $isbn. "\",\"". $title. "\",NUL
 					<div class="col-md-auto mt-9">
 						<h1> Title <?php 
 									foreach ($books as $book) {
-										echo $row['title'];
+										echo $book['title'];
 									 }
 										?> </h1>
 							<p> <b> Author </b> <br></br> </p>
