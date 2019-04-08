@@ -24,57 +24,57 @@
 			
 		?>
         <main>
-            <div class="container-fluid" >
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-2 col-12 py-2 py-lg-3 pb-lg-4 bg-light">
                         <nav class="nav nav-pills flex-column flex-sm-row flex-lg-column">
-                            <a class="h5 mb-1 text-blue font-weight-bold flex-fill text-lg-right text-center nav-link" href="#">Account</a>
-                            <a class="h5 mb-1 text-blue font-weight-bold flex-fill text-lg-right text-center nav-link" href="#">Notifications</a>
-                            <a class="h5 mb-1 text-blue font-weight-bold flex-fill text-lg-right text-center nav-link" href="#">Courses</a>
-                            <a class="h5 mb-1 text-blue font-weight-bold flex-fill text-lg-right text-center nav-link" href="#">Listings</a>
+                            <a class="h5 mb-1 text-blue font-weight-bold flex-fill text-lg-right text-center nav-link" href="profileAccount.php">Account</a>
+                            <a class="h5 mb-1 text-blue font-weight-bold flex-fill text-lg-right text-center nav-link" href="profileNotifications.php">Notifications</a>
+                            <a class="h5 mb-1 text-blue font-weight-bold flex-fill text-lg-right text-center nav-link" href="profileCourses.php">Courses</a>
+                            <a class="h5 mb-1 text-blue font-weight-bold flex-fill text-lg-right text-center nav-link" href="profileListings.php">Listings</a>
                         </nav>
                     </div>
                     <div class="col-12 col-lg-10 pt-4 pb-4">
-						<h1><strong>Account</strong></h1>
-						<div >
-							<form action="profileAccount.php" method="post">
-								<div>
-									<h3>Email:</h3>
-
-									<input type="email" name="email">
-								</div>
-								<br></br>
-								
-								<div><h2>Change password</h2></div>
-								<br>
-								<div>
-									<h3>Enter new password:</h3>
-									<input type="text" name="password">
-								</div>
-								<div>
-									<h3>Confirm new password:</h3>
-									<input type="text" name="confirm">
-								</div>
-								<br>
-								<button type="submit" class="btn btn-lg bg-orange">Update</button>
-							</form>
-							<br>
-							<?php
-							
-							if(isset($_POST['password'])){
-								if($_POST['password'] == $_POST['confirm']){
-									echo '<p>Password was changed</p>';
-					
-								}
-								else{
-									echo '<p>Passwords do not match re-enter please.</p>';
-								}
-				
-							}
-			
-							
-							?>
-						</div>
+                        <div class="mb-3">
+                            <div class="row mb-3">
+                                <div class="col-12">
+                                    <h4 class="font-weight-bold">Account</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <form action="" method="post">
+                            <div class="row mb-4">
+                                <div class="col-12 col-md-4">
+                                    <div class="form-group mb-4">
+                                        <label for="email">Email</label>
+                                        <input type="text" id="email" name="email" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="password" id="password" name="password" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="confirm">Confirm Password</label>
+                                        <input type="password" id="confirm" name="confirm" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-warning">Update</button>
+                                </div>
+                            </div>
+                        </form>
+                        <?php
+                            if(isset($_POST['password'])){
+                                if($_POST['password'] == $_POST['confirm']){
+                                    echo '<p>Password was changed</p>';
+                                }
+                                else{
+                                    echo '<p>Passwords do not match re-enter please.</p>';
+                                }
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
