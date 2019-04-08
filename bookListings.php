@@ -1,6 +1,5 @@
 <?php 
 require_once("resources/functions/dbconnection.function.php");
-require_once("resources/functions/searchResults/singleBookResult.class.php");
 $books =dbconnection("spSelectUserSellBook"(\"". $isbn. "\",\"". $title. "\",NULL,NULL,NULL\")";
 ?>
 <!doctype html>
