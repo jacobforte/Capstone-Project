@@ -1,5 +1,5 @@
 <?php include('resources/functions/account/account.listings.list.function.php'); ?>
-<?php include_once("resources/includes/check.php"); ?>
+
 
 <!doctype html>
 <html lang="en">
@@ -9,6 +9,7 @@
     </head>
     <body>
         <?php include("resources/includes/header.inc.php"); ?>
+        <?php include_once("resources/includes/check.php"); ?>
         <main>
             <div class="container-fluid">
                 <div class="row">
