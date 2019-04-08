@@ -1,20 +1,15 @@
 <?php 
 require_once("resources/functions/dbconnection.function.php");
-
-$books =dbconnection("spSelectUserSellBook"(NULL,NULL,\"9780073523323\",NULL,NULL,NULL)")";
+$books =dbconnection("spSelectUserSellBook"(NULL,NULL, \"". $id. "\",NULL,NULL,NULL \")";
 ?>
 <!doctype html>
 <html lang="en">
 <head>
-
-
   <title>Book Listing</title>
   <?php include("resources/includes/head.inc.php"); ?>
 </head> 
-
     <body>
         <?php include("resources/includes/header.inc.php"); ?>
-
        <main>
 			<div class="col">
 				<div class="container">
@@ -37,8 +32,6 @@ $books =dbconnection("spSelectUserSellBook"(NULL,NULL,\"9780073523323\",NULL,NUL
 									<input type="checkbox"> Fair<br>
 									<input type="checkbox"> Poor<br>
 								</div>
-
-
 								<div>
 									Sort By<br>
 									<input type="radio" id="Choice1" name="lowest" value="lowest"> Price (lowest to highest)<br>
@@ -46,7 +39,6 @@ $books =dbconnection("spSelectUserSellBook"(NULL,NULL,\"9780073523323\",NULL,NUL
 									<input type="radio"id="Choice3" name="newest" value="newest"> Date (newest) <br>
 									<input type="radio"id="Choice4" name="oldest" value="oldest"> Date (oldest)<br>
 								</div>
-
 								<div data-role="rangeslider" data-mini="true">
 								<label for="range-4a">Price Range:</label>
 								<input name="range-4a" id="range-4a" min="0" max="1000" value="0" type="range" />
@@ -60,11 +52,8 @@ $books =dbconnection("spSelectUserSellBook"(NULL,NULL,\"9780073523323\",NULL,NUL
 					</div>
 				</div>
 			</div>
-
-
 		</main>
 		
     <?php include("resources/includes/footer.inc.php"); ?>
-
     </body>
 </html>
