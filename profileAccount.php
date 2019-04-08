@@ -23,6 +23,8 @@
 			
 			
 		?>
+	    
+	     <?php    include_once("resources/includes/check.php"); ?>
         <main>
             <div class="container-fluid">
                 <div class="row">
