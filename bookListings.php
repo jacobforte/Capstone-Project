@@ -1,8 +1,14 @@
 
 <?php 
     require_once("resources/functions/dbconnection.function.php");
-    $booksList = dbconnection("spSelectUserSellBook(NULL, NULL,\"". $bookISBN ."\" ,NULL, NULL, NULL)");
-    $book = dbconnection("spSelectBooks( \"". $bookISBN ."\",NULL, NULL, NULL, NULL)")[0];
+   
+    $isbn ="";
+    if (isset($_GET["isbn"])) {
+        $isbn = $_GET["isbn"];
+    }
+
+    $booksList = dbconnection("spSelectUserSellBook(NULL, NULL,\"". $isbn ."\" ,NULL, NULL, NULL)");
+    $book = dbconnection("spSelectBooks( \"". $isbn ."\",NULL, NULL, NULL, NULL)")[0];
 ?> 
 
 <!doctype html>
@@ -18,7 +24,7 @@
 			<div class="col">
 				<div class="container">
 					<div class="col-md-auto mt-9">
-						<h1> Title <?php echo $book["title"];?> </h1>
+						<h1> <?php echo $book["title"];?> </h1>
                         <p> 
                             <strong>
                             Author 
@@ -28,10 +34,10 @@
                         <p> 
                             <strong>
                             ISBN 
-                                <?php echo $bookISBN;?>
+                                <?php echo $isbn;?>
                             </strong> 
                         </p>
-                        <button type="button" class="btn btn-warning" action="postABook.php"> Sell Your Textbook </button>
+                        <button type="button" class="btn btn-warning" action="GETABook.php"> Sell Your Textbook </button>
    						 <div class="row 1">
 							<div class="col-sm-auto mt-3">
 								<h2> Filters </h2>
