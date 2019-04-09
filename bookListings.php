@@ -2,6 +2,7 @@
     require_once("resources/functions/dbconnection.function.php");
     $bookISBN ="12345";
     $booksList = dbconnection("spSelectUserSellBook(NULL, NULL,\"". $bookISBN ."\" ,NULL, NULL, NULL)");
+    $book = dbconnection("spSelectUserSellBook( \"". $bookISBN. "\",NULL, NULL, NULL, NULL)");
 ?> 
 <!doctype html>
 <html lang="en">
@@ -15,13 +16,14 @@
 			<div class="col">
 				<div class="container">
 					<div class="col-md-auto mt-9">
-						<h1> Title </h1>
-							<p> <b> ISBN <?php 
-									foreach ($booksList as $book) {
-										echo $book['bookISBN'];
-									 }
-										?></b> <br>  </br> </p>
-							<button type="button" class="btn btn-warning" action="postABook.php"> Sell Your Textbook </button>
+						<h1> Title <?php echo $book["title"];?> </h1>
+                        <p> 
+                            <strong>
+                            ISBN 
+                                <?php echo $bookISBN;?>
+                            </strong> 
+                        </p>
+                        <button type="button" class="btn btn-warning" action="postABook.php"> Sell Your Textbook </button>
    						 <div class="row 1">
 							<div class="col-sm-auto mt-3">
 								<h2> Filters </h2>
@@ -48,23 +50,6 @@
                                 </select><span tabIndex="-1" aria-label="Conditon: " class="a-button a-button-dropdown a-button-small"><span class="a-button-inner"><span class="a-button-text a-declarative" data-action="a-dropdown-button" role="button" tabIndex="0" aria-hidden="true"><span class="a-dropdown-label"></span><span class="a-dropdown-prompt"></span></span><i class="a-icon a-icon-dropdown"></i></span></span></span>
                                 </form>
 								</div>
-								        echo "<table>"; 
-        <tr>
-        <th>ISBN</th>
-        <th>Email</th>
-	<th>Book Conditon </th>
-        <th>Price </th>
-        <th>Post Date</th> 
-        </tr> 
-
-            <!-- <tr>
-            <td><php? echo".$row['isbn']."?></td>
-            <td><php? echo".$row['email']."?></td>
-            <td><php? echo".$row['bookCondition']."?></td>
-            <td><php? echo".$row['price']."?></td>
- 	    <td><php? echo".$row['postDate']."?></td>
-            </tr> -->
-        </table>	
 							</div>
 						</div>
 					</div>
