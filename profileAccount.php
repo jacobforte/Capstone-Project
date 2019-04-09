@@ -15,18 +15,7 @@
 			
 			if(isset($_POST['email'])) {
 				
-			define('DBHOST', 'localhost');
-			define('DBUSER', 'webuser');
-			define('DBPASS', '123456');
-			define('DBNAME', 'Capstone');
-	
-
-			$connect = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
-			
-				
-				$sql = "SELECT * FROM tblUsers WHERE tblUsers.email='" . $_POST['email'] . "'";
-				$result = mysqli_query($connect, $sql);
-				$row = mysqli_fetch_assoc($result);
+				$row = dbconnection("spSelectEmail('$newemail')");
 				
 				$newemail = $_POST['email'];
 				
