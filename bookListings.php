@@ -8,7 +8,7 @@ $email ="vta@kent.edu";
 $bookCondition="Fair";
 $price ="32";
 $postDate ="2019-11-11";
-$User = dbconnection("spSelectUserSellBook(NULL, \"". $email. "\", \"". $bookISBN. "\", NULL,NULL, \"". $bookCondition. "\",\"". $price. "\",\"". $postDate. "\",)");
+$User = dbconnection("spSelectUserSellBook(NULL, \"". $email. "\",NULL, NULL,NULL, \"". $bookCondition. "\",\"". $price. "\",\"". $postDate. "\",)");
 $sql = "SELECT * FROM books left join UserSellBook on isbn "; 
 if ($res = mysqli_query($link, $sql)) { 
     if (mysqli_num_rows($res) > 0) { 
