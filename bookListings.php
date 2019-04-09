@@ -1,45 +1,13 @@
 <?php 
 require_once("resources/functions/dbconnection.function.php");
-if ($mysqli == = false) { 
-    die("ERROR: Could not connect. " 
-                          .$mysqli->connect_error); 
-} 
-$sql = "SELECT * FROM UserSellBook "; 
-if ($res = $mysqli->query($sql)) { 
-    if ($res->num_rows > 0) { 
-        echo "<table>"; 
-        echo "<tr>"; 
-        echo "<th>Title</th>"; 
-        echo "<th>ISBN</th>"; 
-        echo "<th>Email</th>";
-	echo "<th>Book Conditon </th>"; 
-        echo "<th>Price </th>"; 
-        echo "<th>Post Date</th>"; 
-        echo "</tr>"; 
-        while ($row = mysqli_fetch_array($res)) { 
-            echo "<tr>"; 
-            echo "<td>".$row['id']."</td>"; 
-            echo "<td>".$row['isbn']."</td>"; 
-            echo "<td>".$row['email']."</td>"; 
-            echo "<td>".$row['bookCondition']."</td>"; 
-            echo "<td>".$row['price']."</td>"; 
-            echo "<td>".$row['postDate']."</td>"; 
-            echo "</tr>"; 
-        } 
-	echo "</table>"; 
-        $res->free(); 
-    } 
-    else { 
-        echo "No matching records are found."; 
-    } 
-} 
-else { 
-    echo "ERROR: Could not able to execute $sql. " 
-                                             .$mysqli->error; 
-} 
-$mysqli->close(); 
+$id ="Test";
+$isbnBook ="12345";
+$email ="vta@kent.edu";
+$bookCondition="Fair";
+$price ="32";
+$postDate ="2019-11-11";
+$user = dbconnection("spSelectUserSellBook(NULL, \"". $email. "\",NULL, NULL,NULL, \"". $bookCondition. "\",\"". $price. "\",\"". $postDate. "\",)");
 ?> 
-?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -53,18 +21,13 @@ $mysqli->close();
 				<div class="container">
 					<div class="col-md-auto mt-9">
 						<h1> Title <?php 
-									foreach ($books as $book) {
-										echo $book['title'];
+									foreach ($user as $user) {
+										echo $user['id'];
 									 }
 										?> </h1>
-							<p> <b> Author <?php 
-									foreach ($books as $book) {
-										echo $book['author'];
-									 }
-										?></b> <br></br> </p>
 							<p> <b> ISBN <?php 
-									foreach ($books as $book) {
-										echo $book['isbn'];
+									foreach ($user as $user) {
+										echo $user['isbn'];
 									 }
 										?></b> <br>  </br> </p>
 							<button type="button" class="btn btn-warning" action="postABook.php"> Sell Your Textbook </button>
@@ -94,7 +57,25 @@ $mysqli->close();
                                 </select><span tabIndex="-1" aria-label="Conditon: " class="a-button a-button-dropdown a-button-small"><span class="a-button-inner"><span class="a-button-text a-declarative" data-action="a-dropdown-button" role="button" tabIndex="0" aria-hidden="true"><span class="a-dropdown-label"></span><span class="a-dropdown-prompt"></span></span><i class="a-icon a-icon-dropdown"></i></span></span></span>
                                 </form>
 								</div>
-									
+								        echo "<table>"; 
+        <tr>
+        <th>Title</th>
+        <th>ISBN</th>
+        <th>Email</th>
+	<th>Book Conditon </th>
+        <th>Price </th>
+        <th>Post Date</th> 
+        </tr> 
+
+            <tr>
+            <td><php? echo ".$row['id']." ?></td> 
+            <td><php? echo".$row['isbn']."?></td>
+            <td><php? echo".$row['email']."?></td>
+            <td><php? echo".$row['bookCondition']."?></td>
+            <td><php? echo".$row['price']."?></td>
+ 	    <td><php? echo".$row['postDate']."?></td>
+            </tr>
+        </table>	
 							</div>
 						</div>
 					</div>
