@@ -178,6 +178,14 @@
  * id
  */
 
+/**
+ * \file spSelectEmail.sql
+ * Used to check if an email exists.
+ * IN email varchar(255)\n
+ * Returns:\n
+ * email\n
+ */
+
  /**
  * \file spSelectUserNotifications.sql
  * Returns a list of notifications a user is subscribed to.
@@ -329,4 +337,3 @@
  * Returns:\n
  * photoName\n
  */
-?>
