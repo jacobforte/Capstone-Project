@@ -11,18 +11,40 @@
 		
 		include_once("resources/functions/dbconnection.function.php");
 		
-			
 
+			
 			if(isset($_POST['email'])) {
-                $newemail = $_POST['email'];
-                $currentemail = $_SESSION['user']['email'];
-                dbconnection("spUpdateUser(" . $_SESSION['user']['id'] . ",'" . $newemail . "','" . $_SESSION['user']['name'] . "','" . $_SESSION['user']['password'] . "')");
+				
+			define('DBHOST', 'localhost');
+			define('DBUSER', 'webuser');
+			define('DBPASS', '123456');
+			define('DBNAME', 'Capstone');
+	
 
-            }
+			$connect = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
 			
-			
+				
+				$sql = "SELECT * FROM tblUsers WHERE tblUsers.email='" . $_POST['email'] . "'";
+				$result = mysqli_query($connect, $sql);
+				$row = mysqli_fetch_assoc($result);
+				
+				$newemail = $_POST['email'];
+				
+				if($row == NULL){
+				
+				$message = "Email has been updated.";
+
+                dbconnection("spUpdateUser(" . $_SESSION['user']['id'] . ",'" . $newemail . "','" . $_SESSION['user']['name'] . "','" . $_SESSION['user']['password'] . "')");
+				$_SESSION['user']['email'] = $newemail;
+
+				}else{ $message = "The email you have entered already exist within the database please enter new one."; }
+
+				
+				}
 			
 		?>
+	    
+	     <?php    include_once("resources/includes/check.php"); ?>
         <main>
             <div class="container-fluid">
                 <div class="row">
@@ -47,15 +69,15 @@
                                 <div class="col-12 col-md-4">
                                     <div class="form-group mb-4">
                                         <label for="email">Email</label>
-                                        <input type="text" id="email" name="email" class="form-control">
+                                        <input type="text" id="email" name="email" class="form-control" value="<?php echo $_SESSION['user']['email']; ?>">
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Password</label>
-                                        <input type="password" id="password" name="password" class="form-control">
+                                        <input type="password" id="password" name="password" class="form-control" value="<?php echo $_SESSION['user']['password']; ?>">
                                     </div>
                                     <div class="form-group">
                                         <label for="confirm">Confirm Password</label>
-                                        <input type="password" id="confirm" name="confirm" class="form-control">
+                                        <input type="password" id="confirm" name="confirm" class="form-control" value="<?php echo $_SESSION['user']['password']; ?>">
                                     </div>
                                 </div>
                             </div>
@@ -67,14 +89,29 @@
                         </form>
                         <?php
                             if(isset($_POST['password'])){
-                                if($_POST['password'] == $_POST['confirm']){
+								if($_POST['password'] != $_SESSION['user']['password']){
+									                                if($_POST['password'] == $_POST['confirm']){
+									
+									if(isset($_POST['password'])) {
+									$newpass = $_POST['password'];
+									dbconnection("spUpdateUser(" . $_SESSION['user']['id'] . ",'" . $_SESSION['user']['email'] . "','" . $_SESSION['user']['name'] . "','" . $newpass . "')");							
+									}
+									$_SESSION['user']['password'] = $newpass;
                                     echo '<p>Password was changed</p>';
                                 }
                                 else{
                                     echo '<p>Passwords do not match re-enter please.</p>';
                                 }
+
+								}
                             }
                         ?>
+						<br>
+						<p><?php
+						if(isset($_POST['email']))
+						echo $message;
+
+						?></p>
                     </div>
                 </div>
             </div>
