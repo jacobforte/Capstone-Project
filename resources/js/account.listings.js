@@ -1,9 +1,10 @@
-function removeById(str) {
+function removeById(str, email) {
     $.ajax({
         url:"resources/functions/account/account.listings.remove.function.php?id=" + str,
         type: "POST",
         data:{
             id: str,
+            user: email
         },
         success:function(data) {
             $('#' + str).fadeOut(function() {

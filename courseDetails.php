@@ -97,6 +97,16 @@
             </div>
         </div>
 
+        <?php if (sizeof($courseDetails->getSections()) == 0) { ?>
+
+        <div class="row">
+            <div class="col-12">
+                <h5 class="my-4">No sections found for selected term.</h5>
+            </div>
+        </div>
+
+        <?php } ?>
+
         <?php
             $prev = null;
             foreach ($courseDetails->getSections() as $section) {

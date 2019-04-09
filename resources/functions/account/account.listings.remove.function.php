@@ -3,7 +3,7 @@
 require("../dbconnection.function.php");
 
 if(isset($_POST['id'])) {
-    removeUserListing($_POST['id']);
+    removeUserListing($_POST['id'], $_POST['user']);
 }
 
 /** \file */
@@ -13,7 +13,7 @@ if(isset($_POST['id'])) {
  *
  */
 
-function removeUserListing($id) {
+function removeUserListing($id, $user) {
     dbconnection("spDeleteUserSellBook(" . $id . ")");
-    echo count(dbconnection("spSelectUserSellBook(null, \"zbrockwa@kent.edu\", null, null, null, null)"));
+    echo count(dbconnection("spSelectUserSellBook(null, \"" . $user . "\", null, null, null, null)"));
 }

@@ -1,6 +1,4 @@
 <?php include('resources/functions/account/account.listings.list.function.php'); ?>
-
-
 <!doctype html>
 <html lang="en">
     <head>

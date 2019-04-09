@@ -64,7 +64,7 @@ function outputUserListings($user) {
                 echo '</div>
                 <div class="row">
                     <div class="col-12">
-                        <button type="button" class="btn btn-warning" onclick="removeById(' . $listing["id"] . ')">Remove</button>
+                        <button type="button" class="btn btn-warning" onclick="removeById(' . $listing["id"] . ', \'' . $_SESSION['user']['email'] .  '\')">Remove</button>
                     </div>
                 </div>
             </form>
