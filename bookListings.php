@@ -22,6 +22,12 @@
 						<h1> Title <?php echo $book["title"];?> </h1>
                         <p> 
                             <strong>
+                            Author 
+                                <?php echo echo $book["author"];?>
+                            </strong> 
+                        </p>
+                        <p> 
+                            <strong>
                             ISBN 
                                 <?php echo $bookISBN;?>
                             </strong> 
