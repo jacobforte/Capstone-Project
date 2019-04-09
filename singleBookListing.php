@@ -33,12 +33,13 @@ $books = dbconnection("spSelectUserSellBook( \"". $isbn. "\", \"". $title. "\", 
 									 }
 										?> </b> <br>  </br> </p>
 							<button type="button" class="btn btn-warning" action="postABook.php"> Sell Your Textbook </button>
-
-		
 					</div>
 				</div>
 			</div>
+					<?php  $result = $_GET['image']; ?>
 
+					<img src="images/gallery/<?php echo $result ?>.jpg">
+	
 
 		</main>
 		
