@@ -1,14 +1,6 @@
 <?php 
 require_once("resources/functions/dbconnection.function.php");
-$isbn = "12345";
-$title ="Test";
-$author = "Thanos";
-$books = dbconnection("spSelectUserSellBook( \"". $isbn. "\", \"". $title. "\", \"". $author. "\", NULL,NULL, NULL)");
-$email ="vta@kent.edu";
-$bookCondition="Fair";
-$price ="32";
-$postDate ="2019-11-11";
-$User = dbconnection("spSelectUserSellBook(NULL, \"". $email. "\",NULL, NULL,NULL, \"". $bookCondition. "\",\"". $price. "\",\"". $postDate. "\",)");
+try { 
 $sql = "SELECT * FROM books left join UserSellBook on isbn "; 
 if ($res = mysqli_query($link, $sql)) { 
     if (mysqli_num_rows($res) > 0) { 
@@ -34,16 +26,16 @@ if ($res = mysqli_query($link, $sql)) {
         echo "</table>"; 
         mysqli_free_res($res); 
     } 
-    else { 
+   else { 
         echo "No matching records are found."; 
     } 
 } 
-else { 
-    echo "ERROR: Could not able to execute $sql. "
-                                .mysqli_error($link); 
+catch (PDOException $e) { 
+    die("ERROR: Could not able to execute $sql. " 
+                                .$e->getMessage()); 
 } 
-mysqli_close($link); 
-?>
+unset($pdo); 
+?> 
 <!doctype html>
 <html lang="en">
 <head>
