@@ -3,14 +3,12 @@ require_once("resources/functions/dbconnection.function.php");
 $isbn = "12345";
 $title ="Test";
 $author = "Thanos";
-$books = dbconnection("spSelectUserSellBook( \"". $isbn. "\", \"". $title. "\", \"". $author. "\", NULL,NULL, NULL)"); 
-?> 
-<?php
+$books = dbconnection("spSelectBooks( \"". $isbn. "\", \"". $title. "\", \"". $author. "\", NULL,NULL, NULL)"); 
 $email ="vta@kent.edu";
 $bookCondition="Fair";
 $price ="32";
 $postDate ="2019-11-11";
-$User = dbconnection("spSelectUserSellBook(NULL, \"". $email. "\",NULL, NULL,NULL, \"". $bookCondition. "\",\"". $price. "\",\"". $postDate. "\",)");
+$user = dbconnection("spSelectUserSellBook(NULL, \"". $email. "\",NULL, NULL,NULL, \"". $bookCondition. "\",\"". $price. "\",\"". $postDate. "\",)");
 ?>
 <!doctype html>
 <html lang="en">
@@ -29,8 +27,16 @@ $User = dbconnection("spSelectUserSellBook(NULL, \"". $email. "\",NULL, NULL,NUL
 										echo $book['title'];
 									 }
 										?> </h1>
-							<p> <b> Author </b> <br></br> </p>
-							<p> <b> ISBN </b> <br>  </br> </p>
+							<p> <b> Author <?php 
+									foreach ($books as $book) {
+										echo $book['author'];
+									 }
+										?></b> <br></br> </p>
+							<p> <b> ISBN <?php 
+									foreach ($books as $book) {
+										echo $book['isbn'];
+									 }
+										?></b> <br>  </br> </p>
 							<button type="button" class="btn btn-warning" action="postABook.php"> Sell Your Textbook </button>
    						 <div class="row 1">
 							<div class="col-sm-auto mt-3">
