@@ -36,6 +36,11 @@ $books = dbconnection("spSelectUserSellBook( \"". $isbn. "\", \"". $title. "\", 
 					</div>
 				</div>
 			</div>
+				<h2> <?php 
+									foreach ($books as $book) {
+										echo $row['title'];
+									 }
+					?> Images </h2>
 					<?php  $result = $_GET['image']; ?>
 
 					<img src="images/gallery/<?php echo $result ?>.jpg">
