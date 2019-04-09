@@ -39,10 +39,16 @@ $books = dbconnection("spSelectUserSellBook(NULL, NULL, \"". $isbn. "\", NULL,NU
                                         </select><span tabIndex="-1" aria-label="Sort by:" class="a-button a-button-dropdown a-button-small"><span class="a-button-inner"><span class="a-button-text a-declarative" data-action="a-dropdown-button" role="button" tabIndex="0" aria-hidden="true"><span class="a-dropdown-label"></span><span class="a-dropdown-prompt"></span></span><i class="a-icon a-icon-dropdown"></i></span></span></span>
                                     </form>
 								<div>Condition of Textbook <br>
+                                <form method="get" action="/s" class="aok-inline-block a-spacing-none">
+                                        
+                                        <span class="a-dropdown-container"><label for="s-result-sort-select" class="a-native-dropdown">Condtion </label><select name="s" autocomplete="off" id="s-result-sort-select" tabIndex="-1" class="a-native-dropdown">
+                                      
 									<option value="checkbox"> Mint</option>
 									<option value="checkbox"> Good</option>
 									<option value="checkbox"> Fair</option>
 									<option value="checkbox"> Poor</option>
+                                </select><span tabIndex="-1" aria-label="Sort by:" class="a-button a-button-dropdown a-button-small"><span class="a-button-inner"><span class="a-button-text a-declarative" data-action="a-dropdown-button" role="button" tabIndex="0" aria-hidden="true"><span class="a-dropdown-label"></span><span class="a-dropdown-prompt"></span></span><i class="a-icon a-icon-dropdown"></i></span></span></span>
+                                </form>
 								</div>
 									
 							</div>
