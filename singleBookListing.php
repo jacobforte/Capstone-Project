@@ -32,7 +32,7 @@ $books = dbconnection("spSelectUserSellBook( \"". $isbn. "\", \"". $title. "\", 
 										echo $row['isbn'];
 									 }
 										?> </b> <br>  </br> </p>
-	    <ahref class="btn btn-warning" action="postABook.php"> Sell Your Textbook </a>
+	    <a class="btn btn-warning" action="postABook.php"> Sell Your Textbook </a>
 					</div>
 				</div>
 			</div>
