@@ -23,7 +23,17 @@ $books = dbconnection("spSelectUserSellBook(NULL, NULL, \"". $isbn. "\", NULL,NU
 							<p> <b> Author </b> <br></br> </p>
 							<p> <b> ISBN </b> <br>  </br> </p>
 							<button type="button" class="btn btn-warning" action="postABook.php"> Sell Your Textbook </button>
-    <form method="get" action="/s" class="aok-inline-block a-spacing-none">
+   						 <div class="row 1">
+							<div class="col-sm-auto mt-3">
+								<h2> Filters </h2>
+								<div>
+									Show Condition<br>
+									<input type="checkbox"> Mint<br>
+									<input type="checkbox"> Good<br>
+									<input type="checkbox"> Fair<br>
+									<input type="checkbox"> Poor<br>
+								</div>
+	<form method="get" action="/s" class="aok-inline-block a-spacing-none">
         
         <span class="a-dropdown-container"><label for="s-result-sort-select" class="a-native-dropdown">Sort by:</label><select name="s" autocomplete="off" id="s-result-sort-select" tabIndex="-1" class="a-native-dropdown">
             
@@ -34,8 +44,7 @@ $books = dbconnection("spSelectUserSellBook(NULL, NULL, \"". $isbn. "\", NULL,NU
                 <option value="date-desc-rank">Newest Arrivals</option>
             
         </select><span tabIndex="-1" aria-label="Sort by:" class="a-button a-button-dropdown a-button-small"><span class="a-button-inner"><span class="a-button-text a-declarative" data-action="a-dropdown-button" role="button" tabIndex="0" aria-hidden="true"><span class="a-dropdown-label"></span><span class="a-dropdown-prompt"></span></span><i class="a-icon a-icon-dropdown"></i></span></span></span>
-        <noscript><span class="a-button a-button-base"><span class="a-button-inner"><input class="a-button-input" type="submit" value="Go"><span class="a-button-text" aria-hidden="true">Go</span></span></span></noscript>
-    </form>
+     </form>
 									
 							</div>
 						</div>
