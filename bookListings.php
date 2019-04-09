@@ -30,11 +30,6 @@ if ($res = mysqli_query($link, $sql)) {
         echo "No matching records are found."; 
     } 
 } 
-catch (PDOException $e) { 
-    die("ERROR: Could not able to execute $sql. " 
-                                .$e->getMessage()); 
-} 
-unset($pdo); 
 ?> 
 <!doctype html>
 <html lang="en">
