@@ -4,7 +4,10 @@ $isbn = "12345";
 $title ="Test";
 $author = "Thanos";
 $books = dbconnection("spSelectUserSellBook( \"". $isbn. "\", \"". $title. "\", \"". $author. "\", NULL,NULL, NULL)");
-
+$email ="vta@kent.edu";
+$bookCondition="Fair";
+$price ="32";
+$postDate ="2019-11-11";
 $User = dbconnection("spSelectUserSellBook(NULL, \"". $email. "\", \"". $bookISBN. "\", NULL,NULL, \"". $bookCondition. "\",\"". $price. "\",\"". $postDate. "\",)");
 $sql = "SELECT * FROM books left join UserSellBook on isbn "; 
 if ($res = mysqli_query($link, $sql)) { 
