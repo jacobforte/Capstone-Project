@@ -1,5 +1,9 @@
 <?php 
 require_once("resources/functions/dbconnection.function.php");
+if ($mysqli == = false) { 
+    die("ERROR: Could not connect. " 
+                          .$mysqli->connect_error); 
+} 
 $sql = "SELECT * FROM UserSellBook "; 
 if ($res = $mysqli->query($sql)) { 
     if ($res->num_rows > 0) { 
