@@ -1,6 +1,8 @@
 <?php 
 require_once("resources/functions/dbconnection.function.php");
 $isbn = "12345";
+$title ="Test";
+$author = "Thanos";
 $books = dbconnection("spSelectUserSellBook( \"". $isbn. "\", \"". $title. "\", \"". $author. "\", NULL,NULL, NULL)");
 ?>
 <!doctype html>
