@@ -3,8 +3,8 @@ require_once("resources/functions/dbconnection.function.php");
 $books = dbconnection("spSelectUserSellBook( NULL, NULL, NULL, NULL,NULL, NULL)");
 $User = dbconnection("spSelectUserSellBook(NULL, NULL,NULL, NULL, NULL,NULL, NULL,NULL, NULL);
 $sql = "SELECT * FROM UserSellBook "; 
-if ($res = mysqli_query($link, $sql)) { 
-    if (mysqli_num_rows($res) > 0) { 
+f ($res = $mysqli->query($sql)) { 
+    if ($res->num_rows > 0) { 
         echo "<table>"; 
         echo "<tr>"; 
         echo "<th>Title</th>"; 
@@ -24,18 +24,19 @@ if ($res = mysqli_query($link, $sql)) {
             echo "<td>".$row['postDate']."</td>"; 
             echo "</tr>"; 
         } 
-        echo "</table>"; 
-        mysqli_free_res($res); 
+	echo "</table>"; 
+        $res->free(); 
     } 
     else { 
         echo "No matching records are found."; 
     } 
 } 
 else { 
-    echo "ERROR: Could not able to execute $sql. "
-                                .mysqli_error($link); 
+    echo "ERROR: Could not able to execute $sql. " 
+                                             .$mysqli->error; 
 } 
-mysqli_close($link); 
+$mysqli->close(); 
+?> 
 ?>
 <!doctype html>
 <html lang="en">
