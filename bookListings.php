@@ -1,8 +1,8 @@
 <?php 
 require_once("resources/functions/dbconnection.function.php");
 $books = dbconnection("spSelectUserSellBook( NULL, NULL, NULL, NULL,NULL, NULL)");
-$User = dbconnection("spSelectUserSellBook(\"". $id. "\", \"". $email. "\",NULL, NULL,NULL, \"". $bookCondition. "\",\"". $price. "\",\"". $postDate. "\",)");
-$sql = "SELECT * FROM books left join UserSellBook on isbn "; 
+$User = dbconnection("spSelectUserSellBook(NULL, NULL,NULL, NULL, NULL,NULL, NULL,NULL, NULL);
+$sql = "SELECT * FROM UserSellBook "; 
 if ($res = mysqli_query($link, $sql)) { 
     if (mysqli_num_rows($res) > 0) { 
         echo "<table>"; 
