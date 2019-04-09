@@ -23,7 +23,7 @@
                         <p> 
                             <strong>
                             Author 
-                                <?php echo echo $book["author"];?>
+                                <?php echo $book["author"];?>
                             </strong> 
                         </p>
                         <p> 
