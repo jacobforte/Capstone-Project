@@ -5,6 +5,13 @@ $title ="Test";
 $author = "Thanos";
 $books = dbconnection("spSelectUserSellBook( \"". $isbn. "\", \"". $title. "\", \"". $author. "\", NULL,NULL, NULL)"); 
 ?> 
+<?php
+$email ="vta@kent.edu";
+$bookCondition="Fair";
+$price ="32";
+$postDate ="2019-11-11";
+$User = dbconnection("spSelectUserSellBook(NULL, \"". $email. "\",NULL, NULL,NULL, \"". $bookCondition. "\",\"". $price. "\",\"". $postDate. "\",)");
+?>
 <!doctype html>
 <html lang="en">
 <head>
