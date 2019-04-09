@@ -15,9 +15,10 @@
 			
 			if(isset($_POST['email'])) {
 				
+				$newemail = $_POST['email'];
 				$row = dbconnection("spSelectEmail('$newemail')");
 				
-				$newemail = $_POST['email'];
+
 				
 				if($row == NULL){
 				
