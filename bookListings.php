@@ -3,33 +3,7 @@ require_once("resources/functions/dbconnection.function.php");
 $isbn = "12345";
 $title ="Test";
 $author = "Thanos";
-$email ="vta@kent.edu";
-$bookCondition="Fair";
-$price ="32";
-$postDate ="2019-11-11";
-$books = dbconnection("spSelectUserSellBook( \"". $isbn. "\", \"". $title. "\", \"". $author. "\", NULL,NULL, NULL)");
-try { 
-$sql = "SELECT * FROM books"; 
-if ($res = mysqli_query($link, $sql)) { 
-    if (mysqli_num_rows($res) > 0) { 
-        echo "<table>"; 
-        echo "<tr>"; 
-        echo "<th>Title</th>"; 
-        echo "<th>ISBN</th>"; 
-        echo "</tr>"; 
-        while ($row = mysqli_fetch_array($res)) { 
-            echo "<tr>"; 
-            echo "<td>".$row['title']."</td>"; 
-            echo "<td>".$row['isbn']."</td>"; 
-            echo "</tr>"; 
-        } 
-        echo "</table>"; 
-        mysqli_free_res($res); 
-    } 
-   else { 
-        echo "No matching records are found."; 
-    } 
-} 
+$books = dbconnection("spSelectUserSellBook( \"". $isbn. "\", \"". $title. "\", \"". $author. "\", NULL,NULL, NULL)"); 
 ?> 
 <!doctype html>
 <html lang="en">
