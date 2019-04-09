@@ -4,11 +4,6 @@ $isbn = "12345";
 $title ="Test";
 $author = "Thanos";
 $books = dbconnection("spSelectBooks( \"". $isbn. "\", \"". $title. "\", \"". $author. "\", NULL,NULL)"); 
-$email ="vta@kent.edu";
-$bookCondition="Fair";
-$price ="32";
-$postDate ="2019-11-11";
-$user = dbconnection("spSelectUserSellBook(NULL, \"". $email. "\",NULL, NULL,NULL, \"". $bookCondition. "\",\"". $price. "\",\"". $postDate. "\",)");
 ?>
 <!doctype html>
 <html lang="en">
