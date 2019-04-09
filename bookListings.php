@@ -1,7 +1,6 @@
 <?php 
 require_once("resources/functions/dbconnection.function.php");
-$books = dbconnection("spSelectUserSellBook( NULL, NULL, NULL, NULL,NULL, NULL)");
-$User = dbconnection("spSelectUserSellBook(NULL, NULL,NULL, NULL, NULL,NULL, NULL,NULL, NULL);
+require_once("resources/SQL/StoredProcedures/spSelectUserSellBook.sql.php");
 $sql = "SELECT * FROM UserSellBook "; 
 f ($res = $mysqli->query($sql)) { 
     if ($res->num_rows > 0) { 
