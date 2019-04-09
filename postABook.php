@@ -5,7 +5,24 @@
     </head>
     <body>
         <?php include("resources/includes/header.inc.php"); ?>
-        
+        <?php
+			
+		include_once("resources/functions/dbconnection.function.php");
+		
+			if(isset($_POST['title'])){
+			
+			$title = $_POST['title'];
+			$isbn = $_POST['isbn'];
+			$author = $_POST['author'];
+			$price = $_POST['price'];
+			$edition = $_POST['edition'];
+			$publisher = $_POST['publisher'];
+			
+			dbconnection("spNewBook('$isbn' ,'$title', '$author', '$edition', '$publisher', 'NULL')");
+			$_POST = array();
+			
+			}
+		?>
         <main>
 <br></br>
         <div  class="container-fluid" >
@@ -32,13 +49,27 @@
 								<input type="text" class="form-control" name="price">
 							</div>
 							<div class="form-group text-left col-sm-6">
+								<label for="author">author:</label>
+								<input type="text" class="form-control" name="author">
+							</div>
+							<div class="form-group text-left col-sm-6">
+								<label for="edition">edition:</label>
+								<input type="text" class="form-control" name="edition">
+							</div>
+							<div class="form-group text-left col-sm-6">
+								<label for="publisher">publisher:</label>
+								<input type="text" class="form-control" name="publisher" >
+							</div>
+
+							</div>
+							
+							<div class="form-group text-left ">
 								<label for="condition">Condition:</label>
 								<select class="form-control" name="condition">
 									<option value="New">New</option>
 									<option value="Min">Some Damage</option>
 									<option value="Bad">Bad</option>
 								</select>
-							</div>
 							</div>
 							
 							<div class="form-group text-left">
@@ -54,7 +85,9 @@
 
 
 		</div>
-		</div> 
+		</div>
+
+			<br></br>
 
         </main>
 
