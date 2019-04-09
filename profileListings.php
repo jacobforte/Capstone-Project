@@ -33,7 +33,7 @@
                                 <h5>No active book listings.</h5>
                             </div>
                         </div>
-                        <?php outputUserListings("zbrockwa@kent.edu"); ?>
+                        <?php outputUserListings($_SESSION['user']['email']); ?>
                     </div>
                 </div>
             </div>
