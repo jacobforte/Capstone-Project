@@ -2,7 +2,7 @@
 require_once("resources/functions/dbconnection.function.php");
 require_once("resources/SQL/StoredProcedures/spSelectUserSellBook.sql.php");
 $sql = "SELECT * FROM UserSellBook "; 
-f ($res = $mysqli->query($sql)) { 
+if ($res = $mysqli->query($sql)) { 
     if ($res->num_rows > 0) { 
         echo "<table>"; 
         echo "<tr>"; 
