@@ -1,12 +1,7 @@
 <?php 
-require_once("resources/functions/dbconnection.function.php");
-$id ="Test";
-$isbnBook ="12345";
-$email ="vta@kent.edu";
-$bookCondition="Fair";
-$price ="32";
-$postDate ="2019-11-11";
-$user = dbconnection("spSelectUserSellBook(NULL, \"". $email. "\",\"". $isbnBook. "\" ,NULL, \"". $bookCondition. "\",\"". $price. "\",\"". $postDate. "\",)");
+    require_once("resources/functions/dbconnection.function.php");
+    $bookISBN ="12345";
+    $booksList = dbconnection("spSelectUserSellBook(NULL, NULL,\"". $bookISBN ."\" ,NULL, NULL, NULL)");
 ?> 
 <!doctype html>
 <html lang="en">
@@ -20,14 +15,10 @@ $user = dbconnection("spSelectUserSellBook(NULL, \"". $email. "\",\"". $isbnBook
 			<div class="col">
 				<div class="container">
 					<div class="col-md-auto mt-9">
-						<h1> Title <?php 
-									foreach ($user as $user) {
-										echo $user['id'];
-									 }
-										?> </h1>
+						<h1> Title </h1>
 							<p> <b> ISBN <?php 
-									foreach ($user as $user) {
-										echo $user['isbn'];
+									foreach ($bookList as $bookList) {
+										echo $bookList['bookISBN'];
 									 }
 										?></b> <br>  </br> </p>
 							<button type="button" class="btn btn-warning" action="postABook.php"> Sell Your Textbook </button>
@@ -59,7 +50,6 @@ $user = dbconnection("spSelectUserSellBook(NULL, \"". $email. "\",\"". $isbnBook
 								</div>
 								        echo "<table>"; 
         <tr>
-        <th>Title</th>
         <th>ISBN</th>
         <th>Email</th>
 	<th>Book Conditon </th>
@@ -67,14 +57,13 @@ $user = dbconnection("spSelectUserSellBook(NULL, \"". $email. "\",\"". $isbnBook
         <th>Post Date</th> 
         </tr> 
 
-            <tr>
-            <td><php? echo ".$row['id']." ?></td> 
+            <!-- <tr>
             <td><php? echo".$row['isbn']."?></td>
             <td><php? echo".$row['email']."?></td>
             <td><php? echo".$row['bookCondition']."?></td>
             <td><php? echo".$row['price']."?></td>
  	    <td><php? echo".$row['postDate']."?></td>
-            </tr>
+            </tr> -->
         </table>	
 							</div>
 						</div>
