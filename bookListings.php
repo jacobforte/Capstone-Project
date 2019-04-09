@@ -16,7 +16,7 @@
 			<div class="col">
 				<div class="container">
 					<div class="col-md-auto mt-9">
-						<h1> Title <?php echo $book["title"];?> </h1>
+						<h1> Title <?php echo $book["isbn"];?> </h1>
                         <p> 
                             <strong>
                             ISBN 
