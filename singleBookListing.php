@@ -41,9 +41,9 @@ $books = dbconnection("spSelectUserSellBook( \"". $isbn. "\", \"". $title. "\", 
 										echo $row['title'];
 									 }
 					?> Images </h2>
-					<?php  $result = $_GET['image']; ?>
+					//<?php  $result = $_GET['image']; ?>
 
-					<img src="images/gallery/<?php echo $result ?>.jpg">
+					//<img src="images/gallery/<?php echo $result ?>.jpg">
 	
 
 		</main>
