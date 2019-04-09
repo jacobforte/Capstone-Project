@@ -23,30 +23,19 @@ $books = dbconnection("spSelectUserSellBook(NULL, NULL, \"". $isbn. "\", NULL,NU
 							<p> <b> Author </b> <br></br> </p>
 							<p> <b> ISBN </b> <br>  </br> </p>
 							<button type="button" class="btn btn-warning" action="postABook.php"> Sell Your Textbook </button>
-						<div class="row 1">
-							<div class="col-sm-auto mt-3">
-								<h2> Filters </h2>
-								<div>
-									Show Condition<br>
-									<input type="checkbox"> Mint<br>
-									<input type="checkbox"> Good<br>
-									<input type="checkbox"> Fair<br>
-									<input type="checkbox"> Poor<br>
-								</div>
-								<div>
-									Sort By<br>
-									<input type="radio" id="Choice1" name="lowest" value="lowest"> Price (lowest to highest)<br>
-									<input type="radio"id="Choice2" name="highest" value="highest"> Price (highest to lowest)<br>
-									<input type="radio"id="Choice3" name="newest" value="newest"> Date (newest) <br>
-									<input type="radio"id="Choice4" name="oldest" value="oldest"> Date (oldest)<br>
-								</div>
-								<div data-role="rangeslider" data-mini="true">
-								<label for="range-4a">Price Range:</label>
-								<input name="range-4a" id="range-4a" min="0" max="1000" value="0" type="range" />
-								<label for="range-4b">Price Range:</label>
-								<input name="range-4b" id="range-4b" min="0" max="25" value="1000" type="range" />
-								<input type="submit" data-inline="true" class="btn btn-warning" value="Submit" class="col-md-2">
-								</div>
+    <form method="get" action="/s" class="aok-inline-block a-spacing-none">
+        
+        <span class="a-dropdown-container"><label for="s-result-sort-select" class="a-native-dropdown">Sort by:</label><select name="s" autocomplete="off" id="s-result-sort-select" tabIndex="-1" class="a-native-dropdown">
+            
+                <option value="price-asc-rank">Price: Low to High</option>
+            
+		<option value="price-desc-rank">Price: High to Low</option>
+            
+                <option value="date-desc-rank">Newest Arrivals</option>
+            
+        </select><span tabIndex="-1" aria-label="Sort by:" class="a-button a-button-dropdown a-button-small"><span class="a-button-inner"><span class="a-button-text a-declarative" data-action="a-dropdown-button" role="button" tabIndex="0" aria-hidden="true"><span class="a-dropdown-label">Sort by:</span><span class="a-dropdown-prompt">Featured</span></span><i class="a-icon a-icon-dropdown"></i></span></span></span>
+        <noscript><span class="a-button a-button-base"><span class="a-button-inner"><input class="a-button-input" type="submit" value="Go"><span class="a-button-text" aria-hidden="true">Go</span></span></span></noscript>
+    </form>
 									
 							</div>
 						</div>
