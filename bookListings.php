@@ -20,7 +20,8 @@
 </head> 
     <body>
         <?php include("resources/includes/header.inc.php"); ?>
-       <main>
+       <main class= "container-mt-4">
+        <div class="row">
 			<div class="col">
 				<div class="container">
 					<div class="col-md-auto mt-9">
@@ -37,7 +38,7 @@
                                 <?php echo $book["isbn"];?>
                             </strong> 
                         </p>
-                        <button type="button" class="btn btn-warning" action="GETABook.php"> Sell Your Textbook </button>
+                        <button type="button" class="btn btn-warning" action="postABook.php"> Sell Your Textbook </button>
    						 <div class="row 1">
 							<div class="col-sm-auto mt-3">
 								<h2> Filters </h2>
@@ -68,7 +69,8 @@
                 </div>
             </div>
         </div>
-        </div>
+     </div>
+    </div>
     </main>
 
     <?php include("resources/includes/footer.inc.php"); ?>
