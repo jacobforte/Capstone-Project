@@ -1,7 +1,6 @@
 
 <?php 
     require_once("resources/functions/dbconnection.function.php");
-    $bookISBN ="12345";
     $booksList = dbconnection("spSelectUserSellBook(NULL, NULL,\"". $bookISBN ."\" ,NULL, NULL, NULL)");
     $book = dbconnection("spSelectBooks( \"". $bookISBN ."\",NULL, NULL, NULL, NULL)")[0];
 ?> 
