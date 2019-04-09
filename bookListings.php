@@ -28,7 +28,7 @@ $books = dbconnection("spSelectUserSellBook(NULL, NULL, \"". $isbn. "\", NULL,NU
 								<h2> Filters </h2>
                                     <form method="get" action="/s" class="aok-inline-block a-spacing-none">
                                         
-                                        <span class="a-dropdown-container"><label for="s-result-sort-select" class="a-native-dropdown">Sort by:</label><select name="s" autocomplete="off" id="s-result-sort-select" tabIndex="-1" class="a-native-dropdown">
+                                        <span class="a-dropdown-container"><label for="s-result-sort-select" class="a-native-dropdown"><b> Sort by:</b> </label><select name="s" autocomplete="off" id="s-result-sort-select" tabIndex="-1" class="a-native-dropdown">
                                             
                                                 <option value="price-asc-rank">Price: Low to High</option>
                                             
@@ -40,7 +40,7 @@ $books = dbconnection("spSelectUserSellBook(NULL, NULL, \"". $isbn. "\", NULL,NU
                                     </form>
                                 <form method="get" action="/s" class="aok-inline-block a-spacing-none">
                                         
-                                        <span class="a-dropdown-container"><label for="s-result-sort-select" class="a-native-dropdown">Condtion: </label><select name="s" autocomplete="off" id="s-result-sort-select" tabIndex="-1" class="a-native-dropdown">
+                                        <span class="a-dropdown-container"><label for="s-result-sort-select" class="a-native-dropdown"><b>Condtion: </b> </label><select name="s" autocomplete="off" id="s-result-sort-select" tabIndex="-1" class="a-native-dropdown">
                                       
 									<option value="checkbox"> Mint</option>
 									<option value="checkbox"> Good</option>
