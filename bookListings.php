@@ -1,26 +1,26 @@
 <?php 
 require_once("resources/functions/dbconnection.function.php");
+$isbn = "12345";
+$title ="Test";
+$author = "Thanos";
+$email ="vta@kent.edu";
+$bookCondition="Fair";
+$price ="32";
+$postDate ="2019-11-11";
+$books = dbconnection("spSelectUserSellBook( \"". $isbn. "\", \"". $title. "\", \"". $author. "\", NULL,NULL, NULL)");
 try { 
-$sql = "SELECT * FROM books left join UserSellBook on isbn "; 
+$sql = "SELECT * FROM books"; 
 if ($res = mysqli_query($link, $sql)) { 
     if (mysqli_num_rows($res) > 0) { 
         echo "<table>"; 
         echo "<tr>"; 
         echo "<th>Title</th>"; 
         echo "<th>ISBN</th>"; 
-        echo "<th>Email</th>";
-	echo "<th>Book Conditon </th>"; 
-        echo "<th>Price </th>"; 
-        echo "<th>Post Date</th>"; 
         echo "</tr>"; 
         while ($row = mysqli_fetch_array($res)) { 
             echo "<tr>"; 
             echo "<td>".$row['title']."</td>"; 
             echo "<td>".$row['isbn']."</td>"; 
-            echo "<td>".$row['email']."</td>"; 
-            echo "<td>".$row['bookCondition']."</td>"; 
-            echo "<td>".$row['price']."</td>"; 
-            echo "<td>".$row['postDate']."</td>"; 
             echo "</tr>"; 
         } 
         echo "</table>"; 
