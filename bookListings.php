@@ -17,7 +17,7 @@
 					<div class="col-md-auto mt-9">
 						<h1> Title </h1>
 							<p> <b> ISBN <?php 
-									foreach ($bookList as $book) {
+									foreach ($booksList as $book) {
 										echo $book['bookISBN'];
 									 }
 										?></b> <br>  </br> </p>
