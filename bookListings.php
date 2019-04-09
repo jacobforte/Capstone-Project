@@ -2,7 +2,7 @@
     require_once("resources/functions/dbconnection.function.php");
     $bookISBN ="12345";
     $booksList = dbconnection("spSelectUserSellBook(NULL, NULL,\"". $bookISBN ."\" ,NULL, NULL, NULL)");
-    $book = dbconnection("spSelectBooks( \"". $isbn ."\",NULL, NULL, NULL, NULL)");
+    $book = dbconnection("spSelectBooks( \"". $bookISBN ."\",NULL, NULL, NULL, NULL)")[0];
 ?> 
 <!doctype html>
 <html lang="en">
@@ -16,7 +16,7 @@
 			<div class="col">
 				<div class="container">
 					<div class="col-md-auto mt-9">
-						<h1> Title <?php echo $book["isbn"];?> </h1>
+						<h1> Title <?php echo $book["title"];?> </h1>
                         <p> 
                             <strong>
                             ISBN 
