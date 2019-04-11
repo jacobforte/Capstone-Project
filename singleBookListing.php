@@ -53,7 +53,7 @@
                             <?php
                                 foreach($photos as $photo) {
                                     echo "<li>
-                                        <img src='resources/images/{$photo['photoName']'>
+                                        <img src='resources/images/{$photo['photoName']}' alt='Picture'>
                                     </li>";
                                 }
                             ?>
