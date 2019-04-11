@@ -13,6 +13,10 @@ CREATE PROCEDURE spNewUserClassComment
     IN campus varchar(255)
 )
 BEGIN
+    IF reviewDate IS NULL THEN
+        SET reviewDate = NOW();
+	END IF;
+    
     INSERT INTO tblUserClassComment 
     (
         email,
