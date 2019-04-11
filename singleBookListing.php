@@ -21,6 +21,7 @@
         <?php include("resources/includes/head.inc.php"); ?>
         <link type="text/css" rel="stylesheet" href="resources/css/lightslider.css">
         <script src="resources/js/lightslider.js"></script>
+        <script src="resources/js/copyEmail.js"></script>
     </head> 
     <body>
         <?php include("resources/includes/header.inc.php"); ?>
@@ -42,7 +43,7 @@
                         ?></p>
                     <h2 class="mt-2">Listing Description</h2>
                     <p><?php echo $bookData["longDescription"];?></p><br>
-                    <button class="btn bg-orange mt-4 mb-4" type="button">Contact Seller</button>
+                    <button id="copyButton" class="btn bg-orange mb-4" type="button" onclick="copyEmail('<?php echo $bookData['email']; ?>')">Contact Seller</button>
                 </div>
             </div>
             <div class="row">
