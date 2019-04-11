@@ -31,18 +31,18 @@
                 <div class="col">
                     <h1 class="mt-2"><?php echo $bookData["title"];?></h1>
                     <h2 class="mt-2">Seller</h2>
-                    <p><?php echo $sellerInfo["name"];?></p>
+                    <h4><?php echo $sellerInfo["name"];?></h4>
                     <h2 class="mt-2">ISBN</h2>
-                    <p><?php echo $bookData["bookISBN"];?></p>
+                    <h4><?php echo $bookData["bookISBN"];?></h4>
                     <h2 class="mt-2">Condition</h2>
-                    <p><?php echo $bookData["bookCondition"];?></p>
+                    <h4><?php echo $bookData["bookCondition"];?></h4>
                     <h2 class="mt-2">Price</h2>
-                    <p>$<?php
+                    <h4>$<?php
                             if (empty($bookData["price"])) {echo "0.00";}
                             else {echo $bookData["price"];}
-                        ?></p>
+                        ?></h4>
                     <h2 class="mt-2">Listing Description</h2>
-                    <p><?php echo $bookData["longDescription"];?></p><br>
+                    <h4><?php echo $bookData["longDescription"];?></h4><br>
                     <button id="copyButton" class="btn bg-orange mb-4" type="button" onclick="copyEmail('<?php echo $bookData['email']; ?>')">Contact Seller</button>
                 </div>
             </div>
@@ -60,7 +60,7 @@
                             ?>
                         </ul>
                     <?php }else {?>
-                        <p>There are no pictures for this book</p>
+                        <h4>There are no pictures for this book</h4>
                     <?php }?>
                 </div>
             </div>
