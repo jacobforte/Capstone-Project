@@ -5,7 +5,7 @@
         <?php include("resources/includes/head.inc.php"); ?>
         <title>Your Listings | BookIt - KSU</title>
     </head>
-    <body>
+    <body class="h-100">
         <?php include("resources/includes/header.inc.php"); ?>
         <?php include_once("resources/includes/check.php"); ?>
         <main class="h-100">
