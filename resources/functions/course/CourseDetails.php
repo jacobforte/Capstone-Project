@@ -261,9 +261,12 @@ class CourseDetails
             </div>';
         }
         echo '</div>';
-        if (!$this->userPostedReview($_SESSION['user']['name'])) {
-            $this->outputReviewForm($_SESSION['user']['email']);
+        if (isset($_SESSION['user'])){
+            if (!$this->userPostedReview($_SESSION['user']['name'])) {
+                $this->outputReviewForm($_SESSION['user']['email']);
+            }
         }
+
     }
 
     public function outputReviewForm($user) {
