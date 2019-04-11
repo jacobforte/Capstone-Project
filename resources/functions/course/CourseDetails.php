@@ -14,6 +14,8 @@ class CourseDetails
     private $seatsOpen;
     private $sections = array();
     private $reviews = array();
+    private $totalReviews = 0;
+    private $overallReviewScore = 0.0;
 
     /**
      * @return array
@@ -84,6 +86,8 @@ class CourseDetails
         if (sizeof($reviews) > 0) {
             foreach ($reviews as $review) {
                 $this->reviews[] = new Review($review["name"], $review["rating"], $review["semester"], $review["instructor"], $review["campus"], $review["shortDescription"]);
+                $this->overallReviewScore += $review["rating"];
+                $this->totalReviews++;
             }
         }
 
@@ -199,23 +203,28 @@ class CourseDetails
             <div class="row">
             <div class="col-12">
                 <h4 class="font-weight-bold mb-1">Reviews</h4>
-            </div>
+            </div>';
+
+          if ($this->totalReviews > 0) {
+              echo '<div class="col-12">';
+              for ($i = 0; $i < $this->overallReviewScore/$this->totalReviews; $i++) {
+                echo '<i class="fas fa-star text-orange"></i>';
+              }
+              while ($i != 5) {
+                echo '<i class="far fa-star text-orange"></i>';
+                $i++;
+              }
+              echo '<p>' . $this->overallReviewScore/$this->totalReviews . '/5 stars</p>';
+          }
+
+          echo '</div>
             <div class="col-12">
-                <i class="fas fa-star text-orange"></i>
-                <i class="fas fa-star text-orange"></i>
-                <i class="fas fa-star text-orange"></i>
-                <i class="fas fa-star text-orange"></i>
-                <i class="far fa-star text-orange"></i>
-                <p>4 out of 5 stars</p>
-            </div>
-        </div>
-        <div class="row mb-2">
-            <div class="col-12">
-                <h6>Sorting by newest (2 of 2 reviews)</h6>
+                <h6>Sorting by newest (' . $this->totalReviews . ' of ' . $this->totalReviews . ' reviews)</h6>
             </div>
         </div>
         <div class="row mb-4">
             <div class="col-12">';
+
                     if(isset($_SESSION['user'])) {
                         if ($this->userPostedReview($_SESSION['user']['name'])) {
                             echo '<button type="button" class="btn btn-warning" disabled>
@@ -228,9 +237,9 @@ class CourseDetails
                         }
                     }
                     else {
-                        echo '<button type="button" class="btn btn-warning" disabled>
+                        echo '<a href="login.php" class="btn btn-warning">
                             Login to Review
-                        </button>';
+                        </a>';
                     }
            echo ' </div>
         </div>';
