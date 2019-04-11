@@ -2,9 +2,10 @@
     require_once("resources/functions/dbconnection.function.php");
 
     $bookID = "";
-    if (!empty($_GET["id"])) {
-        $bookID = $_GET["id"];
+    if (empty($_GET["id"])) {
+        die("Error: invalid book posting.");
     }
+    $bookID = $_GET["id"];
 
     $bookData = dbconnection("spSelectUserSellBook({$bookID}, NULL, NULL, NULL, NULL, NULL)");
     if (count($bookData) != 1) {
