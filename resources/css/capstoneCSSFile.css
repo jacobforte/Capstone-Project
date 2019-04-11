@@ -118,3 +118,7 @@ a.head-link:active {color: #EAAB00; }
 .w-480p {max-width: 480px !important;}
 .w-160p {width: 160px !important;}
 /* Index.php */
+
+#sidenav {
+    min-height: calc(100vh - 202px);
+}
