@@ -12,6 +12,7 @@
     }
     $bookData = $bookData[0];
     $photos = dbconnection("spSelectUserSellBookPhoto({$bookID})");
+    $sellerInfo = dbconnection("spSelectEmail(". $bookData["email"] .")");
 ?>
 <!doctype html>
 <html lang="en">
@@ -29,7 +30,7 @@
                 <div class="col">
                     <h1 class="mt-2"><?php echo $bookData["title"];?></h1>
                     <h2 class="mt-2">Seller</h2>
-                    <p><?php echo $bookData["email"];?></p>
+                    <p><?php echo $sellerInfo["name"];?></p>
                     <h2 class="mt-2">ISBN</h2>
                     <p><?php echo $bookData["bookISBN"];?></p>
                     <h2 class="mt-2">Condition</h2>
