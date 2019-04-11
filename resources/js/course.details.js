@@ -20,7 +20,7 @@ function addReview(email, id) {
     if ($("#crn").val() === null || $("#reviewDescription").val() === "" || $("#ratingValue").val() === "0" ||
         $("#semester").val() === null || $("#year").val() === "" || $("#instructor").val() === "" || $("#campus").val() === null) {
         $('#checkForm').removeClass('d-none');
-        $('#checkMessage').append('Please enter all fields.');
+        $('#checkMessage').empty().append('Please enter all fields.');
     }
     else {
         $.ajax({
