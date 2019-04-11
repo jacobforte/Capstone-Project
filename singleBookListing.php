@@ -47,8 +47,8 @@
             </div>
             <div class="row">
                 <div class="col">
+                    <h1>Pictures</h1>
                     <?php if (count($photos) > 0) {?>
-                        <h1>Pictures</h1>
                         <ul id="lightSlider">
                             <?php
                                 foreach($photos as $photo) {
