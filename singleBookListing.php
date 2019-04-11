@@ -36,7 +36,7 @@
                     <p><?php echo $bookData["bookCondition"];?></p>
                     <h2 class="mt-2">Price</h2>
                     <p>$<?php
-                            if (empty($bookData["price"]) {echo "0.00";}
+                            if (empty($bookData["price"])) {echo "0.00";}
                             else {echo $bookData["price"];}
                         ?></p>
                     <h2 class="mt-2">Listing Description</h2>
