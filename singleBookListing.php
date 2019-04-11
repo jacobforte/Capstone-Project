@@ -12,7 +12,7 @@
     }
     $bookData = $bookData[0];
     $photos = dbconnection("spSelectUserSellBookPhoto({$bookID})");
-    $sellerInfo = dbconnection("spSelectEmail(". $bookData["email"] .")");
+    $sellerInfo = dbconnection("spSelectEmail(\"". $bookData["email"] ."\")");
 ?>
 <!doctype html>
 <html lang="en">
