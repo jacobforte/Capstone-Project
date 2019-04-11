@@ -1,16 +1,16 @@
 <?php include('resources/functions/account/account.listings.list.function.php'); ?>
 <!doctype html>
-<html lang="en" class="h-100">
+<html lang="en">
     <head>
         <?php include("resources/includes/head.inc.php"); ?>
         <title>Your Listings | BookIt - KSU</title>
     </head>
-    <body class="h-100">
+    <body>
         <?php include("resources/includes/header.inc.php"); ?>
         <?php include_once("resources/includes/check.php"); ?>
-        <main class="h-100">
-            <div class="container-fluid h-100">
-                <div class="row h-100">
+        <main>
+            <div class="container-fluid">
+                <div class="row">
                     <div class="col-lg-2 col-12 py-2 py-lg-3 pb-lg-4 bg-light">
                         <nav class="nav nav-pills flex-column flex-sm-row flex-lg-column">
                             <a class="h5 mb-1 text-blue font-weight-bold flex-fill text-lg-right text-center nav-link" href="profileAccount.php">Account</a>
