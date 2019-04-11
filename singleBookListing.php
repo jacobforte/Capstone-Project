@@ -47,7 +47,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <?php if (count($photos > 1)) {?>
+                    <?php if (count($photos) > 0) {?>
                         <h1>Pictures</h1>
                         <ul id="lightSlider">
                             <?php
