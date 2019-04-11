@@ -207,21 +207,24 @@ class CourseDetails
 
           if ($this->totalReviews > 0) {
               echo '<div class="col-12">';
-              for ($i = 0; $i < $this->overallReviewScore/$this->totalReviews; $i++) {
-                echo '<i class="fas fa-star text-orange"></i>';
+              for ($i = 0; $i < $this->overallReviewScore / $this->totalReviews; $i++) {
+                  echo '<i class="fas fa-star text-orange"></i>';
               }
               while ($i != 5) {
-                echo '<i class="far fa-star text-orange"></i>';
-                $i++;
+                  echo '<i class="far fa-star text-orange"></i>';
+                  $i++;
               }
-              echo '<p>' . $this->overallReviewScore/$this->totalReviews . '/5 stars</p>';
-          }
+              echo '<p>' . $this->overallReviewScore / $this->totalReviews . '/5 stars</p>';
 
-          echo '</div>
+              echo '</div>
             <div class="col-12">
                 <h6>Sorting by newest (' . $this->totalReviews . ' of ' . $this->totalReviews . ' reviews)</h6>
-            </div>
-        </div>
+            </div>';
+          }
+          else {
+              echo'<div class="col-12"><p class="my-3">No reviews found.</p></div>';
+          }
+        echo '</div>
         <div class="row mb-4">
             <div class="col-12">';
 
