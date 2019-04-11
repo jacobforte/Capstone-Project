@@ -6,9 +6,8 @@
         $bookID = $_GET["id"];
     }
 
-    $bookData = array();
     $bookData = dbconnection("spSelectUserSellBook({$bookID}, NULL, NULL, NULL, NULL, NULL)");
-    if (count($bookData != 1)) {
+    if (count($bookData) != 1) {
         die("Error: invalid book posting.");
     }
     $bookData = $bookData[0];
