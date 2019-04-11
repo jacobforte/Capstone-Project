@@ -6,7 +6,11 @@
         $bookID = $_GET["id"];
     }
 
-    $bookData = dbconnection("spSelectUserSellBook({$bookID}, NULL, NULL, NULL, NULL, NULL)")[0];
+    $bookData = dbconnection("spSelectUserSellBook({$bookID}, NULL, NULL, NULL, NULL, NULL)");
+    if (count($bookData != 1)) {
+        die("Error: invalid book posting.");
+    }
+    $bookData = $bookData[0];
     $photos = dbconnection("spSelectUserSellBookPhoto({$bookID}");
 ?>
 <!doctype html>
