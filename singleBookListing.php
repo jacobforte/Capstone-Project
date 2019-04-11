@@ -2,7 +2,7 @@
     require_once("resources/functions/dbconnection.function.php");
 
     $bookID = "";
-    if (empty($_GET["id"])) {
+    if (empty($_GET["id"]) || !is_int($_GET["id"])) {
         die("Error: invalid book posting.");
     }
     $bookID = $_GET["id"];
