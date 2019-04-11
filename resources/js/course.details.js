@@ -32,6 +32,7 @@ function addReview(email, id) {
                 review: $("#reviewDescription").val(),
                 rating: $("#ratingValue").val(),
                 instructor: $("#instructor").val(),
+                semester: $("#semester").val() + " " + $("#year").val(),
                 campus: $("#campus").val()
             },
             success: function (data) {
