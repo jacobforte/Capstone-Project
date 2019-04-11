@@ -9,4 +9,5 @@ function copyEmail(email) {
     document.execCommand("copy");
 
     tempField.parentElement.removeChild(tempField);
+    $.notify("Seller Email Copied");
 }
