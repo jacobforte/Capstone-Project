@@ -293,6 +293,11 @@ class CourseDetails
                     </div>
                     <div class="modal-body">
                         <div class="row">
+                            <div class="col-12 d-none" id="checkForm">
+                                <div class="alert alert-warning" id="checkMessage" role="alert">
+                                  
+                                </div>
+                            </div>
                             <form action ="resources/functions/course/course.details.addreview.function.php" method="post">
                                 <div class="col-12">
                                     <div class="row">
@@ -306,16 +311,22 @@ class CourseDetails
                                             <div class="form-group">
                                                 <label for="campus">Campus</label>
                                                 <select name="campus" id="campus" class="custom-select">
-                                                    <option value="KC">Kent</option>
-                                                    <option value="ST">Stark</option>
-                                                    <option value="ON">Online</option>
+                                                    <option value="Kent">Kent</option>
+                                                    <option value="Stark">Stark</option>
+                                                    <option value="Ashtabula">Ashtabula</option>
+                                                    <option value="East Liverpool">East Liverpool</option>
+                                                    <option value="Salem">Salem</option>
+                                                    <option value="Geauga">Geauga</option>
+                                                    <option value="Trumbull">Trumbull</option>
+                                                    <option value="Tuscarawas">Tuscarawas</option>
+                                                    <option value="Online">Online</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <div class="row">
-                                                    <div class="col-6">
+                                                    <div class="col-12 col-sm-6">
                                                         <div class="row">
                                                             <div class="col-6">
                                                                 <label for="semester">Semester</label>
@@ -331,10 +342,15 @@ class CourseDetails
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-6">
+                                                    <div class="col-12 col-sm-6">
                                                         <div class="form-group">
                                                             <label for="crn">CRN</label>
-                                                            <input type="text" id="crn" name="crn" class="form-control">
+                                                            <select id="crn" name="crn" class="custom-select">';
+                                                                foreach ($this->getSections() as $section) {
+                                                                    echo '<option value="' . $section->getCrn() . '">' . $section->getCrn() . '</option>';
+
+                                                                }
+                                                            echo '</select>
                                                         </div>
                                                     </div>
                                                 </div>
