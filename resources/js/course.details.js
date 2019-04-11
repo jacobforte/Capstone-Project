@@ -16,7 +16,7 @@ function subscribeByCrn(str, email) {
     });
 }
 
-function addReview(email) {
+function addReview(email, id) {
     $.ajax({
         url:"resources/functions/course/course.details.addreview.function.php",
         type: "POST",
@@ -30,12 +30,51 @@ function addReview(email) {
             campus: $("#campus").val()
         },
         success:function(data) {
-            alert(data);
+            $('#exampleModal').modal('hide');
+            $('#reviewPart').empty().load('resources/functions/course/course.details.fetchreviews.function.php?id=' + id);
         },
         error:function(data){
             alert(data);
         }
     });
+}
+
+function highlightStar($this) {
+    $('#rating').children('i').each(function () {
+        $("#"+this.id).removeClass("fas");
+    });
+    switch($this.id) {
+        case "fiveStar":
+            $("#fiveStar").addClass("fas");
+            $("#fourStar").addClass("fas");
+            $("#threeStar").addClass("fas");
+            $("#twoStar").addClass("fas");
+            $("#oneStar").addClass("fas");
+            $("#ratingValue").val("5");
+            break;
+        case "fourStar":
+            $("#fourStar").addClass("fas");
+            $("#threeStar").addClass("fas");
+            $("#twoStar").addClass("fas");
+            $("#oneStar").addClass("fas");
+            $("#ratingValue").val("4");
+            break;
+        case "threeStar":
+            $("#threeStar").addClass("fas");
+            $("#twoStar").addClass("fas");
+            $("#oneStar").addClass("fas");
+            $("#ratingValue").val("3");
+            break;
+        case "twoStar":
+            $("#twoStar").addClass("fas");
+            $("#oneStar").addClass("fas");
+            $("#ratingValue").val("2");
+            break;
+        case "oneStar":
+            $("#oneStar").addClass("fas");
+            $("#ratingValue").val("1");
+            break;
+    }
 }
 
 

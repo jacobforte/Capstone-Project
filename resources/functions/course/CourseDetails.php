@@ -1,8 +1,8 @@
 <?php
 
-require("resources/functions/dbconnection.function.php");
-require("resources/functions/course/Course.php");
-require("resources/functions/course/Review.php");
+require( $_SERVER["DOCUMENT_ROOT"] . "/" . "resources/functions/dbconnection.function.php");
+require( $_SERVER["DOCUMENT_ROOT"] . "/" . "resources/functions/course/Course.php");
+require( $_SERVER["DOCUMENT_ROOT"] . "/" . "resources/functions/course/Review.php");
 
 
 class CourseDetails
@@ -194,6 +194,78 @@ class CourseDetails
 
     }
 
+    public function outputReviewSection() {
+          echo'<div id="reviewPart"> 
+            <div class="row">
+            <div class="col-12">
+                <h4 class="font-weight-bold mb-1">Reviews</h4>
+            </div>
+            <div class="col-12">
+                <i class="fas fa-star text-orange"></i>
+                <i class="fas fa-star text-orange"></i>
+                <i class="fas fa-star text-orange"></i>
+                <i class="fas fa-star text-orange"></i>
+                <i class="far fa-star text-orange"></i>
+                <p>4 out of 5 stars</p>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-12">
+                <h6>Sorting by newest (2 of 2 reviews)</h6>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-12">';
+                    if(isset($_SESSION['user'])) {
+                        if ($this->userPostedReview($_SESSION['user']['name'])) {
+                            echo '<button type="button" class="btn btn-warning" disabled>
+                                Review Submitted
+                            </button>';
+                        } else {
+                            echo '<button type="button" id="postReviewButton" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">
+                                Post Review
+                            </button>';
+                        }
+                    }
+                    else {
+                        echo '<button type="button" class="btn btn-warning" disabled>
+                            Login to Review
+                        </button>';
+                    }
+           echo ' </div>
+        </div>';
+        foreach ($this->getReviews() as $review) {
+            echo '<div class="review mb-3">
+                <div class="row mb-1">
+                    <div class="col-12">
+                        <h5 class="font-weight-bold">' . $review->getName() . '</h5>
+                        <h6 class="d-sm-inline mr-sm-2"><i class="fas fa-chalkboard-teacher text-orange" aria-label="Professor"></i> '. $review->getInstructor() .'</h6>
+                        <h6 class="d-sm-inline mr-sm-2"><i class="fas fa-calendar-day text-orange" aria-label="Semester"></i> ' . $review->getSemester() . '</h6>
+                        <h6 class="d-sm-inline"><i class="fas fa-school text-orange" aria-label="Campus"></i> '. $review->getCampus(). '</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <p class="mb-2">' . $review->getDescription() . '</p>
+                    </div>
+                    <div class="col-12">';
+                            for ($i = 0; $i < $review->getRating(); $i++) {
+                                echo '<i class="fas fa-star text-orange"></i>';
+                            }
+                            while ($i != 5) {
+                                echo '<i class="far fa-star text-orange"></i>';
+                                $i++;
+                            }
+                    echo '</div>
+                </div>
+            </div>';
+        }
+        echo '</div>';
+        if (!$this->userPostedReview($_SESSION['user']['name'])) {
+            $this->outputReviewForm($_SESSION['user']['email']);
+        }
+    }
+
     public function outputReviewForm($user) {
         echo '<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -278,7 +350,7 @@ class CourseDetails
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" onclick="addReview(\'' . $user . '\')" class="btn btn-warning">Post Review</button>
+                        <button type="button" onclick="addReview(\'' . $user . '\', \'' . $this->id . '\')" class="btn btn-warning">Post Review</button>
                     </div>
                     </form>
                 </div>

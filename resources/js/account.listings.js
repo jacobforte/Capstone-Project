@@ -1,6 +1,6 @@
 function removeById(str, email) {
     $.ajax({
-        url:"resources/functions/account/account.listings.remove.function.php?id=" + str,
+        url:"resources/functions/account/account.listings.remove.function.php",
         type: "POST",
         data:{
             id: str,
