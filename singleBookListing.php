@@ -47,13 +47,20 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <h1>Pictures</h1>
-                    <ul id="lightSlider">
-                        <li>
-                            <h3>First Slide</h3>
-                            <p>Lorem ipsum Cupidatat quis pariatur anim.</p>
-                        </li>
-                    </ul>
+                    <?php if (cout($photos > 1)) {?>
+                        <h1>Pictures</h1>
+                        <ul id="lightSlider">
+                            <?php
+                                foreach($photos as $photo) {
+                                    echo "<li>
+                                        <img src='resources/images/{$photo['photoName']'>
+                                    </li>";
+                                }
+                            ?>
+                        </ul>
+                    <?php }else {?>
+                        <p>There are no pictures for this book</p>
+                    <?php }?>
                 </div>
             </div>
         </main>
