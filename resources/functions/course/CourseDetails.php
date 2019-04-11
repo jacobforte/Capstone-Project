@@ -207,14 +207,14 @@ class CourseDetails
 
           if ($this->totalReviews > 0) {
               echo '<div class="col-12">';
-              for ($i = 0; $i < $this->overallReviewScore / $this->totalReviews; $i++) {
+              for ($i = 0; $i < round($this->overallReviewScore / $this->totalReviews); $i++) {
                   echo '<i class="fas fa-star text-orange"></i>';
               }
               while ($i != 5) {
                   echo '<i class="far fa-star text-orange"></i>';
                   $i++;
               }
-              echo '<p>' . $this->overallReviewScore / $this->totalReviews . '/5 stars</p>';
+              echo '<p>' . round($this->overallReviewScore / $this->totalReviews) . '/5 stars</p>';
 
               echo '</div>
             <div class="col-12">
