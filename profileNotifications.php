@@ -3,10 +3,10 @@
     <head>
         <?php include("resources/includes/head.inc.php"); ?>
     </head>
-    <body>
+    <body class="h-100">
         <?php include("resources/includes/header.inc.php"); ?>
 
-        <main>
+        <main class="h-100">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-2 col-12 py-2 py-lg-3 pb-lg-4 bg-light">
