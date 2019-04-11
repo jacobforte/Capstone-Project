@@ -22,7 +22,7 @@
                         <a class='text-primary' href='courseDetails.php?id={$this->courseID}'>{$this->title}</a><br>
                         {$this->courseID}
                     </div>
-                    <div class='col-sm-auto text-right'>
+                    <div class='col-sm-auto text-sm-right'>
                         Credit Hours: {$this->credits}<br>
                         Updated {$this->lastUpdated} ago.
                     </div>
