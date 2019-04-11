@@ -2,7 +2,7 @@
     require_once("resources/functions/dbconnection.function.php");
 
     $bookID = "";
-    if (isset($_GET["id"])) {
+    if (!empty($_GET["id"])) {
         $bookID = $_GET["id"];
     }
 
