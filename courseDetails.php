@@ -17,6 +17,22 @@
                 $courseDetails = new CourseDetails($_GET["id"], $_POST['term']);
             else
                 $courseDetails = new CourseDetails($_GET["id"], "2019-06-10:2019-08-17");
+
+            if ($courseDetails->getTitle() == "" && $courseDetails->getCreditHours() == "") {
+                echo '<div class="row text-center">
+                    <div class="col-12 my-4">
+                        <i class="fas fa-trophy fa-10x text-orange"></i>
+                    </div>
+                    <div class="col-12">
+                        <h3>Congratulations, you broke it!</h3>
+                    </div>
+                    <div class="col-12">
+                        <p>We weren\'t able to find the class you\'re looking for.</p>
+                        <a href="index.php" class="btn btn-warning">Return to Homepage</a>
+                    </div>
+                </div>';
+                return;
+            }
         ?>
 
         <div class="row">

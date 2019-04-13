@@ -1,8 +1,8 @@
 <?php
 
-require( $_SERVER["DOCUMENT_ROOT"] . "/" . "resources/functions/dbconnection.function.php");
-require( $_SERVER["DOCUMENT_ROOT"] . "/" . "resources/functions/course/Course.php");
-require( $_SERVER["DOCUMENT_ROOT"] . "/" . "resources/functions/course/Review.php");
+require( $_SERVER["DOCUMENT_ROOT"] . "/Web-Programming-II/capstone/" . "resources/functions/dbconnection.function.php");
+require( $_SERVER["DOCUMENT_ROOT"] . "/Web-Programming-II/capstone/" . "resources/functions/course/Course.php");
+require( $_SERVER["DOCUMENT_ROOT"] . "/Web-Programming-II/capstone/" . "resources/functions/course/Review.php");
 
 
 class CourseDetails
@@ -64,9 +64,12 @@ class CourseDetails
         if (sizeof($sections) == 0) {
             $sections = dbconnection("spSelectClasses(null, \"" . $id . "\", null, null, null, null, null, null, null, null, null)");
 
-            $this->title = $sections[0]["title"];
-            $this->creditHours = $sections[0]["credits"];
-            $this->seatsOpen = 0;
+            if (isset($sections[0])) {
+                $this->title = $sections[0]["title"];
+                $this->creditHours = $sections[0]["credits"];
+                $this->seatsOpen = 0;
+            }
+
         }
         else {
             foreach ($sections as $section) {
