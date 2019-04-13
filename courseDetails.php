@@ -123,7 +123,7 @@
                     }
                 }
                 else {
-                    echo '<button type="button" class="btn btn-warning" onclick="alert(\'Please login\')">Subscribe</button>';
+                    echo '<a href="login.php" class="btn btn-warning">Login to Subscribe</a>';
                 }
                 $prev = $section;
 
