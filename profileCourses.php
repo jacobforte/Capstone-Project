@@ -31,7 +31,7 @@
 							
 							foreach($result as $row){
 								
-								echo '<a href="courseDetails.php?id=CS-' . $row['crn'] . '"><h3><strong>' . $row['title'] . '</strong></h3></a>';		
+								echo '<a href="courseDetails.php?id=CS-' . $row['courseID'] . '"><h3><strong>' . $row['title'] . '</strong></h3></a>';		
 								
 							echo '<div class="container-fluid row">';
 							echo '<div class="col-2" style="padding-left: 0;">';
