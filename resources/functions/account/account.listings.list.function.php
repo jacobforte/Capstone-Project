@@ -21,11 +21,10 @@ function outputUserListings($user) {
     }
 
     foreach($listings as $listing) {
-        $listingImages = dbconnection("spSelectUserSellBookPhoto(" . $listing['id'] . ")");
         echo '<div class="mb-3" id="' . $listing["id"] . '">
             <div class="row">
                 <div class="col-12">
-                    <h5 class="font-weight-bold"><a href="#">' . $listing['title'] . '</a></h5>
+                    <h5 class="font-weight-bold"><a href="singleBookListing?id=' . $listing['id'] .'">' . $listing['title'] . '</a></h5>
                 </div>
             </div>
             <div class="row">
@@ -55,13 +54,6 @@ function outputUserListings($user) {
                 </div>
             </div>
             <form action="" method="post">
-                <div class="row mb-3">';
-                        foreach($listingImages as $image) {
-                            echo '<div class="col-6 col-md-4 col-lg-3">';
-                            echo '  <img src="resources/images/' . $image["photoName"] . '" class="img-thumbnail" />';
-                            echo '</div>';
-                        }
-                echo '</div>
                 <div class="row">
                     <div class="col-12">
                         <button type="button" class="btn btn-warning" onclick="removeById(' . $listing["id"] . ', \'' . $_SESSION['user']['email'] .  '\')">Remove</button>
