@@ -104,18 +104,14 @@
             <?php } ?>
             <div class="col-12 col-md-6 col-lg-4 mb-3 section">
                 <div class="card">
+                    <div class="card-header bg-blue"><h5 class="my-1 text-white">Section <?php echo explode('-', $section->getCourse())[2] . ' (' . $section->getCrn() . ')'; ?></h5></div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><span class="font-weight-bold">Meets on</span> <div class="w-100 d-block d-sm-none"></div><span class="float-sm-right"><?php echo $section->getMeetDays() . ' ' . $section->getStartTime() . ' - ' . $section->getEndTime(); ?></span></li>
+                        <li class="list-group-item"><span class="font-weight-bold">Meets in</span> <div class="w-100 d-block d-sm-none"></div><span class="float-sm-right"><?php echo $section->getLocation(); ?></span></li>
+                        <li class="list-group-item"><span class="font-weight-bold">Taught by</span> <div class="w-100 d-block d-sm-none"></div><span class="float-sm-right"><?php echo str_replace("(P)", "", $section->getInstructor()); ?></span></li>
+                        <li class="list-group-item"><span class="font-weight-bold">Students enrolled</span> <div class="w-100 d-block d-sm-none"></div><span class="float-sm-right"><?php echo $section->getEnrolled() . "/" . (integer)($section->getRemainOpen() + $section->getEnrolled()); ?></span></li>
+                    </ul>
                     <div class="card-body">
-                        <h5 class="card-title">Section <?php echo explode('-', $section->getCourse())[2] . ' (' . $section->getCrn() . ')'; ?></h5>
-                        <div class="card-text">
-                            <div class="row">
-                                <div class="col-12">
-                                    <p>Meets on <?php echo $section->getMeetDays() . ' ' . $section->getStartTime() . ' - ' . $section->getEndTime(); ?></p>
-                                    <p>Meets in <?php echo $section->getLocation(); ?></p>
-                                    <p>Taught by <?php echo str_replace("(P)", "", $section->getInstructor()); ?></p>
-                                    <p><?php echo $section->getRemainOpen(); ?> seat remaining</p>
-                                    <p><?php echo $section->getEnrolled(); ?> enrolled</p>
-                                </div>
-                            </div>
 
             <?php
                 if (isset($_SESSION['user']['email'])) {
@@ -131,7 +127,7 @@
                 }
                 $prev = $section;
 
-                echo '</div></div></div></div>';
+                echo '</div></div></div>';
             }
 
             if (sizeof($courseDetails->getSections()) > 0) {
