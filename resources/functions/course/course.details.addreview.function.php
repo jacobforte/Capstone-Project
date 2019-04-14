@@ -15,8 +15,7 @@ else {
 
 
 /** \file */
-/**
-/// This function is used to add a review for a specific course.
+/** This function is used to add a review for a specific course.
  * @param email The email of the user posting the review
  * @param crn The CRN number of class being reviewed
  * @param review The written review description
