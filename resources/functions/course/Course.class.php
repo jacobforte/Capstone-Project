@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * A model class for a course
+ */
 class Course
 {
     private $crn;
