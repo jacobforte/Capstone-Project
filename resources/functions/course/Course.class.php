@@ -18,21 +18,35 @@ class Course
     private $meetDays;
 
     /**
-     * Course constructor.
+     * Course constructor
      * @param $crn
+     *  The CRN number of the class
      * @param $course
+     *  The course ID of the class
      * @param $campus
+     *  The campus the class is taught at
      * @param $credits
+     *  The amount of credit hours of the class
      * @param $title
+     *  The title of the class
      * @param $enrolled
+     *  Amount of students currently enrolled in the class
      * @param $remainOpen
+     *  Remaining amount of students that can enroll in the class
      * @param $instructor
+     *  The instructor that teaches the class
      * @param $startDate
+     *  The start date of the class formatted YYYY-MM-DD
      * @param $endDate
+     *  The end date of the class formatted YYYY-MM-DD
      * @param $location
+     *  The location the class meets on campus
      * @param $startTime
+     *  The start time of the class
      * @param $endTime
+     *  The end time of the class
      * @param $meetDays
+     *  The days the class meets
      */
     public function __construct($crn, $course, $campus, $credits, $title, $enrolled, $remainOpen, $instructor, $startDate, $endDate, $location, $startTime, $endTime, $meetDays)
     {
@@ -52,225 +66,141 @@ class Course
         $this->meetDays = $meetDays;
     }
 
-    /**
-     * @return mixed
-     */
     public function getCrn()
     {
         return $this->crn;
     }
 
-    /**
-     * @param mixed $crn
-     */
     public function setCrn($crn)
     {
         $this->crn = $crn;
     }
 
-    /**
-     * @return mixed
-     */
     public function getCourse()
     {
         return $this->course;
     }
 
-    /**
-     * @param mixed $course
-     */
     public function setCourse($course)
     {
         $this->course = $course;
     }
 
-    /**
-     * @return mixed
-     */
     public function getCampus()
     {
         return $this->campus;
     }
 
-    /**
-     * @param mixed $campus
-     */
     public function setCampus($campus)
     {
         $this->campus = $campus;
     }
 
-    /**
-     * @return mixed
-     */
     public function getCredits()
     {
         return $this->credits;
     }
 
-    /**
-     * @param mixed $credits
-     */
     public function setCredits($credits)
     {
         $this->credits = $credits;
     }
 
-    /**
-     * @return mixed
-     */
     public function getTitle()
     {
         return $this->title;
     }
 
-    /**
-     * @param mixed $title
-     */
     public function setTitle($title)
     {
         $this->title = $title;
     }
 
-    /**
-     * @return mixed
-     */
     public function getEnrolled()
     {
         return $this->enrolled;
     }
 
-    /**
-     * @param mixed $enrolled
-     */
     public function setEnrolled($enrolled)
     {
         $this->enrolled = $enrolled;
     }
 
-    /**
-     * @return mixed
-     */
     public function getRemainOpen()
     {
         return $this->remainOpen;
     }
 
-    /**
-     * @param mixed $remainOpen
-     */
     public function setRemainOpen($remainOpen)
     {
         $this->remainOpen = $remainOpen;
     }
 
-    /**
-     * @return mixed
-     */
     public function getInstructor()
     {
         return $this->instructor;
     }
 
-    /**
-     * @param mixed $instructor
-     */
     public function setInstructor($instructor)
     {
         $this->instructor = $instructor;
     }
 
-    /**
-     * @return mixed
-     */
     public function getStartDate()
     {
         return $this->startDate;
     }
 
-    /**
-     * @param mixed $startDate
-     */
     public function setStartDate($startDate)
     {
         $this->startDate = $startDate;
     }
 
-    /**
-     * @return mixed
-     */
     public function getEndDate()
     {
         return $this->endDate;
     }
 
-    /**
-     * @param mixed $endDate
-     */
     public function setEndDate($endDate)
     {
         $this->endDate = $endDate;
     }
 
-    /**
-     * @return mixed
-     */
     public function getLocation()
     {
         return $this->location;
     }
 
-    /**
-     * @param mixed $location
-     */
     public function setLocation($location)
     {
         $this->location = $location;
     }
 
-    /**
-     * @return mixed
-     */
     public function getStartTime()
     {
         return $this->startTime;
     }
 
-    /**
-     * @param mixed $startTime
-     */
     public function setStartTime($startTime)
     {
         $this->startTime = $startTime;
     }
 
-    /**
-     * @return mixed
-     */
     public function getEndTime()
     {
         return $this->endTime;
     }
 
-    /**
-     * @param mixed $endTime
-     */
     public function setEndTime($endTime)
     {
         $this->endTime = $endTime;
     }
 
-    /**
-     * @return mixed
-     */
     public function getMeetDays()
     {
         return $this->meetDays;
     }
 
-    /**
-     * @param mixed $meetDays
-     */
     public function setMeetDays($meetDays)
     {
         $this->meetDays = $meetDays;

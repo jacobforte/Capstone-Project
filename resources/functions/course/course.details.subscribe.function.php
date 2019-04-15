@@ -8,9 +8,14 @@ if(isset($_POST['id'])) {
 
 /** \file */
 /**
- * This function is used to subscribe a user to an individual course.
- * @param crn of section to subscribe user to
- * @param email of user to subscribe a section to
+ * @brief Subscribe a user to a specific class.
+ *
+ * Subscribes a user to a single class.
+ *
+ * @param $crn
+ *  The CRN number of the section to subscribe a user to
+ * @param $email
+ *  The email address of a user to subscribe a section to
  */
 
 function subscribeUserTo($crn, $email) {

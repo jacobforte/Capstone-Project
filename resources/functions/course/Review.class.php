@@ -26,7 +26,7 @@ class Review
     }
 
     /**
-     * Review constructor.
+     * Review.class constructor
      * @param $name
      * @param $rating
      * @param $semester

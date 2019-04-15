@@ -17,49 +17,21 @@ class CourseDetails
     private $overallReviewScore = 0.0;
 
     /**
-     * @return array
-     */
-    public function getSections()
-    {
-        return $this->sections;
-    }
-
-    /**
-     * @param array $sections
-     */
-    public function setSections($sections)
-    {
-        $this->sections = $sections;
-    }
-
-    /**
-     * @return array
-     */
-    public function getReviews()
-    {
-        return $this->reviews;
-    }
-
-    /**
-     * @param array $reviews
-     */
-    public function setReviews($reviews)
-    {
-        $this->reviews = $reviews;
-    }
-
-    /**
-     * CourseDetails constructor.
+     * CourseDetails constructor
      * @param $id
+     *  The course ID to display course data for
      * @param $term
+     *  The term to display course data for formatted as startDate:endDate (YYYY-MM-DD:YYYY-MM-DD)
      */
     public function __construct($id, $term)
     {
         $this->id = $id;
         $this->term = $term;
 
+        // Retrieve all sections for provided course ID/term
         $sections = dbconnection("spSelectClasses(null, \"" . $id . "\", null, null, null, null, \"" . explode(":", $term)[0] . "\", \"" . explode(":", $term)[1] . "\", null, null, null)");
 
+        // If no sections are found for the provided course ID/term, search for all sections to retrieve basic data such as course title and credit hours
         if (sizeof($sections) == 0) {
             $sections = dbconnection("spSelectClasses(null, \"" . $id . "\", null, null, null, null, null, null, null, null, null)");
 
@@ -71,6 +43,7 @@ class CourseDetails
 
         }
         else {
+            // If sections are found, loop through each, creating an array of Course objects
             foreach ($sections as $section) {
                 $this->sections[] = new Course($section["crn"], $section["courseID"], $section["campus"], $section["credits"], $section["title"], $section["totalSeats"], $section["seatsRemaining"],
                     $section["instructor"], $section["startDate"], $section["endDate"], $section["location"], $section["startTime"], $section["endTime"], $section["meetDays"]);
@@ -80,12 +53,15 @@ class CourseDetails
             $this->title = $this->sections[0]->getTitle();
             $this->creditHours = $this->sections[0]->getCredits();
 
+            // Sort the sections so they can be displayed by campus
             ksort($this->sections);
         }
 
+        // Retrieve all reviews for provided course ID
         $reviews = dbconnection("spSelectUserClassComment(\"" . $id . "\")");
 
         if (sizeof($reviews) > 0) {
+            // If reviews are found, loop through each, creating an array of Review objects
             foreach ($reviews as $review) {
                 $this->reviews[] = new Review($review["name"], $review["rating"], $review["semester"], $review["instructor"], $review["campus"], $review["shortDescription"]);
                 $this->overallReviewScore += $review["rating"];
@@ -95,86 +71,87 @@ class CourseDetails
 
     }
 
-    /**
-     * @return mixed
-     */
+    public function getSections()
+    {
+        return $this->sections;
+    }
+
+    public function setSections($sections)
+    {
+        $this->sections = $sections;
+    }
+
+    public function getReviews()
+    {
+        return $this->reviews;
+    }
+
+    public function setReviews($reviews)
+    {
+        $this->reviews = $reviews;
+    }
+
     public function getId()
     {
         return $this->id;
     }
 
-    /**
-     * @param mixed $id
-     */
     public function setId($id)
     {
         $this->id = $id;
     }
 
-    /**
-     * @return mixed
-     */
     public function getTerm()
     {
         return $this->term;
     }
 
-    /**
-     * @param mixed $term
-     */
     public function setTerm($term)
     {
         $this->term = $term;
     }
 
-    /**
-     * @return mixed
-     */
     public function getTitle()
     {
         return $this->title;
     }
 
-    /**
-     * @param mixed $title
-     */
     public function setTitle($title)
     {
         $this->title = $title;
     }
 
-    /**
-     * @return mixed
-     */
     public function getCreditHours()
     {
         return $this->creditHours;
     }
 
-    /**
-     * @param mixed $creditHours
-     */
     public function setCreditHours($creditHours)
     {
         $this->creditHours = $creditHours;
     }
 
-    /**
-     * @return mixed
-     */
     public function getSeatsOpen()
     {
         return $this->seatsOpen;
     }
 
-    /**
-     * @param mixed $seatsOpen
-     */
     public function setSeatsOpen($seatsOpen)
     {
         $this->seatsOpen = $seatsOpen;
     }
 
+    /**
+     * @brief Check if a user has already posted a review in a class.
+     *
+     * Loops through the array of reviews for a class, searching for a user.
+     *
+     * @param $user
+     *  The display name of a user
+     *
+     * @return bool
+     *  Returns true if a user has posted a review, false if not
+     */
     public function userPostedReview($user) {
         foreach ($this->reviews as $review) {
             if ($review->getName() == $user) {
@@ -185,6 +162,17 @@ class CourseDetails
         return false;
     }
 
+    /**
+     * @brief Fetch all subscribed classes for a user.
+     *
+     * Loops through the subscribed courses for a user and adds their CRNs to an array.
+     *
+     * @param $user
+     *  The display name of a user
+     *
+     * @return array
+     *  Returns array of CRNs for subscribed classes of a user
+     */
     public function getUserSubscribedCourses($user) {
         $sc[] = array();
 
@@ -200,6 +188,10 @@ class CourseDetails
 
     }
 
+    /**
+     * @brief Display full review section for a class.
+     *
+     */
     public function outputReviewSection() {
           echo'<div id="reviewPart"> 
             <div class="row">
@@ -207,6 +199,7 @@ class CourseDetails
                 <h4 class="font-weight-bold mb-1">Reviews</h4>
             </div>';
 
+          // Check if there are any reviews for this class
           if ($this->totalReviews > 0) {
               echo '<div class="col-12">';
               for ($i = 0; $i < round($this->overallReviewScore / $this->totalReviews); $i++) {
@@ -229,9 +222,11 @@ class CourseDetails
         echo '</div>
         <div class="row mb-4">
             <div class="col-12">';
-
+                    // Check if a user is logged in
                     if(isset($_SESSION['user'])) {
+                        // Check if a user has already posted a review for this class
                         if ($this->userPostedReview($_SESSION['user']['name'])) {
+                            // Disable button if a user has already posted a review for this class
                             echo '<button type="button" class="btn btn-warning" disabled>
                                 Review Submitted
                             </button>';
@@ -248,6 +243,7 @@ class CourseDetails
                     }
            echo ' </div>
         </div>';
+        // Loop through each review in class and display review details
         foreach ($this->getReviews() as $review) {
             echo '<div class="review mb-3">
                 <div class="row mb-1">
@@ -275,6 +271,7 @@ class CourseDetails
             </div>';
         }
         echo '</div>';
+        // Display new review form if a user is logged in
         if (isset($_SESSION['user'])){
             if (!$this->userPostedReview($_SESSION['user']['name'])) {
                 $this->outputReviewForm($_SESSION['user']['email']);
@@ -283,12 +280,19 @@ class CourseDetails
 
     }
 
+    /**
+     * @brief Output the add new review form.
+     *
+     * @param $user
+     *  The display name of a user
+     *
+     */
     public function outputReviewForm($user) {
         echo '<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">New Review</h5>
+                        <h5 class="modal-title">New Review.class</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -350,7 +354,6 @@ class CourseDetails
                                                             <select id="crn" name="crn" class="custom-select">';
                                                                 foreach ($this->getSections() as $section) {
                                                                     echo '<option value="' . $section->getCrn() . '">' . $section->getCrn() . '</option>';
-
                                                                 }
                                                             echo '</select>
                                                         </div>
@@ -383,7 +386,7 @@ class CourseDetails
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" onclick="addReview(\'' . $user . '\', \'' . $this->id . '\')" class="btn btn-warning">Post Review</button>
+                        <button type="button" onclick="addReview(\'' . $user . '\', \'' . $this->id . '\')" class="btn btn-warning">Post Review.class</button>
                     </div>
                     </form>
                 </div>

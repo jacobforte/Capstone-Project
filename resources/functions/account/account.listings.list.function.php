@@ -4,13 +4,17 @@ require("resources/functions/dbconnection.function.php");
 
 /** \file */
 /**
- * This function is used to retrieve and display all active book listings for a specific user.
- * @param ID (email) of user to retrieve listings for
+ * @brief List active book listings for a user
+ *
+ * Fetches and outputs all active book listings for a user
+ *
+ * @param $email
+ *  The email address of user to retrieve listings for
  *
  */
 
-function outputUserListings($user) {
-    $listings = dbconnection("spSelectUserSellBook(null, \"" . $user . "\", null, null, null, null)");
+function outputUserListings($email) {
+    $listings = dbconnection("spSelectUserSellBook(null, \"" . $email . "\", null, null, null, null)");
 
     if (count($listings) == 0) {
         echo '<div class="col-12">
@@ -56,7 +60,7 @@ function outputUserListings($user) {
             <form action="" method="post">
                 <div class="row">
                     <div class="col-12">
-                        <button type="button" class="btn btn-warning" onclick="removeById(' . $listing["id"] . ', \'' . $_SESSION['user']['email'] .  '\')">Remove</button>
+                        <button type="button" class="btn btn-warning" onclick="removeById(' . $listing["id"] . ', \'' . $email .  '\')">Remove</button>
                     </div>
                 </div>
             </form>
