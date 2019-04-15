@@ -153,8 +153,7 @@ class CourseDetails
      * @param $user
      *  The display name of a user
      *
-     * @return bool
-     *  Returns true if a user has posted a review, false if not
+     * @return true if a user has posted a review, false if not
      */
     public function userPostedReview($user) {
         foreach ($this->reviews as $review) {
