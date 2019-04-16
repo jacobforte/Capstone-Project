@@ -73,10 +73,10 @@
                                             <h5>><b><?php echo $book["title"];?>Title </h5>
                                         </div>
                                         <div class="col-12 col-sm-3">
-                                            <h5><?php echo $booksList["price"];?>Price</h5>
+                                            <h5><?php echo $book["price"];?>Price</h5>
                                         </div>
                                         <div class="col-12 col-sm-3">
-                                            <h5><?php echo $booksList["condition"];?> Condition</h5>
+                                            <h5><?php echo $book["condition"];?> Condition</h5>
                                         </div>
                                     </div>
                                 </div>
