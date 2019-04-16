@@ -128,10 +128,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-     </div>
-    </div>
     </main>
 
     <?php include("resources/includes/footer.inc.php"); ?>
