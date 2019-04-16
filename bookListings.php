@@ -8,7 +8,7 @@
     }
     $booksList = dbconnection("spSelectUserSellBook(NULL, NULL,\"". $isbn ."\" ,NULL, NULL, NULL)");
     $booksList = $booksList[0];
-    $book = dbconnection("spSelectSingleBook( \"". $isbn ."\")")[0];
+    $book = dbconnection("spSelectSingleBook( \"". $isbn ."\")");
 ?> 
 
 <!doctype html>
