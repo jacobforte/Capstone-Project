@@ -44,116 +44,6 @@
 </div>
 </div>
 </div>
-                        <form action='<?php echo $_SERVER['UserSellBook']; ?>' method='post' name='form_filter' >
-
-<select name="value">
-    <option value="all">All</option>
-    <option value="price-asc-rank">Price: Low to High</option>     
-    <option value="price-desc-rank">Price: High to Low</option>
-    <option value="date-desc-rank">Newest Arrivals</option>
-
-                                    
-</select>
-
-<br />
-
-<input type='submit' value = 'Filter'>
-
-</form>
-<?php
-
-//connect to database, checking, etc
-
-if($_POST['value'] == 'price') {
-// query to get all price 
-$query = "SELECT * FROM price WHERE name='price'";
-}
-elseif($_POST['value'] == 'date') {
-// query to get all date 
-$query = "SELECT * FROM date WHERE name='date'";
-} else {
-// query to get all 
-$query = "SELECT * FROM price";
-}
-$sql = mysql_query($query);
-
-while ($row = mysql_fetch_array($query)){
-    $price = $row["price"];
-    $date = $row["date"];        
-?>
-                    <form action='<?php echo $_POST['UserSellBook']; ?>' method='post' name='form_filter' >
-
-                    <select name="checkbox">
-                        <option value="all">All</option>
-                        <option value="checkbox"> Mint</option>
-                        <option value="checkbox"> Good</option>
-                        <option value="checkbox"> Fair</option>
-                        <option value="checkbox"> Poor</option>
-                                                        
-                    </select>
-                    
-                    <br />
-                    
-                    <input type='submit' value = 'Filter'>
-
-                </form>
-                <?php
-
-                //connect to database, checking, etc
-
-                if($_POST['value'] == 'Mint') {
-                    // query to get all Mint 
-                    $query = "SELECT * FROM bookCondition WHERE name='Mint'";
-                }
-                elseif($_POST['value'] == 'Good') {
-                    // query to get all Good 
-                    $query = "SELECT * FROM bookCondition WHERE name='Good'";
-                }elseif($_POST['value'] == 'Fair') {
-                    // query to get all Fair 
-                    $query = "SELECT * FROM bookCondition WHERE name='Fair'";
-                }elseif($_POST['value'] == 'Poor') {
-                    // query to get all Poor 
-                    $query = "SELECT * FROM bookCondition WHERE name='Poor'";
-                } else {
-                    // query to get all condition
-                    $query = "SELECT * FROM ";
-                }
-                $sql = mysql_query($query);
-
-                while ($row = mysql_fetch_array($query)){
-                        $bookCondition = $row["bookCondition"];
-                ?>
-                <form action='<?php echo $_POST['UserSellBook']; ?>' method='post' name='form_filter' >
-
-                <select name="value">
-                    <option value="all">All</option>
-                    <option value="price-asc-rank">Price: Low to High</option>     
-                    <option value="price-desc-rank">Price: High to Low</option>
-
-                                                    
-                </select>
-
-                <br />
-
-                <input type='submit' value = 'Filter'>
-
-                </form>
-                <?php
-
-                //connect to database, checking, etc
-
-                if($_POST['value'] == 'price'){
-                // query to get price 
-                $query = "SELECT * FROM price WHERE name='price'";
-                } else {
-                // query to get all price
-                $query = "SELECT * FROM price";
-                }
-                $sql = mysql_query($query);
-
-                while ($row = mysql_fetch_array($query)){
-                    $price = $row["price"];       
-                ?>
                             <div class="row mb-3">
                                 <div class="col-sm-12 col-md-9 col-lg-6 col-xl-5">
                                     <div class="row">
@@ -162,6 +52,7 @@ while ($row = mysql_fetch_array($query)){
                                                 else {echo $booksList["price"];}
                                             ?> </p>
                                             <p><?php echo $booksList["bookCondition"];?></p>
+                                            <p><a href="singleBookListing.php">This is a link</a></p>
                                         </div>
                                     </div>
                                 </div>
