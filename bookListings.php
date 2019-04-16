@@ -7,9 +7,8 @@
         $isbn = $_GET["isbn"];
     }
 
-    $booksList = dbconnection("spSelectUserSellBook(NULL, NULL,\"". $isbn ."\" ,NULL, NULL, NULL)");
     $book = dbconnection("spSelectSingleBook( \"". $isbn ."\")")[0];
-
+    $booksList = dbconnection("spSelectUserSellBook(NULL, NULL,\"". $isbn ."\" ,NULL, NULL, NULL)");
 ?> 
 
 <!doctype html>
@@ -73,10 +72,10 @@
                                             <h5>><b><?php echo $book["title"];?>Title </h5>
                                         </div>
                                         <div class="col-12 col-sm-3">
-                                            <h5><?php echo $book $_GET["price"];?>Price</h5>
+                                            <h5><?php echo $booksList["price"];?>Price</h5>
                                         </div>
                                         <div class="col-12 col-sm-3">
-                                            <h5><?php echo $book $_GET["condition"];?> Condition</h5>
+                                            <h5><?php echo $booksList["condition"];?> Condition</h5>
                                         </div>
                                     </div>
                                 </div>
