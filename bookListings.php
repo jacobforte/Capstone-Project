@@ -49,7 +49,6 @@
                             <div class="row mb-3">
                                 <div class="col-sm-12 col-md-9 col-lg-6 col-xl-5">
                                     <div class="row">
-                                    <?php outputUserSellBook($_SESSION['price']['bookCondition']); ?>
                                     </div>
                                     </div>
                             </div>
