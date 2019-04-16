@@ -44,7 +44,7 @@
                                 <?php echo $book["edition"];?>
                             </strong> 
                         </p>
-                        <button type="button" class="btn btn-warning" a href="postABook.php"> Sell Your Textbook </button>
+                        <button onclick="window.location.href='postABook.php'">Continue</button>\
                         </div>
                             <div class="row mb-3">
                                 <div class="col-sm-12 col-md-9 col-lg-6 col-xl-5">
