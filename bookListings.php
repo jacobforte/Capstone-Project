@@ -58,6 +58,7 @@
                                 echo '</div>'; 
                             }
                             ?>
+                            <?php outputUserSellBook(); ?>
                         </div>
                     </div>
 
