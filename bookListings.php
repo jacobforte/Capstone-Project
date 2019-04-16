@@ -137,7 +137,7 @@ while ($row = mysql_fetch_array($query)){
 
                 //connect to database, checking, etc
 
-                if($_POST['value'] == 'price') {
+                if($_POST['value'] == 'price'){
                 // query to get price 
                 $query = "SELECT * FROM price WHERE name='price'";
                 } else {
@@ -165,14 +165,9 @@ while ($row = mysql_fetch_array($query)){
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-     </div>
-    </div>
+                </main>
 
-    </main>
+<?php include('resources/includes/footer.inc.php'); ?>
 
-    <?php include("resources/includes/footer.inc.php"); ?>
 </body>
-
-</html> 
+</html>
