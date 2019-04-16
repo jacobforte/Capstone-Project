@@ -39,6 +39,11 @@
                             </strong> 
                         </p>
                         <button type="button" class="btn btn-warning" a href="postABook.php"> Sell Your Textbook </button>
+                        </div>
+
+</div>
+</div>
+</div>
                         <form action='<?php echo $_SERVER['UserSellBook']; ?>' method='post' name='form_filter' >
 
 <select name="value">
@@ -160,11 +165,6 @@ while ($row = mysql_fetch_array($query)){
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
                 </main>
 
 <?php include('resources/includes/footer.inc.php'); ?>
