@@ -27,13 +27,12 @@ class CourseDetails
      * @param $term
      *  The term to display course data for formatted as startDate:endDate (YYYY-MM-DD:YYYY-MM-DD)
      */
-    public function __construct($id, $term)
+    public function __construct($id)
     {
         $this->id = $id;
-        $this->term = $term;
 
         // Retrieve all sections for provided course ID/term
-        $sections = dbconnection("spSelectClasses(null, \"" . $id . "\", null, null, null, null, \"" . explode(":", $term)[0] . "\", \"" . explode(":", $term)[1] . "\", null, null, null)");
+        $sections = dbconnection("spSelectClasses(null, \"" . $id . "\", null, null, null, null, null, null, null, null)");
 
         // If no sections are found for the provided course ID/term, search for all sections to retrieve basic data such as course title and credit hours
         if (sizeof($sections) == 0) {

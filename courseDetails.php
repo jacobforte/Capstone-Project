@@ -13,10 +13,7 @@
 <main class="mb-4">
     <div class="container">
         <?php
-            if ((isset($_POST['termSubmit'])))
-                $courseDetails = new CourseDetails($_GET["id"], $_POST['term']);
-            else
-                $courseDetails = new CourseDetails($_GET["id"], "2019-06-10:2019-08-17");
+            $courseDetails = new CourseDetails($_GET["id"]);
 
             if ($courseDetails->getTitle() == "" && $courseDetails->getCreditHours() == "") {
                 echo '<div class="row text-center">
@@ -53,25 +50,6 @@
                         <h5><?php echo $courseDetails->getSeatsOpen(); ?> Seats Available</h5>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <div class="col-12">
-                <form action="" method="post" class="form-inline">
-                    <select class="custom-select mb-3 mb-sm-0 mr-sm-3" name="term">
-                        <option value="2019-01-14:2019-05-05"
-                            <?php if(isset($_POST['termSubmit'])) { if ($_POST["term"] == "2019-01-14:2019-05-05") { echo 'selected'; } } ?>
-                        >Spring 2019</option>
-                        <option value="2019-06-10:2019-08-17"
-                            <?php if(isset($_POST['termSubmit'])) { if ($_POST["term"] == "2019-06-10:2019-08-17") { echo 'selected'; } } ?>
-                        >Summer 2019</option>
-                        <option value="2019-08-22:2019-12-08"
-                            <?php if(isset($_POST['termSubmit'])) { if ($_POST["term"] == "2019-08-22:2019-12-08") { echo 'selected'; } } ?>
-                        >Fall 2019</option>
-                    </select>
-                    <button type="submit" name="termSubmit" class="btn btn-warning d-inline">Submit</button>
-                </form>
             </div>
         </div>
 
