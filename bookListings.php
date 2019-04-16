@@ -6,7 +6,7 @@
     if (isset($_GET["isbn"])) {
         $isbn = $_GET["isbn"];
     }
-    $booksList = dbconnection("spSelectUserSellBook(NULL, NULL,\"". $isbn ."\" ,NULL, NULL, NULL)")[0];
+    $booksList = dbconnection("spSelectUserSellBook(NULL, NULL,\"". $isbn ."\" ,NULL, NULL, NULL)");
     $book = dbconnection("spSelectSingleBook( \"". $isbn ."\")")[0];
 ?> 
 
@@ -19,7 +19,7 @@
 </head> 
     <body>
         <?php include("resources/includes/header.inc.php"); ?>
-       <main class= "container-mt-4">
+    <main class= "container-mt-4">
         <div class="row">
 			<div class="col">
 				<div class="container">
@@ -38,25 +38,25 @@
                                 <?php echo $book["isbn"];?>
                             </strong> 
                         </p>
+                        <p> 
+                            <strong>
+                            Edition 
+                                <?php echo $book["edition"];?>
+                            </strong> 
+                        </p>
                         <button type="button" class="btn btn-warning" a href="postABook.php"> Sell Your Textbook </button>
                         </div>
-
-</div>
-</div>
-</div>
                             <div class="row mb-3">
                                 <div class="col-sm-12 col-md-9 col-lg-6 col-xl-5">
                                     <div class="row">
-                                            <p> <?php
-                                                if (empty($booksList["price"])) {echo "0.00";}
-                                                else {echo $booksList["price"];}
-                                            ?> </p>
-                                            <p><?php echo $booksList["bookCondition"];?></p>
-                                            <p><a href="singleBookListing.php">This is a link</a></p>
-                                        </div>
+
                                     </div>
-                                </div>
-                </main>
+                                    </div>
+                            </div>
+                         </div>
+                    </div>
+        </div>
+    </main>
 
 <?php include('resources/includes/footer.inc.php'); ?>
 
