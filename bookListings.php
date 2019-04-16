@@ -44,7 +44,7 @@
 								<h2> Filters </h2>
                                     <form method="get" action="/s" class="aok-inline-block a-spacing-none">
                                         
-                                        <span class="a-dropdown-container"><label for="s-result-sort-select" class="a-native-dropdown"><b> Sort by:</b> </label><select name="<?php $booksList["price"];?>" autocomplete="off" id="s-result-sort-select" tabIndex="-1" class="a-native-dropdown">
+                                        <span class="a-dropdown-container"><label for="s-result-sort-select" class="a-native-dropdown"><b> Sort by:</b> </label><select name="<?php echo $booksList["price"];?>" autocomplete="off" id="s-result-sort-select" tabIndex="-1" class="a-native-dropdown">
                                             
                                                 <option value="price-asc-rank">Price: Low to High</option>
                                             
@@ -56,7 +56,7 @@
                             </form>
                             <form method="get" action="/s" class="aok-inline-block a-spacing-none">
 
-                                <span class="a-dropdown-container"><label for="s-result-sort-select" class="a-native-dropdown"><b>Condition: </b> </label><select name="<?php $booksList["bookCondition"];?>" autocomplete="off" id="s-result-sort-select" tabIndex="-1" class="a-native-dropdown">
+                                <span class="a-dropdown-container"><label for="s-result-sort-select" class="a-native-dropdown"><b>Condition: </b> </label><select name="<?php echo $booksList["bookCondition"];?>" autocomplete="off" id="s-result-sort-select" tabIndex="-1" class="a-native-dropdown">
 
                                         <option value="checkbox"> Mint</option>
                                         <option value="checkbox"> Good</option>
@@ -68,7 +68,7 @@
                                 <div class="col-sm-12 col-md-9 col-lg-6 col-xl-5">
                                     <div class="row">
                                             <p><?php echo $booksList["price"];?>Price</p>
-                                            <p><?php echo $booksList["bookcondition"];?> Condition</p>
+                                            <p><?php echo $booksList["bookCondition"];?> Condition</p>
                                         </div>
                                     </div>
                                 </div>
