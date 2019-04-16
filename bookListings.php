@@ -6,7 +6,7 @@
     if (isset($_GET["isbn"])) {
         $isbn = $_GET["isbn"];
     }
-    $booksList = dbconnection("spSelectUserSellBook(NULL, NULL,\"". $isbn ."\" ,NULL, NULL, NULL)");
+    $booksList = dbconnection("spSelectUserSellBook(NULL, NULL,\"". $isbn ."\" ,NULL, NULL, NULL)")[0];
     $book = dbconnection("spSelectSingleBook( \"". $isbn ."\")")[0];
 ?> 
 
