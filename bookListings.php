@@ -25,7 +25,14 @@
 			<div class="col">
 				<div class="container">
 					<div class="col-md-auto mt-9">
-						<h1> <?php echo $book["title"];?> </h1>
+                    <?php
+                                foreach($photos as $photo) {
+                                    echo "<li>
+                                        <img src='resources/images/{$photo['photoName']}' alt='Picture'>
+                                    </li>";
+                                }
+                            ?>
+                        <h1> <?php echo $book["title"];?> </h1>
                         <p> 
                             <strong>
                             Author 
