@@ -24,7 +24,7 @@
 			<div class="col">
 				<div class="container">
 					<div class="col-md-auto mt-9">
-
+                        
                         <h1> <?php echo $book["title"];?> </h1>
                         <p> 
                             <strong>
@@ -44,7 +44,7 @@
                                 <?php echo $book["edition"];?>
                             </strong> 
                         </p>
-                        <button class="btn btn-warning" onclick="window.location.href='/singleBookListing.php'">Single View</button>
+                        <button class="btn btn-warning" onclick="window.location.href='/postABook.php'">Post a Book</button>
                         </div>
                         </div>
                     </div>
