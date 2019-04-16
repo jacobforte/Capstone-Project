@@ -44,7 +44,7 @@
                                 <?php echo $book["edition"];?>
                             </strong> 
                         </p>
-                        <button class="btn btn-warning" onclick="window.location.href='/postABook.php'">Continue</button>
+                        <button class="btn btn-warning" onclick="window.location.href='/singleBookListing.php'">Single View</button>
                         </div>
                         </div>
                     </div>
