@@ -34,7 +34,7 @@
 
         <div class="row">
             <div class="col-12 col-lg-10 pt-4">
-                <h3 class="font-weight-bold"><?php echo $courseDetails->getTitle(); ?></h3>
+                <h3 class="font-weight-bold"><?php echo $courseDetails->getTitle(); ?> - Fall 2019</h3>
             </div>
         </div>
         <div class="row mb-3">
