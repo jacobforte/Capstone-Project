@@ -46,19 +46,6 @@
                         </p>
                         <button class="btn btn-warning" onclick="window.location.href='/postABook.php'">Post a Book</button>
                         </div>
-                            <?php function outputUserSellBook($row) {
-                                echo '<div class="content">';
-                                echo '<h4 class="header">';
-                                echo $row['price']; 
-                                echo '</h4>';
-                                echo '<p class="description">';
-                                echo $row['bookCondition'];
-                                echo '</p>';
-                                echo '</div>'; 
-                                echo '</div>'; 
-                            }
-                            ?>
-                            <?php outputUserSellBook(); ?>
                         </div>
                     </div>
 
