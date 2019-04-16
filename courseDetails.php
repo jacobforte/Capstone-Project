@@ -60,6 +60,9 @@
             <div class="col-12">
                 <form action="" method="post" class="form-inline">
                     <select class="custom-select mb-3 mb-sm-0 mr-sm-3" name="term">
+                        <option value="2019-01-14:2019-05-05"
+                            <?php if(isset($_POST['termSubmit'])) { if ($_POST["term"] == "2019-01-14:2019-05-05") { echo 'selected'; } } ?>
+                        >Spring 2019</option>
                         <option value="2019-06-10:2019-08-17"
                             <?php if(isset($_POST['termSubmit'])) { if ($_POST["term"] == "2019-06-10:2019-08-17") { echo 'selected'; } } ?>
                         >Summer 2019</option>

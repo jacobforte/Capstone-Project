@@ -1,8 +1,8 @@
 <?php
 
-require( $_SERVER["DOCUMENT_ROOT"] . "/Web-Programming-II/capstone/" . "resources/functions/dbconnection.function.php");
-require( $_SERVER["DOCUMENT_ROOT"] . "/Web-Programming-II/capstone/" . "resources/functions/course/Course.class.phpss.php");
-require( $_SERVER["DOCUMENT_ROOT"] . "/Web-Programming-II/capstone/" . "resources/functions/course/Review.class.class.php");
+require( $_SERVER["DOCUMENT_ROOT"] . "/" . "resources/functions/dbconnection.function.php");
+require( $_SERVER["DOCUMENT_ROOT"] . "/" . "resources/functions/course/Course.class.php");
+require( $_SERVER["DOCUMENT_ROOT"] . "/" . "resources/functions/course/Review.class.php");
 
 
 /**
