@@ -3,7 +3,7 @@
 require("../dbconnection.function.php");
 
 // @cond
-if(isset($_POST['email']) && isset($_POST['crn']) && isset($_POST['Review.class']) && isset($_POST['rating'])
+if(isset($_POST['email']) && isset($_POST['crn']) && isset($_POST['review']) && isset($_POST['rating'])
     && isset($_POST['instructor']) && isset($_POST['semester']) && isset($_POST['campus'])) {
     addReviewFor($_POST["email"], $_POST["crn"], $_POST["review"], $_POST["rating"], $_POST["instructor"], $_POST["semester"], $_POST["campus"]);
 }
