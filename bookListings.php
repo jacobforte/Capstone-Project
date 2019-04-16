@@ -8,7 +8,7 @@
     }
 
     $book = dbconnection("spSelectSingleBook( \"". $isbn ."\")")[0];
-    $booksList = dbconnection("spSelectUserSellBook(NULL, NULL,\"". $isbn ."\" ,NULL, NULL, NULL)");
+    $booksList = dbconnection("spSelectUserSellBook(\"". $isbn ."\")");
 ?> 
 
 <!doctype html>
@@ -75,7 +75,7 @@
                                             <h5><?php echo $booksList["price"];?>Price</h5>
                                         </div>
                                         <div class="col-12 col-sm-3">
-                                            <h5><?php echo $booksList["condition"];?> Condition</h5>
+                                            <h5><?php echo $booksList["bookCondition"];?> Condition</h5>
                                         </div>
                                     </div>
                                 </div>
