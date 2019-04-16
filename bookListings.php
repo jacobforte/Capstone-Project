@@ -39,6 +39,22 @@
                             </strong> 
                         </p>
                         <button type="button" class="btn btn-warning" a href="postABook.php"> Sell Your Textbook </button>
+                        <div class="row mb-3">
+                                <div class="col-sm-12 col-md-9 col-lg-6 col-xl-5">
+                                    <div class="row">
+                                            <p> <?php
+                                                if (empty($booksList["price"])) {echo "0.00";}
+                                                else {echo $booksList["price"];}
+                                            ?> </p>
+                                            <p><?php echo $booksList["bookCondition"];?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
                         <form action='<?php echo $_SERVER['UserSellBook']; ?>' method='post' name='form_filter' >
 
                             <select name="checkbox">
@@ -112,22 +128,6 @@
                         while ($row = mysql_fetch_array($query)){
                             $price = $row["price"];       
                         ?>
-                            <div class="row mb-3">
-                                <div class="col-sm-12 col-md-9 col-lg-6 col-xl-5">
-                                    <div class="row">
-                                            <p> <?php
-                                                if (empty($booksList["price"])) {echo "0.00";}
-                                                else {echo $booksList["price"];}
-                                            ?> </p>
-                                            <p><?php echo $booksList["bookCondition"];?></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
     </main>
 
     <?php include("resources/includes/footer.inc.php"); ?>
