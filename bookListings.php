@@ -38,7 +38,6 @@
                                 <?php echo $book["isbn"];?>
                             </strong> 
                         </p>
-                        <?php $booksList = new $BooksList($_GET["isbn"] ?>
                         <button type="button" class="btn btn-warning" action="postABook.php"> Sell Your Textbook </button>
    						 <div class="row 1">
 							<div class="col-sm-auto mt-3">
