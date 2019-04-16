@@ -105,7 +105,7 @@
 
 //connect to database, checking, etc
 
-if($_POST['value'] == 'Mint')) {
+if($_POST['value'] == 'Mint') {
     // query to get all Mint 
     $query = "SELECT * FROM bookCondition WHERE name='Mint'";
 }
@@ -118,7 +118,6 @@ elseif($_POST['value'] == 'Good') {
 }elseif($_POST['value'] == 'Poor') {
     // query to get all Poor 
     $query = "SELECT * FROM bookCondition WHERE name='Poor'";
-}
 } else {
     // query to get all condition
     $query = "SELECT * FROM ";
@@ -147,7 +146,7 @@ while ($row = mysql_fetch_array($query)){
 
 //connect to database, checking, etc
 
-if($_POST['value'] == 'price')) {
+if($_POST['value'] == 'price') {
 // query to get price 
 $query = "SELECT * FROM price WHERE name='price'";
 } else {
