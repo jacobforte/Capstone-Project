@@ -46,37 +46,18 @@
                         </p>
                         <button class="btn btn-warning" onclick="window.location.href='/postABook.php'">Post a Book</button>
                         </div>
-                        <form action='<?php echo $_POST['UserSellBook']; ?>' method='post' name='form_filter' >
-
-                <select name="value">
-                    <option value="all">All</option>
-                    <option value="price-asc-rank">Price: Low to High</option>     
-                    <option value="price-desc-rank">Price: High to Low</option>
-
-                                                    
-                </select>
-
-                <br />
-
-                <input type='submit' value = 'Filter'>
-
-                </form>
-                <?php
-
-                //connect to database, checking, etc
-
-                if($_POST['value'] == 'price'){
-                // query to get price 
-                $query = "SELECT * FROM price WHERE name='price'";
-                } else {
-                // query to get all price
-                $query = "SELECT * FROM price";
-                }
-                $sql = mysql_query($query);
-
-                while ($row = mysql_fetch_array($query)){
-                    $price = $row["price"];       
-                ?>
+                            <?php function outputUserSellBook($row) {
+                                echo '<div class="content">';
+                                echo '<h4 class="header">';
+                                echo $row['price']; 
+                                echo '</h4>';
+                                echo '<p class="description">';
+                                echo $row['bookCondition'];
+                                echo '</p>';
+                                echo '</div>'; 
+                                echo '</div>'; 
+                            }
+                            ?>
                         </div>
                     </div>
 
