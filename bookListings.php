@@ -7,7 +7,7 @@
         $isbn = $_GET["isbn"];
     }
     $booksList = dbconnection("spSelectUserSellBook(NULL, NULL,\"". $isbn ."\" ,NULL, NULL, NULL)");
-    $book = dbconnection("spSelectSingleBook( \"". $isbn ."\")")[0];
+    $book = dbconnection("spSelectSingleBook( \"". $isbn ."\")");
 ?> 
 
 <!doctype html>
@@ -35,7 +35,7 @@
                         <p> 
                             <strong>
                             ISBN 
-                                <?php echo $booksList["isbn"];?>
+                                <?php echo $book["isbn"];?>
                             </strong> 
                         </p>
                         <button type="button" class="btn btn-warning" action="postABook.php"> Sell Your Textbook </button>
@@ -67,13 +67,7 @@
                             <div class="row mb-3">
                                 <div class="col-sm-12 col-md-9 col-lg-6 col-xl-5">
                                     <div class="row">
-                                        <div class="col-12 col-sm-3">
-                                            <h5>><b><?php echo $book["title"];?>Title </h5>
-                                        </div>
-                                        <div class="col-12 col-sm-3">
                                             <h5><?php echo $booksList["price"];?>Price</h5>
-                                        </div>
-                                        <div class="col-12 col-sm-3">
                                             <h5><?php echo $booksList["bookcondition"];?> Condition</h5>
                                         </div>
                                     </div>
