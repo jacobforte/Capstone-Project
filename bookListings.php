@@ -67,7 +67,7 @@
                             <div class="row mb-3">
                                 <div class="col-sm-12 col-md-9 col-lg-6 col-xl-5">
                                     <div class="row">
-                                    <?php $booksList = new $BooksList($_GET["price"]?>
+                                    <?php $booksList = new $BooksList($_GET["price"]; ?>
                                             <p><?php echo $BooksList->getprice() ;?></p>
                                             <p><?php echo $BooksList->getbookCondition;?> Condition</p>
                                         </div>
