@@ -76,7 +76,7 @@ while ($row = mysql_fetch_array($query)){
     $price = $row["price"];
     $date = $row["date"];        
 ?>
-                    <form action='<?php echo $_GET['UserSellBook']; ?>' method='post' name='form_filter' >
+                    <form action='<?php echo $_POST['UserSellBook']; ?>' method='post' name='form_filter' >
 
                     <select name="checkbox">
                         <option value="all">All</option>
@@ -118,7 +118,7 @@ while ($row = mysql_fetch_array($query)){
                 while ($row = mysql_fetch_array($query)){
                         $bookCondition = $row["bookCondition"];
                 ?>
-                <form action='<?php echo $_GET['UserSellBook']; ?>' method='post' name='form_filter' >
+                <form action='<?php echo $_POST['UserSellBook']; ?>' method='post' name='form_filter' >
 
                 <select name="value">
                     <option value="all">All</option>
