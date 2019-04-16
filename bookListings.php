@@ -70,9 +70,6 @@
             <div class="col-sm-12 col-md-9 col-lg-6 col-xl-5">
                 <div class="row">
                     <div class="col-12 col-sm-3">
-                        <h5><?php echo $book->getTitle() ?>Title </h5>
-                    </div>
-                    <div class="col-12 col-sm-3">
                         <h5><?php echo $booksList->getPrice(); ?> Price</h5>
                     </div>
                     <div class="col-12 col-sm-3">
