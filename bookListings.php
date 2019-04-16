@@ -7,7 +7,7 @@
         $isbn = $_GET["isbn"];
     }
     $booksList = dbconnection("spSelectUserSellBook(NULL, NULL,\"". $isbn ."\" ,NULL, NULL, NULL)");
-    $book = dbconnection("spSelectSingleBook( \"". $isbn ."\")");
+    $book = dbconnection("spSelectSingleBook( \"". $isbn ."\")")[0];
 ?> 
 
 <!doctype html>
@@ -44,7 +44,7 @@
 								<h2> Filters </h2>
                                     <form method="get" action="/s" class="aok-inline-block a-spacing-none">
                                         
-                                        <span class="a-dropdown-container"><label for="s-result-sort-select" class="a-native-dropdown"><b> Sort by:</b> </label><select name="<?php echo $booksList["price"];?>" autocomplete="off" id="s-result-sort-select" tabIndex="-1" class="a-native-dropdown">
+                                        <span class="a-dropdown-container"><label for="s-result-sort-select" class="a-native-dropdown"><b> Sort by:</b> </label><select name="<?php $booksList["price"];?>" autocomplete="off" id="s-result-sort-select" tabIndex="-1" class="a-native-dropdown">
                                             
                                                 <option value="price-asc-rank">Price: Low to High</option>
                                             
@@ -56,7 +56,7 @@
                             </form>
                             <form method="get" action="/s" class="aok-inline-block a-spacing-none">
 
-                                <span class="a-dropdown-container"><label for="s-result-sort-select" class="a-native-dropdown"><b>Condition: </b> </label><select name="<?php echo $booksList["bookCondition"];?>" autocomplete="off" id="s-result-sort-select" tabIndex="-1" class="a-native-dropdown">
+                                <span class="a-dropdown-container"><label for="s-result-sort-select" class="a-native-dropdown"><b>Condition: </b> </label><select name="<?php $booksList["bookCondition"];?>" autocomplete="off" id="s-result-sort-select" tabIndex="-1" class="a-native-dropdown">
 
                                         <option value="checkbox"> Mint</option>
                                         <option value="checkbox"> Good</option>
@@ -67,8 +67,8 @@
                             <div class="row mb-3">
                                 <div class="col-sm-12 col-md-9 col-lg-6 col-xl-5">
                                     <div class="row">
-                                            <h5><?php echo $booksList["price"];?>Price</h5>
-                                            <h5><?php echo $booksList["bookcondition"];?> Condition</h5>
+                                            <h1><?php echo $booksList["isbn"];?>Price</h1>
+                                            <h1><?php echo $booksList["bookcondition"];?> Condition</h1>
                                         </div>
                                     </div>
                                 </div>
