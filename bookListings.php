@@ -85,7 +85,7 @@
         </div>
      </div>
     </div>
-    <form action='<?php echo $_SERVER['PHP_SELF']; ?>' method='post' name='form_filter' >
+<form action='<?php echo $_SERVER['UserSellBook']; ?>' method='post' name='form_filter' >
 
     <select name="checkbox">
         <option value="all">All</option>
@@ -120,13 +120,44 @@ elseif($_POST['value'] == 'Good') {
     $query = "SELECT * FROM bookCondition WHERE name='Poor'";
 }
 } else {
-    // query to get all 
+    // query to get all condition
     $query = "SELECT * FROM ";
 }
 $sql = mysql_query($query);
 
 while ($row = mysql_fetch_array($query)){
         $bookCondition = $row["bookCondition"];
+?>
+<form action='<?php echo $_SERVER['UserSellBook']; ?>' method='post' name='form_filter' >
+
+<select name="value">
+    <option value="all">All</option>
+    <option value="price-asc-rank">Price: Low to High</option>     
+    <option value="price-desc-rank">Price: High to Low</option>
+
+                                    
+</select>
+
+<br />
+
+<input type='submit' value = 'Filter'>
+
+</form>
+<?php
+
+//connect to database, checking, etc
+
+if($_POST['value'] == 'price')) {
+// query to get price 
+$query = "SELECT * FROM price WHERE name='price'";
+} else {
+// query to get all price
+$query = "SELECT * FROM price";
+}
+$sql = mysql_query($query);
+
+while ($row = mysql_fetch_array($query)){
+    $price = $row["price"];       
 ?>
     </main>
 
