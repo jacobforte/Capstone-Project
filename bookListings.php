@@ -6,7 +6,7 @@
     if (isset($_GET["isbn"])) {
         $isbn = $_GET["isbn"];
     }
-    $booksList = dbconnection("spSelectUserSellBook(NULL, NULL,\"". $isbn ."\" ,NULL, NULL, NULL)");
+    $booksList = dbconnection("spSelectUserSellBook(NULL, NULL,\"". $isbn ."\" ,NULL, NULL, NULL)")[0];
     $book = dbconnection("spSelectSingleBook( \"". $isbn ."\")")[0];
 ?> 
 
@@ -44,10 +44,23 @@
                                 <?php echo $book["edition"];?>
                             </strong> 
                         </p>
-                        <button class="btn btn-warning" onclick="window.location.href='/singleBookListing.php'">Single View</button>
+                        <button class="btn btn-warning" onclick="window.location.href='/postABook.php'">Post a Book</button>
                         </div>
+                            <?php function outputUserSellBook($row) {
+                                echo '<div class="content">';
+                                echo '<h4 class="header">';
+                                echo $row['price']; 
+                                echo '</h4>';
+                                echo '<p class="description">';
+                                echo $row['bookCondition'];
+                                echo '</p>';
+                                echo '</div>'; 
+                                echo '</div>'; 
+                            }
+                            ?>
                         </div>
                     </div>
+
         </div>
     </main>
 
