@@ -59,14 +59,13 @@
 
 //connect to database, checking, etc
 
-if($_POST['value'] == 'price')) {
+if($_POST['value'] == 'price') {
 // query to get all price 
 $query = "SELECT * FROM price WHERE name='price'";
 }
 elseif($_POST['value'] == 'date') {
 // query to get all date 
 $query = "SELECT * FROM date WHERE name='date'";
-}
 } else {
 // query to get all 
 $query = "SELECT * FROM price";
