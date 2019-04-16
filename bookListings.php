@@ -6,7 +6,7 @@
     if (isset($_GET["isbn"])) {
         $isbn = $_GET["isbn"];
     }
-    $booksList = dbconnection("spSelectUserSellBook(NULL, NULL,\"". $isbn ."\" ,NULL, NULL, NULL)")[0];
+    $booksList = dbconnection("spSelectUserSellBook(NULL, NULL,\"". $isbn ."\" ,NULL, NULL, NULL)");
     $book = dbconnection("spSelectSingleBook( \"". $isbn ."\")")[0];
 ?> 
 
@@ -19,7 +19,7 @@
 </head> 
     <body>
         <?php include("resources/includes/header.inc.php"); ?>
-       <main class= "container-mt-4">
+    <main class= "container-mt-4">
         <div class="row">
 			<div class="col">
 				<div class="container">
@@ -38,55 +38,26 @@
                                 <?php echo $book["isbn"];?>
                             </strong> 
                         </p>
+                        <p> 
+                            <strong>
+                            Edition 
+                                <?php echo $book["edition"];?>
+                            </strong> 
+                        </p>
                         <button type="button" class="btn btn-warning" a href="postABook.php"> Sell Your Textbook </button>
-   						 <div class="row 1">
-							<div class="col-sm-auto mt-3">
-								<h2> Filters </h2>
-                                    <form method="get" action="/s" class="aok-inline-block a-spacing-none">
-                                        
-                                        <span class="a-dropdown-container"><label for="s-result-sort-select" class="a-native-dropdown"><b> Sort by:</b> </label><select name="<?php echo $booksList["price"];?>" autocomplete="on" id="s-result-sort-select" tabIndex="-1" class="a-native-dropdown">
-                                            
-                                                <option value="price-asc-rank">Price: Low to High</option>
-                                            
-                                        <option value="price-desc-rank">Price: High to Low</option>
-
-                                        <option value="date-desc-rank">Newest Arrivals</option>
-
-                                    </select><span tabIndex="-1" aria-label="Sort by: " class="a-button a-button-dropdown a-button-small"><span class="a-button-inner"><span class="a-button-text a-declarative" data-action="a-dropdown-button" role="button" tabIndex="0" aria-hidden="true"><span class="a-dropdown-label"></span><span class="a-dropdown-prompt"></span></span><i class="a-icon a-icon-dropdown"></i></span></span></span>
-                            </form>
-                            <form method="get" action="/s" class="aok-inline-block a-spacing-none">
-
-                                <span class="a-dropdown-container"><label for="s-result-sort-select" class="a-native-dropdown"><b>Condition: </b> </label><select name="<?php echo $booksList["bookCondition"];?>" autocomplete="on" id="s-result-sort-select" tabIndex="-1" class="a-native-dropdown">
-
-                                        <option value="checkbox"> Mint</option>
-                                        <option value="checkbox"> Good</option>
-                                        <option value="checkbox"> Fair</option>
-                                        <option value="checkbox"> Poor</option>
-                                    </select><span tabIndex="-1" aria-label="Conditon: " class="a-button a-button-dropdown a-button-small"><span class="a-button-inner"><span class="a-button-text a-declarative" data-action="a-dropdown-button" role="button" tabIndex="0" aria-hidden="true"><span class="a-dropdown-label"></span><span class="a-dropdown-prompt"></span></span><i class="a-icon a-icon-dropdown"></i></span></span></span>
-                            </form>
+                        </div>
                             <div class="row mb-3">
                                 <div class="col-sm-12 col-md-9 col-lg-6 col-xl-5">
                                     <div class="row">
-                                            <p> <?php
-                                                if (empty($booksList["price"])) {echo "0.00";}
-                                                else {echo $booksList["price"];}
-                                            ?> </p>
-                                            <p><?php echo $booksList["bookCondition"];?> Condition</p>
-                                        </div>
                                     </div>
-                                </div>
+                                    </div>
                             </div>
-
-                        </div>
+                         </div>
                     </div>
-                </div>
-            </div>
         </div>
-     </div>
-    </div>
     </main>
 
-    <?php include("resources/includes/footer.inc.php"); ?>
-</body>
+<?php include('resources/includes/footer.inc.php'); ?>
 
+</body>
 </html>
