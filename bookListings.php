@@ -9,6 +9,7 @@
 
     $booksList = dbconnection("spSelectUserSellBook(NULL, NULL,\"". $isbn ."\" ,NULL, NULL, NULL)");
     $book = dbconnection("spSelectSingleBook( \"". $isbn ."\")")[0];
+    $photos = dbconnection("spSelectUserSellBookPhoto({$bookID})");
 ?> 
 
 <!doctype html>
@@ -26,11 +27,9 @@
 				<div class="container">
 					<div class="col-md-auto mt-9">
                     <?php
-                                foreach($photos as $photo) {
                                     echo "<li>
                                         <img src='resources/images/{$photo['photoName']}' alt='Picture'>
                                     </li>";
-                                }
                             ?>
                         <h1> <?php echo $book["title"];?> </h1>
                         <p> 
@@ -51,7 +50,7 @@
 								<h2> Filters </h2>
                                     <form method="get" action="/s" class="aok-inline-block a-spacing-none">
                                         
-                                        <span class="a-dropdown-container"><label for="s-result-sort-select" class="a-native-dropdown"><b> Sort by:</b> </label><select name="s" autocomplete="off" id="s-result-sort-select" tabIndex="-1" class="a-native-dropdown">
+                                        <span class="a-dropdown-container"><label for="s-result-sort-select" class="a-native-dropdown"><b> Sort by:</b> </label><select name="<?php echo $book["price"];?>" autocomplete="off" id="s-result-sort-select" tabIndex="-1" class="a-native-dropdown">
                                             
                                                 <option value="price-asc-rank">Price: Low to High</option>
                                             
@@ -63,7 +62,7 @@
                             </form>
                             <form method="get" action="/s" class="aok-inline-block a-spacing-none">
 
-                                <span class="a-dropdown-container"><label for="s-result-sort-select" class="a-native-dropdown"><b>Condition: </b> </label><select name="s" autocomplete="off" id="s-result-sort-select" tabIndex="-1" class="a-native-dropdown">
+                                <span class="a-dropdown-container"><label for="s-result-sort-select" class="a-native-dropdown"><b>Condition: </b> </label><select name="<?php echo $book["bookCondition"];?>" autocomplete="off" id="s-result-sort-select" tabIndex="-1" class="a-native-dropdown">
 
                                         <option value="checkbox"> Mint</option>
                                         <option value="checkbox"> Good</option>
