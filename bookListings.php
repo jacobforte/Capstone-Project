@@ -35,7 +35,7 @@
                         <p> 
                             <strong>
                             ISBN 
-                                <?php echo $book["isbn"];?>
+                                <?php echo $booksList["isbn"];?>
                             </strong> 
                         </p>
                         <button type="button" class="btn btn-warning" action="postABook.php"> Sell Your Textbook </button>
