@@ -1,16 +1,20 @@
 <?php
 
+require("resources/functions/dbconnection.function.php");
+
 /** \file */
 /**
- * This function is used to retrieve and display all active book listings for a specific user.
- * @param ID (email) of user to retrieve listings for
+ * @brief List active book listings for a user
+ *
+ * Fetches and outputs all active book listings for a user
+ *
+ * @param $email
+ *  The email address of user to retrieve listings for
  *
  */
 
-require("resources/functions/dbconnection.function.php");
-
-function outputUserListings($user) {
-    $listings = dbconnection("spSelectUserSellBook(null, \"" . $user . "\", null, null, null, null)");
+function outputUserListings($email) {
+    $listings = dbconnection("spSelectUserSellBook(null, \"" . $email . "\", null, null, null, null)");
 
     if (count($listings) == 0) {
         echo '<div class="col-12">
@@ -21,11 +25,10 @@ function outputUserListings($user) {
     }
 
     foreach($listings as $listing) {
-        $listingImages = dbconnection("spSelectUserSellBookPhoto(" . $listing['id'] . ")");
         echo '<div class="mb-3" id="' . $listing["id"] . '">
             <div class="row">
                 <div class="col-12">
-                    <h5 class="font-weight-bold"><a href="#">' . $listing['title'] . '</a></h5>
+                    <h5 class="font-weight-bold"><a href="singleBookListing.php?id=' . $listing['id'] .'">' . $listing['title'] . '</a></h5>
                 </div>
             </div>
             <div class="row">
@@ -55,16 +58,9 @@ function outputUserListings($user) {
                 </div>
             </div>
             <form action="" method="post">
-                <div class="row mb-3">';
-                        foreach($listingImages as $image) {
-                            echo '<div class="col-6 col-md-4 col-lg-3">';
-                            echo '  <img src="resources/images/' . $image["photoName"] . '" class="img-thumbnail" />';
-                            echo '</div>';
-                        }
-                echo '</div>
                 <div class="row">
                     <div class="col-12">
-                        <button type="button" class="btn btn-warning" onclick="removeById(' . $listing["id"] . ', \'' . $_SESSION['user']['email'] .  '\')">Remove</button>
+                        <button type="button" class="btn btn-warning" onclick="removeById(' . $listing["id"] . ', \'' . $email .  '\')">Remove</button>
                     </div>
                 </div>
             </form>

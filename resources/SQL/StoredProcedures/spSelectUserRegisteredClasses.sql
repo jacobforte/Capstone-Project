@@ -19,6 +19,7 @@ BEGIN
         tblClasses.endTime,
         tblClasses.totalSeats,
         tblClasses.seatsRemaining,
+        tblClasses.meetDays,
         tblClasses.description,
         tblClasses.lastUpdated
     FROM tblUserRegisteredClasses

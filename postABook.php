@@ -9,6 +9,9 @@
 			
 		include_once("resources/functions/dbconnection.function.php");
 		
+		
+		$message = "please enter a book";
+		
 			if(isset($_POST['title'])){
 			
 			$title = $_POST['title'];
@@ -17,13 +20,54 @@
 			$price = $_POST['price'];
 			$edition = $_POST['edition'];
 			$publisher = $_POST['publisher'];
+			$desc = $_POST['desc'];
+			$condition = $_POST['condition'];
+ 			$day = $_POST['date'];
+			$h = strlen($desc);
+
+
+			//runs a select to see if book is already in the database if it is then check won't be equal to null if
+			//if it is then that means book isn't in database 
+			$check = dbconnection("spSelectBooks('$isbn', '$title', '$author', '$edition', '$publisher')");
 			
+			if($check == NULL){
+			//if book isn't in database then adds it to it.
 			dbconnection("spNewBook('$isbn' ,'$title', '$author', '$edition', '$publisher', 'NULL')");
-			$_POST = array();
 			
 			}
+			//assigns the current users email to $email.
+			$email = $_SESSION['user']['email'];
+			
+			//checks the length of book description if above 255 character limit of short description then sets short to null and uses long instead.
+			if($h > 255){
+			dbconnection("spNewUserSellBook('$email', '$isbn', 'NULL', '$desc', '$condition', '$price', '$day')");
+			$message = "book was posted.";
+			}
+			else{
+			dbconnection("spNewUserSellBook('$email', '$isbn', '$desc', 'NULL', '$condition', '$price', '$day')");
+			$message = "book was posted.";
+			}
+			
+			
+
+			
+			
+
+
+			
+			$_POST = array();
+			
+
+			
+			}
+			
+
+			
 		?>
         <main>
+		<?php    include_once("resources/includes/check.php"); ?>
+
+		
 <br></br>
         <div  class="container-fluid" >
 
@@ -46,7 +90,7 @@
 							<div class="row">
 							<div class="form-group text-left col-sm-6">
 								<label for="price">Price:</label>
-								<input type="text" class="form-control" name="price">
+								<input type="number" class="form-control" name="price" step="0.01" min="0">
 							</div>
 							<div class="form-group text-left col-sm-6">
 								<label for="author">author:</label>
@@ -60,34 +104,51 @@
 								<label for="publisher">publisher:</label>
 								<input type="text" class="form-control" name="publisher" >
 							</div>
-
+							<div style="display: none;">
+								<input type="date" id="today" name="date" value="">
+							</div>
 							</div>
 							
 							<div class="form-group text-left ">
 								<label for="condition">Condition:</label>
 								<select class="form-control" name="condition">
-									<option value="New">New</option>
-									<option value="Min">Some Damage</option>
+									<option value="Mint">Mint</option>
+									<option value="Good">Good</option>
+									<option value="Fair">Fair</option>
 									<option value="Bad">Bad</option>
 								</select>
 							</div>
 							
 							<div class="form-group text-left">
 								<label for="desc">Description</label>
-								<textarea class="form-control" row="5" cols="50" name="desc" >enter short description</textarea>
+								<textarea class="form-control" rows="5" cols="50" name="desc" placeholder="enter short description" maxlength="2500" ></textarea>
 							</div>
 								<button type="submit" class="btn btn-warning btn-block">Submit</button>
 						</form>
 
                     </div>
+					
+					<?php
+					
+					echo '<p class="text-white text-center mb-2">' . $message . '</p> <br>';
+					
+					?>
                 </div>
             </div>
 
-
+		<script>
+		
+			document.getElementById("today").valueAsDate = new Date();
+		
+		</script>
+		
 		</div>
 		</div>
 
 			<br></br>
+
+			
+			
 
         </main>
 

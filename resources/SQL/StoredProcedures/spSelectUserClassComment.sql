@@ -19,6 +19,7 @@ BEGIN
     FROM tblUserClassComment
     LEFT OUTER JOIN tblClasses ON tblClasses.crn = tblUserClassComment.classCrn
     LEFT JOIN tblUsers on tblUsers.email = tblUserClassComment.email
-    WHERE tblClasses.courseID LIKE courseID;
-END$$
+    WHERE tblClasses.courseID LIKE courseID
+    ORDER BY tblUserClassComment.reviewDate;
+    END$$
 DELIMITER ;

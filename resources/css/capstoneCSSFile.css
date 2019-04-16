@@ -11,6 +11,7 @@ footer {
 
 body {
     font-family: "Source Sans Pro";
+    min-height: 100%;
     margin-bottom: 101px; /* Margin bottom by footer height */
 }
 
@@ -117,3 +118,9 @@ a.head-link:active {color: #EAAB00; }
 .w-480p {max-width: 480px !important;}
 .w-160p {width: 160px !important;}
 /* Index.php */
+
+@media (min-width: 992px) {
+    #sidenav {
+        min-height: calc(100vh - 202px);
+    }
+}

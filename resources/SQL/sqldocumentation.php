@@ -183,7 +183,9 @@
  * Used to check if an email exists.
  * IN email varchar(255)\n
  * Returns:\n
- * email\n
+ * email,\n
+ * name,\n
+ * id\n
  */
 
 /**

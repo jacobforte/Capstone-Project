@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * A model class for a review
+ */
 class Review
 {
     private $name;
@@ -10,28 +13,17 @@ class Review
     private $description;
 
     /**
-     * @return mixed
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * @param mixed $description
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-    }
-
-    /**
-     * Review constructor.
+     * Review constructor
      * @param $name
+     *  The display name of a user
      * @param $rating
+     *  The rating (1-5) of a review
      * @param $semester
+     *  The semester a review was written for
      * @param $instructor
+     *  The instructor a user had
      * @param $campus
+     *  The campus a class was taken at
      */
     public function __construct($name, $rating, $semester, $instructor, $campus, $description)
     {
@@ -43,81 +35,61 @@ class Review
         $this->description = $description;
     }
 
-    /**
-     * @return mixed
-     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
     public function getName()
     {
         return $this->name;
     }
 
-    /**
-     * @param mixed $name
-     */
     public function setName($name)
     {
         $this->name = $name;
     }
 
-    /**
-     * @return mixed
-     */
     public function getRating()
     {
         return $this->rating;
     }
 
-    /**
-     * @param mixed $rating
-     */
     public function setRating($rating)
     {
         $this->rating = $rating;
     }
 
-    /**
-     * @return mixed
-     */
     public function getSemester()
     {
         return $this->semester;
     }
 
-    /**
-     * @param mixed $semester
-     */
     public function setSemester($semester)
     {
         $this->semester = $semester;
     }
 
-    /**
-     * @return mixed
-     */
     public function getInstructor()
     {
         return $this->instructor;
     }
 
-    /**
-     * @param mixed $instructor
-     */
     public function setInstructor($instructor)
     {
         $this->instructor = $instructor;
     }
 
-    /**
-     * @return mixed
-     */
     public function getCampus()
     {
         return $this->campus;
     }
 
-    /**
-     * @param mixed $campus
-     */
     public function setCampus($campus)
     {
         $this->campus = $campus;

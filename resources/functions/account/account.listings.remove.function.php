@@ -8,12 +8,18 @@ if(isset($_POST['id'])) {
 
 /** \file */
 /**
- * This function is used to remove a specific book listing.
- * @param ID of book listing to be removed
+ * @brief Remove an active book listing
  *
+ * Removes an active book listing.
+ * Returns the active book listings count after removing the listing.
+ *
+ * @param $id
+ *  The book listing ID to remove
+ * @param $email
+ *  The email address of the user removing a listing
  */
 
-function removeUserListing($id, $user) {
+function removeUserListing($id, $email) {
     dbconnection("spDeleteUserSellBook(" . $id . ")");
-    echo count(dbconnection("spSelectUserSellBook(null, \"" . $user . "\", null, null, null, null)"));
+    echo count(dbconnection("spSelectUserSellBook(null, \"" . $email . "\", null, null, null, null)"));
 }
