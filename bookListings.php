@@ -66,6 +66,22 @@
                                         <option value="checkbox"> Poor</option>
                                     </select><span tabIndex="-1" aria-label="Conditon: " class="a-button a-button-dropdown a-button-small"><span class="a-button-inner"><span class="a-button-text a-declarative" data-action="a-dropdown-button" role="button" tabIndex="0" aria-hidden="true"><span class="a-dropdown-label"></span><span class="a-dropdown-prompt"></span></span><i class="a-icon a-icon-dropdown"></i></span></span></span>
                             </form>
+                            <div class="row mb-3">
+            <div class="col-sm-12 col-md-9 col-lg-6 col-xl-5">
+                <div class="row">
+                    <div class="col-12 col-sm-3">
+                        <h5><?php echo $book->getId() ?></h5>
+                    </div>
+                    <div class="col-12 col-sm-3">
+                        <h5><?php echo $book->getprice(); ?> Price</h5>
+                    </div>
+                    <div class="col-12 col-sm-3">
+                        <h5><?php echo $books->getcondition(); ?> Condition</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
                         </div>
                     </div>
                 </div>
