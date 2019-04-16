@@ -388,7 +388,7 @@ class CourseDetails
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" onclick="addReview(\'' . $user . '\', \'' . $this->id . '\')" class="btn btn-warning">Post Review.class</button>
+                        <button type="button" onclick="addReview(\'' . $user . '\', \'' . $this->id . '\')" class="btn btn-warning">Post Review</button>
                     </div>
                     </form>
                 </div>
