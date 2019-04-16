@@ -44,15 +44,9 @@
                                 <?php echo $book["edition"];?>
                             </strong> 
                         </p>
-                        <button onclick="window.location.href='postABook.php'">Continue</button>\
+                        <button class="btn btn-warning" onclick="window.location.href='/postABook.php'">Continue</button>
                         </div>
-                            <div class="row mb-3">
-                                <div class="col-sm-12 col-md-9 col-lg-6 col-xl-5">
-                                    <div class="row">
-                                    </div>
-                                    </div>
-                            </div>
-                         </div>
+                        </div>
                     </div>
         </div>
     </main>
