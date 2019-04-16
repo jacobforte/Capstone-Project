@@ -38,6 +38,7 @@
                                 <?php echo $book["isbn"];?>
                             </strong> 
                         </p>
+                        <?php $booksList = new $BooksList($_GET["isbn"] ?>
                         <button type="button" class="btn btn-warning" action="postABook.php"> Sell Your Textbook </button>
    						 <div class="row 1">
 							<div class="col-sm-auto mt-3">
@@ -67,8 +68,8 @@
                             <div class="row mb-3">
                                 <div class="col-sm-12 col-md-9 col-lg-6 col-xl-5">
                                     <div class="row">
-                                            <p><?php echo $booksList->getprice() ;?></p>
-                                            <p><?php echo $booksList->getbookCondition() ;?> Condition</p>
+                                            <p><?php echo $booksList["price"];?></p>
+                                            <p><?php echo $booksList["bookCondition"];?> Condition</p>
                                         </div>
                                     </div>
                                 </div>
