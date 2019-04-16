@@ -70,13 +70,13 @@
             <div class="col-sm-12 col-md-9 col-lg-6 col-xl-5">
                 <div class="row">
                     <div class="col-12 col-sm-3">
-                        <h5><?php echo $book->gettitle() ?>Title </h5>
+                        <h5><?php echo $book->getTitle() ?>Title </h5>
                     </div>
                     <div class="col-12 col-sm-3">
-                        <h5><?php echo $book->getprice(); ?> Price</h5>
+                        <h5><?php echo $book->getPrice(); ?> Price</h5>
                     </div>
                     <div class="col-12 col-sm-3">
-                        <h5><?php echo $books->getcondition(); ?> Condition</h5>
+                        <h5><?php echo $books->getCondition(); ?> Condition</h5>
                     </div>
                 </div>
             </div>
