@@ -9,7 +9,7 @@
 
     $booksList = dbconnection("spSelectUserSellBook(NULL, NULL,\"". $isbn ."\" ,NULL, NULL, NULL)");
     $book = dbconnection("spSelectSingleBook( \"". $isbn ."\")")[0];
-    $photos = dbconnection("spSelectUserSellBookPhoto({$bookID})");
+    $photos = dbconnection("spSelectUserSellBookPhoto(\"". $isbn ."\")");
 ?> 
 
 <!doctype html>
