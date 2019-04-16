@@ -6,8 +6,7 @@
     if (isset($_GET["isbn"])) {
         $isbn = $_GET["isbn"];
     }
-    
-    $booksList = dbconnection("spSelectUserSellBook(\"". $id ."\", NULL, NULL, NULL, NULL, NULL)");
+    $booksList = dbconnection("spSelectUserSellBook(\"". $isbn ."\" )")[0];
     $book = dbconnection("spSelectSingleBook( \"". $isbn ."\")")[0];
 ?> 
 
@@ -75,7 +74,7 @@
                                             <h5><?php echo $booksList["price"];?>Price</h5>
                                         </div>
                                         <div class="col-12 col-sm-3">
-                                            <h5><?php echo $booksList["bookCondition"];?> Condition</h5>
+                                            <h5><?php echo $booksList["bookcondition"];?> Condition</h5>
                                         </div>
                                     </div>
                                 </div>
