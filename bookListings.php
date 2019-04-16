@@ -9,7 +9,7 @@
 
     $booksList = dbconnection("spSelectUserSellBook(NULL, NULL,\"". $isbn ."\" ,NULL, NULL, NULL)");
     $book = dbconnection("spSelectSingleBook( \"". $isbn ."\")")[0];
-    $photos = dbconnection("spSelectUserSellBookPhoto(\"". $isbn ."\")");
+
 ?> 
 
 <!doctype html>
@@ -26,11 +26,7 @@
 			<div class="col">
 				<div class="container">
 					<div class="col-md-auto mt-9">
-                    <?php
-                                    echo "<li>
-                                        <img src='resources/images/{$photo['photoName']}' alt='Picture'>
-                                    </li>";
-                            ?>
+
                         <h1> <?php echo $book["title"];?> </h1>
                         <p> 
                             <strong>
