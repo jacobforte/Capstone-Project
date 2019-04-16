@@ -38,13 +38,13 @@
                                 <?php echo $book["isbn"];?>
                             </strong> 
                         </p>
-                        <button type="button" class="btn btn-warning" action="postABook.php"> Sell Your Textbook </button>
+                        <button type="button" class="btn btn-warning" a href="postABook.php"> Sell Your Textbook </button>
    						 <div class="row 1">
 							<div class="col-sm-auto mt-3">
 								<h2> Filters </h2>
                                     <form method="get" action="/s" class="aok-inline-block a-spacing-none">
                                         
-                                        <span class="a-dropdown-container"><label for="s-result-sort-select" class="a-native-dropdown"><b> Sort by:</b> </label><select name="<?php echo $booksList["price"];?>" autocomplete="off" id="s-result-sort-select" tabIndex="-1" class="a-native-dropdown">
+                                        <span class="a-dropdown-container"><label for="s-result-sort-select" class="a-native-dropdown"><b> Sort by:</b> </label><select name="<?php echo $booksList["price"];?>" autocomplete="on" id="s-result-sort-select" tabIndex="-1" class="a-native-dropdown">
                                             
                                                 <option value="price-asc-rank">Price: Low to High</option>
                                             
@@ -56,7 +56,7 @@
                             </form>
                             <form method="get" action="/s" class="aok-inline-block a-spacing-none">
 
-                                <span class="a-dropdown-container"><label for="s-result-sort-select" class="a-native-dropdown"><b>Condition: </b> </label><select name="<?php echo $booksList["bookCondition"];?>" autocomplete="off" id="s-result-sort-select" tabIndex="-1" class="a-native-dropdown">
+                                <span class="a-dropdown-container"><label for="s-result-sort-select" class="a-native-dropdown"><b>Condition: </b> </label><select name="<?php echo $booksList["bookCondition"];?>" autocomplete="on" id="s-result-sort-select" tabIndex="-1" class="a-native-dropdown">
 
                                         <option value="checkbox"> Mint</option>
                                         <option value="checkbox"> Good</option>
@@ -67,7 +67,10 @@
                             <div class="row mb-3">
                                 <div class="col-sm-12 col-md-9 col-lg-6 col-xl-5">
                                     <div class="row">
-                                            <p><?php echo $booksList["price"];?></p>
+                                            <p> <?php
+                                                if (empty($booksList["price"])) {echo "0.00";}
+                                                else {echo $booksList["price"];}
+                                            ?> </p>
                                             <p><?php echo $booksList["bookCondition"];?> Condition</p>
                                         </div>
                                     </div>
