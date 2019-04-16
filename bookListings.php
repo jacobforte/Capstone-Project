@@ -62,6 +62,7 @@
                                         <option value="checkbox"> Good</option>
                                         <option value="checkbox"> Fair</option>
                                         <option value="checkbox"> Poor</option>
+                                        
                                     </select><span tabIndex="-1" aria-label="Conditon: " class="a-button a-button-dropdown a-button-small"><span class="a-button-inner"><span class="a-button-text a-declarative" data-action="a-dropdown-button" role="button" tabIndex="0" aria-hidden="true"><span class="a-dropdown-label"></span><span class="a-dropdown-prompt"></span></span><i class="a-icon a-icon-dropdown"></i></span></span></span>
                             </form>
                             <div class="row mb-3">
@@ -71,7 +72,7 @@
                                                 if (empty($booksList["price"])) {echo "0.00";}
                                                 else {echo $booksList["price"];}
                                             ?> </p>
-                                            <p><?php echo $booksList["bookCondition"];?> Condition</p>
+                                            <p><?php echo $booksList["bookCondition"];?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -84,6 +85,49 @@
         </div>
      </div>
     </div>
+    <form action='<?php echo $_SERVER['PHP_SELF']; ?>' method='post' name='form_filter' >
+
+    <select name="checkbox">
+        <option value="all">All</option>
+        <option value="checkbox"> Mint</option>
+        <option value="checkbox"> Good</option>
+        <option value="checkbox"> Fair</option>
+        <option value="checkbox"> Poor</option>
+                                        
+    </select>
+	
+    <br />
+	
+    <input type='submit' value = 'Filter'>
+
+</form>
+<?php
+
+//connect to database, checking, etc
+
+if($_POST['value'] == 'Mint')) {
+    // query to get all Mint 
+    $query = "SELECT * FROM bookCondition WHERE name='Mint'";
+}
+elseif($_POST['value'] == 'Good') {
+    // query to get all Good 
+    $query = "SELECT * FROM bookCondition WHERE name='Good'";
+}elseif($_POST['value'] == 'Fair') {
+    // query to get all Fair 
+    $query = "SELECT * FROM bookCondition WHERE name='Fair'";
+}elseif($_POST['value'] == 'Poor') {
+    // query to get all Poor 
+    $query = "SELECT * FROM bookCondition WHERE name='Poor'";
+}
+} else {
+    // query to get all 
+    $query = "SELECT * FROM ";
+}
+$sql = mysql_query($query);
+
+while ($row = mysql_fetch_array($query)){
+        $bookCondition = $row["bookCondition"];
+?>
     </main>
 
     <?php include("resources/includes/footer.inc.php"); ?>
