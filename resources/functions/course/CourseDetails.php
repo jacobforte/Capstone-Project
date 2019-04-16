@@ -32,7 +32,7 @@ class CourseDetails
         $this->id = $id;
 
         // Retrieve all sections for provided course ID/term
-        $sections = dbconnection("spSelectClasses(null, \"" . $id . "\", null, null, null, null, null, null, null, null)");
+        $sections = dbconnection("spSelectClasses(null, \"" . $id . "\", null, null, null, null, null, null, null, null, null)");
 
         // If no sections are found for the provided course ID/term, search for all sections to retrieve basic data such as course title and credit hours
         if (sizeof($sections) == 0) {
