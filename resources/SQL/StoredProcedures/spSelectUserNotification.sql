@@ -6,10 +6,10 @@ CREATE PROCEDURE spSelectUserNotifications
     IN email varchar(255)
 )
 BEGIN
-    SELECT tblUserNotifications.notificationType,
+    SELECT tblUserNotification.notificationType,
     tblNotifications.description
     FROM tblUserNotifications
-    LEFT OUTER JOIN tblNotifications ON tblNotifications.type = tblUserNotifications.notificationType
-    WHERE tblUserNotifications.email = email;
+    LEFT OUTER JOIN tblNotifications ON tblNotifications.type = tblUserNotification.notificationType
+    WHERE tblUserNotification.email = email;
 END$$
 DELIMITER ;
