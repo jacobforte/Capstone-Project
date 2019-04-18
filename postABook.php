@@ -41,7 +41,7 @@
 			//checks the length of book description if above 255 character limit of short description then sets short to null and uses long instead.
 
 
-			dbconnection("spNewUserSellBook('$email', '$isbn', '$desc', 'NULL', '$condition', '$price', '$day')");
+			dbconnection("spNewUserSellBook('$email', '$isbn', 'NULL', '$desc', '$condition', '$price', '$day')");
 			$message = "book was posted.";
 			
 			
