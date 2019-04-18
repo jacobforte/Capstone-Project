@@ -28,15 +28,15 @@
         <main class= "container mt-4">
             <div class="row">
                 <div class="col">
-                    <h1 class="mt-2">Database System Concepts</h1>
+                    <h1 class="mt-2"><?php echo $book['title'];?></h1>
                     <h2>Author</h2>
-                    <h4>Abram Silberalskjdnalksd</h4>
+                    <h4><?php echo $book['author'];?></h4>
                     <h2>ISBN</h2>
-                    <h4>123456789456123</h4>
+                    <h4><?php echo $book['isbn'];?></h4>
                     <h2>Edition</h2>
-                    <h4>6th</h4>
+                    <h4><?php echo $book['edition'];?></h4>
                     <?php if (isset($_SESSION['username'])) {?>
-                        <a role="button" href="postABook.php?title=Database System Concepts&author=Abram Silberalskjdnalksd&isbn=123456789456123&edition=6" class="btn bg-orange">Sell Book</a>
+                        <a role="button" href="postABook.php?title=<?php echo $book['title'];?>&author=<?php echo $book['author'];?>&isbn=<?php echo $book['isbn'];?>&edition=<?php echo $book['edition'];?>" class="btn bg-orange">Sell Book</a>
                     <?php }else{?>
                         <button class="btn bg-orange disabled">Log In</button>
                     <?php }?>
