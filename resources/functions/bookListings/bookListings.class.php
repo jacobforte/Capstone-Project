@@ -11,7 +11,7 @@
         private $id;
 
         public function __construct($dbArrayRow) {
-            $this->seller = preg_replce("/@.*/", "", $dbArrayRow["email"]);
+            $this->seller = "asd";//preg_replce("/@.*/", "", $dbArrayRow["email"]);
             $this->condition = $dbArrayRow["bookCondition"];
             $this->listDate = $dbArrayRow["postDate"];
             $this->price = $dbArrayRow["price"];
