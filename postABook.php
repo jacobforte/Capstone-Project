@@ -58,8 +58,26 @@
 			
 			}
 			
+			
 
 			
+		?>
+		
+		<?php
+		
+		
+			if(isset($_GET['isbn'])){
+				
+				
+				$gtitle = $_GET['title'];
+				$gauthor = $_GET['author'];
+				$gisbn = $_GET['isbn'];
+				$gedition = $_GET['edition'];
+				
+				
+			}
+		
+		
 		?>
         <main>
 		<?php    include_once("resources/includes/check.php"); ?>
@@ -78,28 +96,28 @@
                         <form action="postABook.php" method="post">
 							<div class="form-group text-left">
 								<label for="title">Title:</label>
-								<input type="text" class="form-control" name="title">
+								<input type="text" class="form-control" name="title" required <?php	if(isset($_GET['isbn'])){ echo 'value="' . $gtitle . '" style="background-color: #DCDCDC; " '; }?>>
 							</div>
 							<div class="form-group text-left">
 								<label for="isbn">ISBN:</label>
-								<input type="text" class="form-control" name="isbn">
+								<input type="text" class="form-control" name="isbn" required <?php	if(isset($_GET['isbn'])){ echo 'value="' . $gisbn . '" style="background-color: #DCDCDC; " '; }?>>
 							</div>
 							<div class="row">
 							<div class="form-group text-left col-sm-6">
 								<label for="price">Price:</label>
-								<input type="number" class="form-control" name="price" step="0.01" min="0">
+								<input type="number" class="form-control" name="price" step="0.01" min="0" required>
 							</div>
 							<div class="form-group text-left col-sm-6">
 								<label for="author">author:</label>
-								<input type="text" class="form-control" name="author">
+								<input type="text" class="form-control" name="author" required <?php	if(isset($_GET['isbn'])){ echo 'value="' . $gauthor . '" style="background-color: #DCDCDC; " '; }?>>
 							</div>
 							<div class="form-group text-left col-sm-6">
 								<label for="edition">edition:</label>
-								<input type="text" class="form-control" name="edition">
+								<input type="text" class="form-control" name="edition" required <?php	if(isset($_GET['isbn'])){ echo 'value="' . $gedition . '" style="background-color: #DCDCDC; " '; }?>>
 							</div>
 							<div class="form-group text-left col-sm-6">
 								<label for="publisher">publisher:</label>
-								<input type="text" class="form-control" name="publisher" >
+								<input type="text" class="form-control" name="publisher" required >
 							</div>
 							<div style="display: none;">
 								<input type="date" id="today" name="date" value="">
