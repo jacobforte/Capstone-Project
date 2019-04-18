@@ -35,7 +35,7 @@
                     <h4><?php echo $book['isbn'];?></h4>
                     <h2>Edition</h2>
                     <h4><?php echo $book['edition'];?></h4>
-                    <?php if (isset($_SESSION['username'])) {?>
+                    <?php if (isset($_SESSION['user']['email'])) {?>
                         <a role="button" href="postABook.php?title=<?php echo $book['title'];?>&author=<?php echo $book['author'];?>&isbn=<?php echo $book['isbn'];?>&edition=<?php echo $book['edition'];?>" class="btn bg-orange">Sell Book</a>
                     <?php }else{?>
                         <button class="btn bg-orange disabled">Log In</button>
