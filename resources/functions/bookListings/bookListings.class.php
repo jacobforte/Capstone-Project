@@ -25,7 +25,7 @@
                 <td>{$this->listDate}</td>
                 <td class='price'>{$this->price}</td>
                 <td><a role='button' href='singleBookListing.php?id={$this->id}' class='btn bg-orange'>View Listing</a></td>
-            </tr>"
+            </tr>";
         }
     }
 ?>
