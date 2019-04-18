@@ -15,7 +15,7 @@
             </div>
             <div class="row">
                 <div class="col text-center">
-                    <form method="post" action="searchResults.php">
+                    <form method="get" action="searchResults.php">
                         <div class="container">
                             <div class="row ml-auto mr-auto mt-2 w-480p">
                                 <div class="col">

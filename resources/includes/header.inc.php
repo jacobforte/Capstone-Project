@@ -59,7 +59,7 @@ exit;
                         <i class="fas fa-xs fa" id="chev"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right bg-light">
-                        <form method="post" action="searchResults.php">
+                        <form method="get" action="searchResults.php">
                             <div class="input-group p-3">
                                 <input type="text" name="search" placeholder="Search" class="form-control">
                                 <div class="input-group-append">

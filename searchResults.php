@@ -4,9 +4,9 @@
 
     $search = "";
     $searchType = "courseNo";
-    if (isset($_POST["search"]) && isset($_POST["searchType"])) {
-        $search = $_POST["search"];
-        $searchType = $_POST["searchType"];
+    if (isset($_GET["search"]) && isset($_GET["searchType"])) {
+        $search = $_GET["search"];
+        $searchType = $_GET["searchType"];
     }
 ?>
 
@@ -23,7 +23,7 @@
             <div class="row">
                 <div class="col">
                     <div class="container">
-                        <form class="row" method="post" action="searchResults.php">
+                        <form class="row" method="get" action="searchResults.php">
                             <div class="col-sm">
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="search" placeholder="Search" value="<?php echo($search)?>">
