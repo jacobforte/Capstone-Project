@@ -4,7 +4,7 @@
 
     /**
      * This class will be used by the search results page.
-     * It will hold data for multiple many rows of data
+     * It will hold data for multiple rows of data
      */
     class ClassResults {
         private $singleClassResultArray;

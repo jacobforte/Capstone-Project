@@ -1,58 +1,124 @@
 
 <?php 
     require_once("resources/functions/dbconnection.function.php");
+    require_once("resources/functions/bookListings/bookListingsArray.class.php");
    
     $isbn ="";
-    if (isset($_GET["isbn"])) {
-        $isbn = $_GET["isbn"];
+    if (empty($_GET["isbn"]) || !is_numeric($_GET["isbn"])) {
+        die("Error: invalid isbn.");
     }
-    $booksList = dbconnection("spSelectUserSellBook(NULL, NULL,\"". $isbn ."\" ,NULL, NULL, NULL)")[0];
-    $book = dbconnection("spSelectSingleBook( \"". $isbn ."\")")[0];
+    $isbn = $_GET["isbn"];
+
+    $book = dbconnection("spSelectSingleBook( \"{$isbn}\")");
+    if (count($book) != 1) {
+        die("Error: invalid isbn.");
+    }
+    $book = $book[0];
 ?> 
 
 <!doctype html>
 <html lang="en">
-
-<head>
-  <title>Book Listing</title>
-  <?php include("resources/includes/head.inc.php"); ?>
-</head> 
+    <head>
+        <title>Book Listings</title>
+        <?php include("resources/includes/head.inc.php"); ?>
+    </head> 
     <body>
         <?php include("resources/includes/header.inc.php"); ?>
-    <main class= "container-mt-4">
-        <div class="row">
-			<div class="col">
-				<div class="container">
-					<div class="col-md-auto mt-9">
-
-                        <h1> <?php echo $book["title"];?> </h1>
-                        <p> 
-                            <strong>
-                            Author 
-                                <?php echo $book["author"];?>
-                            </strong> 
-                        </p>
-                        <p> 
-                            <strong>
-                            ISBN 
-                                <?php echo $book["isbn"];?>
-                            </strong> 
-                        </p>
-                        <p> 
-                            <strong>
-                            Edition 
-                                <?php echo $book["edition"];?>
-                            </strong> 
-                        </p>
-                        <button class="btn btn-warning" onclick="window.location.href='/postABook.php'">Post a Book</button>
+        <main class= "container mt-4">
+            <div class="row">
+                <div class="col">
+                    <h1 class="mt-2">Database System Concepts</h1>
+                    <h2>Author</h2>
+                    <h4>Abram Silberalskjdnalksd</h4>
+                    <h2>ISBN</h2>
+                    <h4>123456789456123</h4>
+                    <h2>Edition</h2>
+                    <h4>6th</h4>
+                    <?php if (isset($_SESSION['username'])) {?>
+                        <a role="button" href="postABook.php?title=Database System Concepts&author=Abram Silberalskjdnalksd&isbn=123456789456123&edition=6" class="btn bg-orange">Sell Book</a>
+                    <?php }else{?>
+                        <button class="btn bg-orange disabled">Log In</button>
+                    <?php }?>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-sm-3">
+                    <form>
+                        <h2>Filters</h2>
+                        <h4>Show Condition</h4>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="conditionMint" checked>
+                            <label class="form-check-label" for="conditionMint">
+                                Mint
+                            </label>
                         </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="conditionGood" checked>
+                            <label class="form-check-label" for="conditionGood">
+                                Good
+                            </label>
                         </div>
-                    </div>
-
-        </div>
-    </main>
-
-<?php include('resources/includes/footer.inc.php'); ?>
-
-</body>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="conditionFair" checked>
+                            <label class="form-check-label" for="conditionFair">
+                                Fair
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="conditionPoor" checked>
+                            <label class="form-check-label" for="conditionPoor">
+                                Poor
+                            </label>
+                        </div>
+                        <h4>Price</h4>
+                        <div class="form-row">
+                            <div class="col">
+                                <input class="form-control" type="number" id="minPrice" min="0" value="0">
+                            </div>
+                            <div class="col-auto">
+                                to
+                            </div>
+                            <div class="col">
+                                <input class="form-control" type="number" id="maxPrice" min="0" value="1000">   
+                            </div>
+                        </div>
+                        <h4>Sort by</h4>
+                        <div class="form-check">
+                            <input class="form-check-input" name="sortPrice" type="radio" id="sortPriceLowHigh" checked>
+                            <label class="form-check-label" for="sortPriceLowHigh">
+                                Price (lowest)
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" name="sortPrice" type="radio" id="sortPriceHighLow">
+                            <label class="form-check-label" for="sortPriceHighLow">
+                                Price (highest)
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="col">
+                    <h4>3 Listings Found ($68.00 - $84.99)</h4>
+                    <table class="table table-hover border">
+                        <thead class="bg-blue text-light">
+                            <tr>
+                                <th scope="col">Seller</th>
+                                <th scope="col">Condition</th>
+                                <th scope="col">List Date</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">View Listing</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                $array = new bookListingsArray($isbn);
+                                $array->print();
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+        <?php include('resources/includes/footer.inc.php'); ?>
+    </body>
 </html>
