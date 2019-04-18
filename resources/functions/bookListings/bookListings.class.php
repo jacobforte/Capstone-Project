@@ -23,7 +23,7 @@
                 <td>{$this->seller}</td>
                 <td class='condition'>{$this->condition}</td>
                 <td>{$this->listDate}</td>
-                <td class='price'>{$this->price}</td>
+                <td class='price'>$". $this->price ."</td>
                 <td><a role='button' href='singleBookListing.php?id={$this->id}' class='btn bg-orange'>View Listing</a></td>
             </tr>";
         }
