@@ -25,7 +25,7 @@
     </head> 
     <body>
         <?php include("resources/includes/header.inc.php"); ?>
-        <main class= "container mt-4">
+        <main class= "container mt-4 mb-4">
             <div class="row">
                 <div class="col">
                     <h1 class="mt-2"><?php echo $book['title'];?></h1>
