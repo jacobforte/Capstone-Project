@@ -46,7 +46,7 @@
 								
 
 							
-								echo '<h4 id="' . $a . '" class="' . $a . '"><a href="courseDetails.php?id=' . $row['crn'] . '"><strong>' . $row['title'] . '</strong></a></h4>';		
+								echo '<h4 id="' . $a . '" class="' . $a . '"><a href="courseDetails.php?id=' . $row['courseID'] . '"><strong>' . $row['title'] . '</strong></a></h4>';		
 								
 							echo '<div id="' . $a . '" class="' . $a . ' container-fluid row">';
 							
@@ -57,9 +57,11 @@
 								echo '<p>CRN: ' . $row['crn'] . '</p>';
 								echo '<p>Campus: ' . $row['campus'] . '</p>';
 								echo '<p>Credits: ' . $row['credits'] . '</p>';
-								echo '<form action="#">';
-								echo '<button type="submit" class="btn btn-lg bg-orange w-160p"><strong>Book Info</strong></button>';
-								echo '</form>';
+								echo '<button onclick=" removeclass(' . $a . ', \'' . $row['crn'] . '\') " class="btn btn-lg bg-orange w-160p"><strong>Remove</strong></button>';
+								
+								//echo '<form action="#">';
+								//echo '<button type="submit" class="btn btn-lg bg-orange w-160p"><strong>Book Info</strong></button>';
+								//echo '</form>';
 								
 							echo '<br></br></div>';
 
@@ -70,7 +72,7 @@
 								echo '<p>Start Date: ' . $row['startDate'] . ' End Date: ' . $row['endDate'] . '</p>';
 								echo '<p>Meeting Days: ' . $row['meetDays'] . ' 	|	Meeting Times: ' . $row['startTime'] . '-' . $row['endTime'] . '</p>';
 								echo '<p>Instructor: ' . $row['instructor'] . '</p>';
-								echo '<button onclick=" removeclass(' . $a . ', \'' . $row['crn'] . '\') " class="btn btn-lg bg-orange w-160p"><strong>Remove</strong></button>';
+								//echo '<button onclick=" removeclass(' . $a . ', \'' . $row['crn'] . '\') " class="btn btn-lg bg-orange w-160p"><strong>Remove</strong></button>';
 
 
 								
