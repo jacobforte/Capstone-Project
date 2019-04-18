@@ -25,7 +25,7 @@
     </head> 
     <body>
         <?php include("resources/includes/header.inc.php"); ?>
-        <main class= "container mt-4 mb-4">
+        <main class= "container mt-4">
             <div class="row">
                 <div class="col">
                     <h1 class="mt-2"><?php echo $book['title'];?></h1>
@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div class="row mt-4">
-                <div class="col-sm-3">
+                <div class="col-sm-3 mb-4">
                     <form>
                         <h2>Filters</h2>
                         <h4>Show Condition</h4>
@@ -98,7 +98,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="col">
+                <div class="col mb-4">
                     <h4><?php echo $array->getCount();?> Listings Found ($<?php echo $array->getMinPrice();?> - $<?php echo $array->getMaxPrice();?>)</h4>
                     <table class="table table-hover border">
                         <thead class="bg-blue text-light">
