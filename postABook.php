@@ -28,7 +28,7 @@
 
 			//runs a select to see if book is already in the database if it is then check won't be equal to null if
 			//if it is then that means book isn't in database 
-			$check = dbconnection("spSelectBooks('$isbn', '$title', '$author', '$edition', '$publisher')");
+			$check = dbconnection("spSelectIsbn('$isbn')");
 			
 			if($check == NULL){
 			//if book isn't in database then adds it to it.
