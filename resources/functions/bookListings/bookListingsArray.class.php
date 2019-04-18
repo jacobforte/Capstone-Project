@@ -8,6 +8,7 @@
      */
     class BookListingsArray {
         private $bookListingsArray;
+        private $count;
 
         /**
          * Use this to fetch the data for multiple rows of book listings
@@ -17,8 +18,10 @@
             $this->bookListingsArray = array();
             $dbResult = dbconnection("spSelectUserSellBook(NULL, NULL, \"{$isbn}\", NULL, NULL, NULL)");
 
+            $this->count = 0;
             foreach($dbResult as $row) {
                 $this->bookListingsArray[] = new SingleClassResult($row);
+                $this->count = $this->count + 1;
             }
         }
 
@@ -30,5 +33,35 @@
                 $row->print();
             }
         }
+
+        public function getMinPrice() {
+            if ($this->count == 0) {
+                return 0.00;
+            }
+
+            $price = 10000.00;
+            foreach ($this->bookListingsArray as $row) {
+                if ($row->getPrice() < $price) {
+                    $price = $row->getPrice();
+                }
+            }
+            return $price;
+        }
+
+        public function getMaxPrice() {
+            if ($this->count == 0) {
+                return 0.00;
+            }
+
+            $price = 0.00;
+            foreach ($this->bookListingsArray as $row) {
+                if ($row->getPrice() > $price) {
+                    $price = $row->getPrice();
+                }
+            }
+            return $price;
+        }
+
+        public function getCount() {return $this->count;}
     }
 ?>

@@ -14,6 +14,7 @@
         die("Error: invalid isbn.");
     }
     $book = $book[0];
+    $array = new bookListingsArray($isbn);
 ?> 
 
 <!doctype html>
@@ -98,7 +99,7 @@
                     </form>
                 </div>
                 <div class="col">
-                    <h4>3 Listings Found ($68.00 - $84.99)</h4>
+                    <h4><?php echo $array->getCount();?> Listings Found ($<?php echo $array->getMinPrice();?> - $<?php echo $array->getMaxPrice();?>)</h4>
                     <table class="table table-hover border">
                         <thead class="bg-blue text-light">
                             <tr>
@@ -111,7 +112,6 @@
                         </thead>
                         <tbody>
                             <?php
-                                $array = new bookListingsArray($isbn);
                                 $array->print();
                             ?>
                         </tbody>
