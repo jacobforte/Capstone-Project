@@ -98,8 +98,7 @@
 								id: str,
 								crn: num
 							},
-							success:function(data) {
-							alert("test");
+							success:function(data) {	
 								$('.' + str).fadeOut();
 							},
 							error:function(data){
