@@ -9,6 +9,7 @@
     </head>
     <body>
         <?php include("resources/includes/header.inc.php"); ?>
+	<?php    include_once("resources/includes/check.php"); ?>
 
         <main>
             <div class="container-fluid">
