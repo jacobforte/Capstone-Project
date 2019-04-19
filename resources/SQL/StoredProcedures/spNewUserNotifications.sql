@@ -7,7 +7,9 @@ CREATE PROCEDURE spNewUserNotifications
     IN notificationType varchar(255)
 )
 BEGIN
-    INSERT INTO tblUserNotifications(email, notificationType)
-    VALUES (email, notificationType);
+    INSERT INTO tblUserNotification(email, notificationType) 
+    VALUES(email, notificationType) 
+    ON DUPLICATE KEY UPDATE    
+    email = email, notificationType = notificationType;
 END$$
 DELIMITER ;
