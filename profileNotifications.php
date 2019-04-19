@@ -1,12 +1,21 @@
-<?php include('resources/functions/account/account.notifications.list.function.php'); ?>
+<?php
+    include('resources/functions/account/account.notifications.list.function.php');
+    include('resources/functions/account/account.notifications.update.function.php');
+?>
 <!doctype html>
 <html lang="en">
     <head>
         <?php include("resources/includes/head.inc.php"); ?>
     </head>
     <body>
-        <?php include("resources/includes/header.inc.php"); ?>
-        <?php include_once("resources/includes/check.php"); ?>
+        <?php
+            include("resources/includes/header.inc.php");
+            include_once("resources/includes/check.php");
+            if (isset($_POST['submit'])) {
+                updateNotifications($_SESSION['user']['email'], $_POST['type']);
+            }
+        ?>
+
         <main>
             <div class="container-fluid">
                 <div class="row">
@@ -31,8 +40,10 @@
                         </div>
                         <div class="row mb-3">
                             <div class="col-12">
-                                <?php outputUserNotifications($_SESSION['user']['email']); ?>
-                                <a href="#" class="btn btn-warning">Update</a>
+                                <form action="" method="post">
+                                    <?php outputUserNotifications($_SESSION['user']['email']); ?>
+                                    <button class="btn btn-warning" type="submit" name="submit">Update</button>
+                                </form>
                             </div>
                         </div>
                         <div class="row mb-3">
