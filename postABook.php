@@ -96,7 +96,7 @@
                         <form action="postABook.php" method="post">
 							<div class="form-group text-left">
 								<label for="title">Title:</label>
-								<input type="text" class="form-control" name="title" required <?php	if(isset($_GET['isbn'])){ echo 'value="' . $gtitle . '" style="background-color: #DCDCDC; " '; }?>>
+								<input type="text" class="form-control" name="title" required <?php	if(isset($_GET['isbn'])){ echo 'value="' . $gtitle . '" style="background-color: #DCDCDC; " readonly '; }?>>
 							</div>
 							<div class="form-group text-left">
 								<label for="isbn">ISBN:</label>
