@@ -43,4 +43,16 @@ $(document).ready(function(){
             }
         }
     });
+    $("#maxPrice").blur(function(){
+        var i;
+        var arr = $('[price]');
+        for (i = 0; i < arr.length; i++) {
+            if (arr[i].getAttribute("price") <= $("#maxPrice").val()) {
+                arr[i].style.display = 'table-row';
+            }
+            else {
+                arr[i].style.display = 'none';
+            }
+        }
+    });
 });
