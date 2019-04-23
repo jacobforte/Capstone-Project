@@ -55,4 +55,32 @@ $(document).ready(function(){
             }
         }
     });
+    $("#sortPriceLowHigh").change(function(){
+        var items = $("[price]");
+        items.sort(function(a, b) {
+            return parseFloat(a.getAttribute("price")) == parseFloat(b.getAttribute("price")) ? 0
+                : (parseFloat(a.getAttribute("price")) > parseFloat(b.getAttribute("price")) ? 1 : -1);
+        });
+        list = document.getElementById('list')
+        while (list.hasChildNodes()) {
+            list.removeChild(list.firstChild);
+         }
+        for (i = 0; i < items.length; ++i) {
+            list.appendChild(items[i]);
+        }
+    });
+    $("#sortPriceHighLow").change(function(){
+        var items = $("[price]");
+        items.sort(function(a, b) {
+            return parseFloat(a.getAttribute("price")) == parseFloat(b.getAttribute("price")) ? 0
+                : (parseFloat(a.getAttribute("price")) < parseFloat(b.getAttribute("price")) ? 1 : -1);
+        });
+        list = $("tbody")[0];
+        while (list.hasChildNodes()) {
+            list.removeChild(list.firstChild);
+         }
+        for (i = 0; i < items.length; ++i) {
+            list.appendChild(items[i]);
+        }
+    });
 });
