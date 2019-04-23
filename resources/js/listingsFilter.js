@@ -35,7 +35,7 @@ $(document).ready(function(){
         var i;
         var arr = $('[price]');
         for (i = 0; i < arr.length; i++) {
-            if (parseInt(arr[i].getAttribute("price")) >= parseInt($("#minPrice").val())) {
+            if (parseFloat(arr[i].getAttribute("price")) >= parseFloat($("#minPrice").val()) && parseFloat(arr[i].getAttribute("price")) <= parseFloat($("#maxPrice").val())) {
                 arr[i].style.display = 'table-row';
             }
             else {
@@ -47,7 +47,7 @@ $(document).ready(function(){
         var i;
         var arr = $('[price]');
         for (i = 0; i < arr.length; i++) {
-            if (parseInt(arr[i].getAttribute("price")) <= parseInt($("#maxPrice").val())) {
+            if (parseFloat(arr[i].getAttribute("price")) >= parseFloat($("#minPrice").val()) && parseFloat(arr[i].getAttribute("price")) <= parseFloat($("#maxPrice").val())) {
                 arr[i].style.display = 'table-row';
             }
             else {
