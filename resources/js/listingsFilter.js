@@ -35,7 +35,7 @@ $(document).ready(function(){
         var i;
         var arr = $('[price]');
         for (i = 0; i < arr.length; i++) {
-            if (arr[i].getAttribute("price") >= $("#minPrice").val()) {
+            if (arr[i].getAttribute("price") >= $("#minPrice").val() && arr[i].getAttribute("price") <= $("#maxPrice").val()) {
                 arr[i].style.display = 'table-row';
             }
             else {
@@ -47,7 +47,7 @@ $(document).ready(function(){
         var i;
         var arr = $('[price]');
         for (i = 0; i < arr.length; i++) {
-            if (arr[i].getAttribute("price") <= $("#maxPrice").val()) {
+            if (arr[i].getAttribute("price") >= $("#minPrice").val() && arr[i].getAttribute("price") <= $("#maxPrice").val()) {
                 arr[i].style.display = 'table-row';
             }
             else {
