@@ -31,11 +31,11 @@ $(document).ready(function(){
             $("[condition=Poor]").hide();
         }
     });
-    $("#sortPriceLowHigh").change(function(){
+    $("#minPrice").blur(function(){
         var i;
         var array = $('[price]');
         for (i = 1; i < array.count(); i++) {
-            if (array[i].prop('price') >= $("#sortPriceLowHigh").val()) {
+            if (array[i].prop('price') >= $("#minPrice").val()) {
                 array[i].show();
             }
             else {
