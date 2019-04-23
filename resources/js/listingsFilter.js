@@ -36,10 +36,10 @@ $(document).ready(function(){
         var arr = $('[price]');
         for (i = 0; i < arr.length; i++) {
             if (arr[i].price >= $("#minPrice").val()) {
-                arr[i].show();
+                arr[i].style.display = 'table-row';
             }
             else {
-                arr[i].hide();
+                arr[i].style.display = 'none';
             }
         }
     });
