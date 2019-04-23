@@ -31,7 +31,7 @@ $(document).ready(function(){
             $("[condition=Poor]").hide();
         }
     });
-    $("#sortPriceLowHigh").blur(function(){
+    $("#sortPriceLowHigh").change(function(){
         var i;
         var array = $('[price]');
         for (i = 1; i < array.count(); i++) {
