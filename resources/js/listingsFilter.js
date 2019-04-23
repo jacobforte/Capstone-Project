@@ -33,13 +33,13 @@ $(document).ready(function(){
     });
     $("#minPrice").blur(function(){
         var i;
-        var array = $('[price]');
-        for (i = 1; i < array.count(); i++) {
-            if (array[i].prop('price') >= $("#minPrice").val()) {
-                array[i].show();
+        var arr = $('[price]');
+        for (i = 1; i < arr.count(); i++) {
+            if (arr[i].prop('price') >= $("#minPrice").val()) {
+                arr[i].show();
             }
             else {
-                array[i].hide();
+                arr[i].hide();
             }
         }
     });
