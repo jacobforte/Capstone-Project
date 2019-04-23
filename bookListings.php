@@ -22,6 +22,7 @@
     <head>
         <title>Book Listings</title>
         <?php include("resources/includes/head.inc.php"); ?>
+        <script src="resources/js/listingsFilter.js"></script>
     </head> 
     <body>
         <?php include("resources/includes/header.inc.php"); ?>

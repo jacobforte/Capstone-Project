@@ -19,7 +19,7 @@
         }
 
         public function print() {
-            echo "<tr>
+            echo "<tr condition='{$this->condition}' price='{$this->price}'>
                 <td>{$this->seller}</td>
                 <td class='condition'>{$this->condition}</td>
                 <td>{$this->listDate}</td>
