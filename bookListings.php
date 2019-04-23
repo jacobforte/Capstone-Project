@@ -67,9 +67,9 @@
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="conditionPoor" checked>
-                            <label class="form-check-label" for="conditionPoor">
-                                Poor
+                            <input class="form-check-input" type="checkbox" id="conditionBad" checked>
+                            <label class="form-check-label" for="conditionBad">
+                                Bad
                             </label>
                         </div>
                         <h4>Price</h4>

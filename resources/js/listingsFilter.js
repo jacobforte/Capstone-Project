@@ -23,19 +23,19 @@ $(document).ready(function(){
             $("[condition=Fair]").hide();
         }
     });
-    $("#conditionPoor").click(function(){
-        if ($('#conditionPoor').prop('checked')) {
-            $("[condition=Poor]").show();
+    $("#conditionBad").click(function(){
+        if ($('#conditionBad').prop('checked')) {
+            $("[condition=Bad]").show();
         }
         else {
-            $("[condition=Poor]").hide();
+            $("[condition=Bad]").hide();
         }
     });
     $("#minPrice").blur(function(){
         var i;
         var arr = $('[price]');
         for (i = 0; i < arr.length; i++) {
-            if (arr[i].getAttribute("price") >= $("#minPrice").val() && arr[i].getAttribute("price") <= $("#maxPrice").val()) {
+            if (arr[i].getAttribute("price") >= $("#minPrice").val()) {
                 arr[i].style.display = 'table-row';
             }
             else {
