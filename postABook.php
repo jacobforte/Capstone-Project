@@ -100,7 +100,7 @@
 							</div>
 							<div class="form-group text-left">
 								<label for="isbn">ISBN:</label>
-								<input type="text" class="form-control" name="isbn" required <?php	if(isset($_GET['isbn'])){ echo 'value="' . $gisbn . '" style="background-color: #DCDCDC; " '; }?>>
+								<input type="text" class="form-control" name="isbn" required <?php	if(isset($_GET['isbn'])){ echo 'value="' . $gisbn . '" style="background-color: #DCDCDC; " readonly'; }?>>
 							</div>
 							<div class="row">
 							<div class="form-group text-left col-sm-6">
@@ -109,11 +109,11 @@
 							</div>
 							<div class="form-group text-left col-sm-6">
 								<label for="author">author:</label>
-								<input type="text" class="form-control" name="author" required <?php	if(isset($_GET['isbn'])){ echo 'value="' . $gauthor . '" style="background-color: #DCDCDC; " '; }?>>
+								<input type="text" class="form-control" name="author" required <?php	if(isset($_GET['isbn'])){ echo 'value="' . $gauthor . '" style="background-color: #DCDCDC; " readonly'; }?>>
 							</div>
 							<div class="form-group text-left col-sm-6">
 								<label for="edition">edition:</label>
-								<input type="text" class="form-control" name="edition" required <?php	if(isset($_GET['isbn'])){ echo 'value="' . $gedition . '" style="background-color: #DCDCDC; " '; }?>>
+								<input type="text" class="form-control" name="edition" required <?php	if(isset($_GET['isbn'])){ echo 'value="' . $gedition . '" style="background-color: #DCDCDC; " readonly'; }?>>
 							</div>
 							<div class="form-group text-left col-sm-6">
 								<label for="publisher">publisher:</label>
