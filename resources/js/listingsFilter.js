@@ -61,7 +61,7 @@ $(document).ready(function(){
             return parseFloat(a.getAttribute("price")) == parseFloat(b.getAttribute("price")) ? 0
                 : (parseFloat(a.getAttribute("price")) > parseFloat(b.getAttribute("price")) ? 1 : -1);
         });
-        list = document.getElementById('list')
+        list = $("tbody")[0];
         while (list.hasChildNodes()) {
             list.removeChild(list.firstChild);
          }
