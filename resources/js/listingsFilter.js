@@ -35,7 +35,7 @@ $(document).ready(function(){
         var i;
         var arr = $('[price]');
         for (i = 0; i < arr.length; i++) {
-            if (arr[i].prop('price') >= $("#minPrice").val()) {
+            if (arr[i].price >= $("#minPrice").val()) {
                 arr[i].show();
             }
             else {
