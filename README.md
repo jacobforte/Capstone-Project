@@ -32,21 +32,18 @@ C.1. Required applications
 Apache
 MySQL
 PHP
-
 (OPTIONAL)
 Doxygen
 
-C.2. Process
+C.2. Application Install
 1. Copy all files to the document root. The document root location is specified in the apache configs.
 2. Give Apache full permissions to all folders of the project.
 3. Create a new Database through MySQL and a user that is allowed execute permissions.
 4. In the MySQL command line, source all files located in the resources/SQL/TableCreateScripts folder followed by all files in the resources/SQL/StoredProcedures folder
-5. Do external application stuff.
-6. (OPTIONAL) If you installed Doxygen, run the following command in the document root file.
+5. (OPTIONAL) If you installed Doxygen, run the following command in the document root file.
     doxygen DoxygenConfig, this will install the documentation
     
-Web Scrapers
+C.3 Web Scrapers
 1. The scrapers require a web browser driver, specifically geckodriver, to be accessible on the machine it runs on. The driver can be downloaded from here: https://github.com/mozilla/geckodriver/releases
 2. Modify the application property file (ksu-scraper/src/main/resources/application.properties) to specify a MySQL database name, username, and password. Additionally, add the path to the geckdriver downloaded from step 1.
 3. The scrapers are compiled to JAR files once setup has been completed. To compile, navigate to the Java main application directory (ksu-scraper/src/main/java/com/bookit) which includes the BookScraperApplication and CourseScraperApplication files. For instructions on how to compile these files to JAR files, please visit: https://www.webucator.com/how-to/how-create-jar-file-java.cfm
-   
