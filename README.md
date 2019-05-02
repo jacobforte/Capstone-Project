@@ -44,3 +44,8 @@ C.2. Process
 5. Do external application stuff.
 6. (OPTIONAL) If you installed Doxygen, run the following command in the document root file.
     doxygen DoxygenConfig, this will install the documentation
+    
+C.3. Web Scrapers
+    1. The scrapers require a web browser driver, specifically geckodriver, to be accessible on the machine it runs on. The driver can be downloaded from here: https://github.com/mozilla/geckodriver/releases
+    2. Modify the application property file (ksu-scraper/src/main/resources/application.properties) to specify a MySQL database name, username, and password. Additionally, add the path to the geckdriver downloaded from step 1.
+    3. The scrapers are compiled to JAR files once setup has been completed. To compile, navigate to the Java main application directory (ksu-scraper/src/main/java/com/bookit) which includes the BookScraperApplication and CourseScraperApplication files. For instructions on how to compile these files to JAR files, please visit: https://www.webucator.com/how-to/how-create-jar-file-java.cfm
