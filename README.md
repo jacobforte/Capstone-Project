@@ -39,8 +39,9 @@ C.2. Application Install
 1. Copy all files to the document root. The document root location is specified in the apache configs.
 2. Give Apache full permissions to all folders of the project.
 3. Create a new Database through MySQL and a user that is allowed execute permissions.
-4. In the MySQL command line, source all files located in the resources/SQL/TableCreateScripts folder followed by all files in the resources/SQL/StoredProcedures folder
-5. (OPTIONAL) If you installed Doxygen, run the following command in the document root file.
+4. In the MySQL command line, source all files located in the resources/SQL/TableCreateScripts folder followed by all files in the resources/SQL/StoredProcedures folder.
+5. In the file resources/functions/dbconnection.function.php, edit the $dbuser, $dbpass, and $dbconnstring to the username, password, and host location/Database name you created.
+6. (OPTIONAL) If you installed Doxygen, run the following command in the document root file.
     doxygen DoxygenConfig, this will install the documentation
     
 C.3 Web Scrapers
