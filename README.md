@@ -16,7 +16,7 @@ GitHub - where all of our code is.
 https://github.com/jacobforte/Capstone-Project
 
 Google Drive - where related documents and drafts are.
-https://drive.google.com/drive/u/1/folders/1l0SpFqUmSPNkrlZlU97C_ytU-UZaVVmC
+https://drive.google.com/drive/folders/1l0SpFqUmSPNkrlZlU97C_ytU-UZaVVmC?usp=sharing
 
 Trello - where all of the tasks that wen into this project are.
 https://trello.com/b/nzKO6CA6/capstone-project
