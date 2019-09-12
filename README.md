@@ -22,7 +22,7 @@ Trello - where all of the tasks that wen into this project are.
 https://trello.com/b/nzKO6CA6/capstone-project
 
 Lucid chart - where all of our carts and diagrams are located.
-https://www.lucidchart.com/documents#docs?folder_id=182182990&browser=icon&sort=saved-desc
+https://www.lucidchart.com/invitations/accept/9fa4dfe6-0a7a-4ac5-a441-a2e7db21a603
 
 Marvel app - where all of our application markups are located
 https://marvelapp.com/5aej573/screen/54087432
